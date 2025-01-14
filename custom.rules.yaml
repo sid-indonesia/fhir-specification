@@ -1,0 +1,8 @@
+- name: canonical-starts-with
+  filter: url.exists() and ImplementationGuide.exists().not()
+  # Excluding IGs for now, since they have a Simplifier.net canonical
+  status: "Checking if canonical URL starts with correct base"
+  predicate: url.startsWith('https://fake-acme.org/fhir/')
+  error-message: "Canonical URL doesn't start with correct base"
+
+- include: minimal

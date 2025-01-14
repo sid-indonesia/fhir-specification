@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="BarryShaw-patient-INVALID" />
+  <meta>
+    <profile value="http://fake-acme.org/fhir/StructureDefinition/ACMEGithubProjectPatient" />
+  </meta>
+  <extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex">
+    <valueCode value="M" />
+  </extension>
+  <identifier>
+    <use value="usual" />
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <code value="MR" />
+        <display value="Medical Record Number" />
+      </coding>
+      <text value="Medical Record Number" />
+    </type>
+    <system value="http://hospital.smarthealthit.org" />
+    <value value="1032702" />
+  </identifier>
+  <active value="true" />
+  <name>
+    <family value="Shaw" />
+    <given value="Barry" />
+    <given value="V." />
+  </name>
+  <telecom>
+    <system value="phone" />
+    <value value="555-555-5555" />
+    <use value="home" />
+  </telecom>
+  <telecom>
+    <system value="email" />
+    <value value="barry.shaw@example.com" />
+  </telecom>
+  <gender value="male" />
+  <birthDate value="2007-02-20" />
+  <address>
+    <line value="49 Meadow St" />
+    <city value="Mounds" />
+    <state value="OK" />
+    <postalCode value="74047" />
+    <country value="US" />
+  </address>
+</Patient>
