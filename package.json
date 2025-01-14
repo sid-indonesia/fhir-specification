@@ -9,6 +9,6 @@
   "devDependencies": null,
   "canonicals": null,
   "dependencies": {
-    "hl7.fhir.r4.core": "4.0.1"
+    "hl7.fhir.id.core": "0.1.0"
   }
 }
