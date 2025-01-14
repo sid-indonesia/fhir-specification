@@ -1,0 +1,70 @@
+{
+  "id": "Example-Patient-Get-NIK",
+  "entry": [
+    {
+      "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Patient/100000030009",
+      "resource": {
+        "active": true,
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "code": "id",
+                  "display": "Indonesian",
+                  "system": "urn:ietf:bcp:47"
+                }
+              ],
+              "text": "Indonesian"
+            },
+            "preferred": true
+          }
+        ],
+        "deceasedBoolean": false,
+        "gender": "male",
+        "id": "100000030009",
+        "identifier": [
+          {
+            "system": "https://fhir.kemkes.go.id/id/ihs-number",
+            "use": "official",
+            "value": "100000030009"
+          },
+          {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "use": "official",
+            "value": "################"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2022-06-13T16:50:39.368307+00:00",
+          "profile": [
+            "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient|4.0.1",
+            "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient"
+          ],
+          "versionId": "MTY1NTEzOTAzOTM2ODMwNzAwMA"
+        },
+        "multipleBirthBoolean": false,
+        "name": [
+          {
+            "family": "Santoso",
+            "given": [
+              "Budi"
+            ],
+            "suffix": [
+              "MSc"
+            ],
+            "text": "Budi Santoso",
+            "use": "official"
+          }
+        ],
+        "resourceType": "Patient"
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ],
+  "resourceType": "Bundle",
+  "total": 1,
+  "type": "searchset"
+}

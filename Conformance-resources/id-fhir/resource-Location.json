@@ -1,0 +1,665 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "Location",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2023-05-30T10:10:45.9858707+00:00"
+  },
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Entities"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 3
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "business"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-wg",
+      "valueCode": "pa"
+    }
+  ],
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/Location",
+  "version": "4.0.1",
+  "name": "Location",
+  "status": "active",
+  "date": "2023-05-30T10:14:25.520085+00:00",
+  "publisher": "Health Level Seven International (Patient Administration)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/fhir"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Location",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/DomainResource",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "Location",
+        "path": "Location",
+        "short": "Details and position information for a physical place",
+        "definition": "Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".Role[classCode=SDLC]"
+          }
+        ]
+      },
+      {
+        "id": "Location.extension",
+        "path": "Location.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "Location.extension:serviceClass",
+        "path": "Location.extension",
+        "sliceName": "serviceClass",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/LocationServiceClass"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Location.identifier",
+        "path": "Location.identifier",
+        "short": "Unique code or number identifying the location to its users",
+        "definition": "Unique code or number identifying the location to its users.",
+        "requirements": "Organization label locations in registries, need to keep track of those.",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.identifier"
+          },
+          {
+            "identity": "rim",
+            "map": ".id"
+          }
+        ]
+      },
+      {
+        "id": "Location.status",
+        "path": "Location.status",
+        "short": "active | suspended | inactive",
+        "definition": "The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.",
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": true,
+        "isModifierReason": "This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid",
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "LocationStatus"
+            }
+          ],
+          "strength": "required",
+          "description": "Indicates whether the location is still in use.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/location-status|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.status"
+          },
+          {
+            "identity": "rim",
+            "map": ".statusCode"
+          }
+        ]
+      },
+      {
+        "id": "Location.operationalStatus",
+        "path": "Location.operationalStatus",
+        "short": "The operational status of the location (typically only for a bed/room)",
+        "definition": "The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "OperationalStatus"
+            }
+          ],
+          "strength": "preferred",
+          "description": "The operational status if the location (where typically a bed/room).",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v2-0116"
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.status"
+          }
+        ]
+      },
+      {
+        "id": "Location.name",
+        "path": "Location.name",
+        "short": "Name of the location as used by humans",
+        "definition": "Name of the location as used by humans. Does not need to be unique.",
+        "comment": "If the name of a location changes, consider putting the old name in the alias column so that it can still be located through searches.",
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".name"
+          }
+        ]
+      },
+      {
+        "id": "Location.alias",
+        "path": "Location.alias",
+        "short": "A list of alternate names that the location is known as, or was known as, in the past",
+        "definition": "A list of alternate names that the location is known as, or was known as, in the past.",
+        "comment": "There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the location.",
+        "requirements": "Over time locations and organizations go through many changes and can be known by different names.\n\nFor searching knowing previous names that the location was known by can be very useful.",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".name"
+          }
+        ]
+      },
+      {
+        "id": "Location.description",
+        "path": "Location.description",
+        "short": "Additional details about the location that could be displayed as further information to identify the location beyond its name",
+        "definition": "Description of the Location, which helps in finding or referencing the place.",
+        "requirements": "Humans need additional information to verify a correct location has been identified.",
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".playingEntity[classCode=PLC determinerCode=INSTANCE].desc"
+          }
+        ]
+      },
+      {
+        "id": "Location.mode",
+        "path": "Location.mode",
+        "short": "instance | kind",
+        "definition": "Indicates whether a resource instance represents a specific location or a class of locations.",
+        "comment": "This is labeled as a modifier because whether or not the location is a class of locations changes how it can be used and understood.",
+        "requirements": "When using a Location resource for scheduling or orders, we need to be able to refer to a class of Locations instead of a specific Location.",
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "LocationMode"
+            }
+          ],
+          "strength": "required",
+          "description": "Indicates whether a resource instance represents a specific location or a class of locations.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/location-mode|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.class"
+          },
+          {
+            "identity": "rim",
+            "map": ".playingEntity[classCode=PLC].determinerCode"
+          }
+        ]
+      },
+      {
+        "id": "Location.type",
+        "path": "Location.type",
+        "short": "Type of function performed",
+        "definition": "Indicates the type of function performed at the location.",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "LocationType"
+            }
+          ],
+          "strength": "extensible",
+          "description": "Indicates the type of function performed at the location.",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType"
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.class"
+          },
+          {
+            "identity": "rim",
+            "map": ".code"
+          }
+        ]
+      },
+      {
+        "id": "Location.telecom",
+        "path": "Location.telecom",
+        "short": "Contact details of the location",
+        "definition": "The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.",
+        "type": [
+          {
+            "code": "ContactPoint"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".telecom"
+          }
+        ]
+      },
+      {
+        "id": "Location.address",
+        "path": "Location.address",
+        "short": "Physical location",
+        "definition": "Physical location.",
+        "comment": "Additional addresses should be recorded using another instance of the Location resource, or via the Organization.",
+        "requirements": "If locations can be visited, we need to keep track of their address.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Address"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".addr"
+          }
+        ]
+      },
+      {
+        "id": "Location.physicalType",
+        "path": "Location.physicalType",
+        "short": "Physical form of the location",
+        "definition": "Physical form of the location, e.g. building, room, vehicle, road.",
+        "requirements": "For purposes of showing relevant locations in queries, we need to categorize locations.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "PhysicalType"
+            }
+          ],
+          "strength": "example",
+          "description": "Physical form of the location.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/location-physical-type"
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.class"
+          },
+          {
+            "identity": "rim",
+            "map": ".playingEntity [classCode=PLC].code"
+          }
+        ]
+      },
+      {
+        "id": "Location.position",
+        "path": "Location.position",
+        "short": "The absolute geographic location",
+        "definition": "The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same co-ordinate system used in KML).",
+        "requirements": "For mobile applications and automated route-finding knowing the exact location of the Location is required.",
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".playingEntity [classCode=PLC determinerCode=INSTANCE].positionText"
+          }
+        ]
+      },
+      {
+        "id": "Location.position.longitude",
+        "path": "Location.position.longitude",
+        "short": "Longitude with WGS84 datum",
+        "definition": "Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "(RIM Opted not to map the sub-elements of GPS location, is now an OBS)"
+          }
+        ]
+      },
+      {
+        "id": "Location.position.latitude",
+        "path": "Location.position.latitude",
+        "short": "Latitude with WGS84 datum",
+        "definition": "Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "(RIM Opted not to map the sub-elements of GPS location, is now an OBS)"
+          }
+        ]
+      },
+      {
+        "id": "Location.position.altitude",
+        "path": "Location.position.altitude",
+        "short": "Altitude with WGS84 datum",
+        "definition": "Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).",
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "(RIM Opted not to map the sub-elements of GPS location, is now an OBS)"
+          }
+        ]
+      },
+      {
+        "id": "Location.managingOrganization",
+        "path": "Location.managingOrganization",
+        "short": "Organization responsible for provisioning and upkeep",
+        "definition": "The organization responsible for the provisioning and upkeep of the location.",
+        "comment": "This can also be used as the part of the organization hierarchy where this location provides services. These services can be defined through the HealthcareService resource.",
+        "requirements": "Need to know who manages the location.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".scopingEntity[classCode=ORG determinerKind=INSTANCE]"
+          }
+        ]
+      },
+      {
+        "id": "Location.partOf",
+        "path": "Location.partOf",
+        "short": "Another Location this one is physically a part of",
+        "definition": "Another Location of which this Location is physically a part of.",
+        "requirements": "For purposes of location, display and identification, knowing which locations are located within other locations is important.",
+        "max": "1",
+        "type": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ],
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Location"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".inboundLink[typeCode=PART].source[classCode=SDLC]"
+          }
+        ]
+      },
+      {
+        "id": "Location.hoursOfOperation",
+        "path": "Location.hoursOfOperation",
+        "short": "What days/times during a week is this location usually open",
+        "definition": "What days/times during a week is this location usually open.",
+        "comment": "This type of information is commonly found published in directories and on websites informing customers when the facility is available.\n\nSpecific services within the location may have their own hours which could be shorter (or longer) than the locations hours.",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".effectiveTime"
+          }
+        ]
+      },
+      {
+        "id": "Location.hoursOfOperation.daysOfWeek",
+        "path": "Location.hoursOfOperation.daysOfWeek",
+        "short": "mon | tue | wed | thu | fri | sat | sun",
+        "definition": "Indicates which days of the week are available between the start and end Times.",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "DaysOfWeek"
+            }
+          ],
+          "strength": "required",
+          "description": "The days of the week.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/days-of-week|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".effectiveTime"
+          }
+        ]
+      },
+      {
+        "id": "Location.hoursOfOperation.allDay",
+        "path": "Location.hoursOfOperation.allDay",
+        "short": "The Location is open all day",
+        "definition": "The Location is open all day.",
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".effectiveTime"
+          }
+        ]
+      },
+      {
+        "id": "Location.hoursOfOperation.openingTime",
+        "path": "Location.hoursOfOperation.openingTime",
+        "short": "Time that the Location opens",
+        "definition": "Time that the Location opens.",
+        "max": "1",
+        "type": [
+          {
+            "code": "time"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".effectiveTime"
+          }
+        ]
+      },
+      {
+        "id": "Location.hoursOfOperation.closingTime",
+        "path": "Location.hoursOfOperation.closingTime",
+        "short": "Time that the Location closes",
+        "definition": "Time that the Location closes.",
+        "max": "1",
+        "type": [
+          {
+            "code": "time"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".effectiveTime"
+          }
+        ]
+      },
+      {
+        "id": "Location.availabilityExceptions",
+        "path": "Location.availabilityExceptions",
+        "short": "Description of availability exceptions",
+        "definition": "A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.",
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Location.endpoint",
+        "path": "Location.endpoint",
+        "short": "Technical endpoints providing access to services operated for the location",
+        "definition": "Technical endpoints providing access to services operated for the location.",
+        "requirements": "Organizations may have different systems at different locations that provide various services and need to be able to define the technical connection details for how to connect to them, and for what purpose.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Endpoint"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

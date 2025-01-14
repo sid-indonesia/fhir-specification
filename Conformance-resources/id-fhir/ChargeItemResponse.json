@@ -1,0 +1,249 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ChargeItemResponse",
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/chargeItemResponse",
+  "name": "ChargeItemResponse",
+  "status": "draft",
+  "date": "2024-05-07T16:08:37.130606+00:00",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "ChargeItem"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension:sequence",
+        "path": "Extension.extension",
+        "sliceName": "sequence"
+      },
+      {
+        "id": "Extension.extension:sequence.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "sequence"
+      },
+      {
+        "id": "Extension.extension:sequence.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:payor",
+        "path": "Extension.extension",
+        "sliceName": "payor"
+      },
+      {
+        "id": "Extension.extension:payor.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "payor"
+      },
+      {
+        "id": "Extension.extension:payor.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:identifier",
+        "path": "Extension.extension",
+        "sliceName": "identifier"
+      },
+      {
+        "id": "Extension.extension:identifier.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "identifier"
+      },
+      {
+        "id": "Extension.extension:identifier.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "id"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:coverage",
+        "path": "Extension.extension",
+        "sliceName": "coverage"
+      },
+      {
+        "id": "Extension.extension:coverage.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "coverage"
+      },
+      {
+        "id": "Extension.extension:coverage.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Coverage"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:status",
+        "path": "Extension.extension",
+        "sliceName": "status"
+      },
+      {
+        "id": "Extension.extension:status.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "status"
+      },
+      {
+        "id": "Extension.extension:status.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:unitPriceOverride",
+        "path": "Extension.extension",
+        "sliceName": "unitPriceOverride"
+      },
+      {
+        "id": "Extension.extension:unitPriceOverride.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "unitPriceOverride"
+      },
+      {
+        "id": "Extension.extension:unitPriceOverride.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Money"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:quantity",
+        "path": "Extension.extension",
+        "sliceName": "quantity"
+      },
+      {
+        "id": "Extension.extension:quantity.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "quantity"
+      },
+      {
+        "id": "Extension.extension:quantity.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:factorOverride",
+        "path": "Extension.extension",
+        "sliceName": "factorOverride"
+      },
+      {
+        "id": "Extension.extension:factorOverride.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "factorOverride"
+      },
+      {
+        "id": "Extension.extension:factorOverride.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:overrideReason",
+        "path": "Extension.extension",
+        "sliceName": "overrideReason"
+      },
+      {
+        "id": "Extension.extension:overrideReason.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "overrideReason"
+      },
+      {
+        "id": "Extension.extension:overrideReason.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:total",
+        "path": "Extension.extension",
+        "sliceName": "total"
+      },
+      {
+        "id": "Extension.extension:total.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "total"
+      },
+      {
+        "id": "Extension.extension:total.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Money"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:excess",
+        "path": "Extension.extension",
+        "sliceName": "excess"
+      },
+      {
+        "id": "Extension.extension:excess.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "excess"
+      },
+      {
+        "id": "Extension.extension:excess.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Money"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/chargeItemResponse"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

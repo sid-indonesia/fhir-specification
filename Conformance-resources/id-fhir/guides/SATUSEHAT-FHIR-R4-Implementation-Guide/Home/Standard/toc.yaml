@@ -1,0 +1,11 @@
+- name: Index
+  filename: Index.page.md
+
+- name: Standar Interoperabilitas
+  filename: InteroperabilityStandard.page.md
+
+- name: Introduksi FHIR
+  filename: FHIRIntroduction.page.md
+
+- name: Standar Terminologi
+  filename: Terminology.page.md

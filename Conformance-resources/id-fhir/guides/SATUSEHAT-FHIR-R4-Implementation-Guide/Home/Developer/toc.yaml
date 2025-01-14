@@ -1,0 +1,10 @@
+- name: Tahapan Integrasi
+  filename: Onboarding.page.md
+- name: Autentikasi ke SATUSEHAT
+  filename: Authentication.page.md
+- name: Organization
+  filename: Organization.page.md
+- name: Registrasi Struktur Lokasi
+  filename: Location.page.md
+- name: Nomor SATUSEHAT Tenaga Kesehatan
+  filename: Practitioner.page.md

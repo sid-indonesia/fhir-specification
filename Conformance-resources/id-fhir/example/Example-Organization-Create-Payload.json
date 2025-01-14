@@ -1,0 +1,80 @@
+{
+  "resourceType": "Organization",
+  "id": "Example-Organization-Create-Payload",
+  "active": true,
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://sys-ids.kemkes.go.id/organization/10000004",
+      "value": "R100005"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "dept",
+          "display": "Hospital Department"
+        }
+      ]
+    }
+  ],
+  "name": "Direktorat Medik, Keperawatan, dan Penunjang RSUD Jati Asih",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+6221-783042654",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "rsudjatiasih@gmail.com",
+      "use": "work"
+    },
+    {
+      "system": "url",
+      "value": "www.rsudjatiasih@gmail.com",
+      "use": "work"
+    }
+  ],
+  "address": [
+    {
+      "use": "work",
+      "type": "both",
+      "line": [
+        "Jl. Raya Jatiasih No.72, RT.004/RW.005, Jatiasih, Kec. Jatiasih, Kota Bks, Jawa Barat 17423"
+      ],
+      "city": "Jakarta",
+      "postalCode": "55292",
+      "country": "ID",
+      "extension": [
+        {
+          "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode",
+          "extension": [
+            {
+              "url": "province",
+              "valueCode": "31"
+            },
+            {
+              "url": "city",
+              "valueCode": "3171"
+            },
+            {
+              "url": "district",
+              "valueCode": "317101"
+            },
+            {
+              "url": "village",
+              "valueCode": "31710101"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "partOf": {
+    "reference": "Organization/10000004",
+    "display": "RSUD Jati Asih"
+  }
+}

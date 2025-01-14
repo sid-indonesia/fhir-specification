@@ -1,0 +1,12 @@
+{
+  "name": "hl7.fhir.r4.id.core",
+  "version": "0.1.0",
+  "description": "SATUSEHAT (Indonesia Health Service) FHIR R4 Package",
+  "author": "DTO Kemkes",
+  "fhirVersions": [
+    "4.0.1"
+  ],
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1"
+  }
+}

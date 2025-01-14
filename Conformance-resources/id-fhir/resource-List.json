@@ -1,0 +1,600 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "List",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2022-01-10T01:52:54.849+00:00"
+  },
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Management"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 1
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    }
+  ],
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/List",
+  "version": "4.0.1",
+  "name": "List",
+  "status": "draft",
+  "date": "2023-05-12T03:54:04.8907436+00:00",
+  "publisher": "Health Level Seven International (FHIR Infrastructure)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/fhir"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/fiwg/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "A list is a curated collection of resources.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "List",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/DomainResource",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "List",
+        "path": "List",
+        "short": "A list is a curated collection of resources",
+        "definition": "A list is a curated collection of resources.",
+        "alias": [
+          "Collection",
+          "WorkingList",
+          "Organizer"
+        ],
+        "constraint": [
+          {
+            "key": "lst-3",
+            "severity": "error",
+            "human": "An entry date can only be used if the mode of the list is \"working\"",
+            "expression": "mode = 'working' or entry.date.empty()",
+            "xpath": "(f:mode/@value = 'working') or not(exists(f:entry/f:date))",
+            "source": "https://fhir.kemkes.go.id/r4/StructureDefinition/List"
+          },
+          {
+            "key": "lst-2",
+            "severity": "error",
+            "human": "The deleted flag can only be used if the mode of the list is \"changes\"",
+            "expression": "mode = 'changes' or entry.deleted.empty()",
+            "xpath": "(f:mode/@value = 'changes') or not(exists(f:entry/f:deleted))",
+            "source": "https://fhir.kemkes.go.id/r4/StructureDefinition/List"
+          },
+          {
+            "key": "lst-1",
+            "severity": "error",
+            "human": "A list can only have an emptyReason if it is empty",
+            "expression": "emptyReason.empty() or entry.empty()",
+            "xpath": "not(exists(f:emptyReason) and exists(f:entry))",
+            "source": "https://fhir.kemkes.go.id/r4/StructureDefinition/List"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "Act[classCode<ORG,moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "List.identifier",
+        "path": "List.identifier",
+        "short": "Business identifier",
+        "definition": "Identifier for the List assigned for business purposes outside the context of FHIR.",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.identifier"
+          },
+          {
+            "identity": "rim",
+            "map": ".id"
+          }
+        ]
+      },
+      {
+        "id": "List.status",
+        "path": "List.status",
+        "short": "current | retired | entered-in-error",
+        "definition": "Indicates the current state of this list.",
+        "comment": "This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": true,
+        "isModifierReason": "This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid",
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ListStatus"
+            }
+          ],
+          "strength": "required",
+          "description": "The current state of the list.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/list-status|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.status"
+          },
+          {
+            "identity": "rim",
+            "map": ".status[current=active;retired=obsolete;entered-in-error=nullified]"
+          }
+        ]
+      },
+      {
+        "id": "List.mode",
+        "path": "List.mode",
+        "short": "working | snapshot | changes",
+        "definition": "How this list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.",
+        "comment": "This element is labeled as a modifier because a change list must not be misunderstood as a complete list.",
+        "requirements": "Lists are used in various ways, and it must be known in what way it is safe to use them.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": true,
+        "isModifierReason": "If set to \"changes\", the list is considered incomplete, while the other two codes indicate the list is complete, which changes the understanding of the elements listed",
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ListMode"
+            }
+          ],
+          "strength": "required",
+          "description": "The processing mode that applies to this list.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/list-mode|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.class"
+          },
+          {
+            "identity": "rim",
+            "map": ".outBoundRelationship[typeCode=COMP].target[classCode=OBS\"].value"
+          }
+        ]
+      },
+      {
+        "id": "List.title",
+        "path": "List.title",
+        "short": "Descriptive name for the list",
+        "definition": "A label for the list assigned by the author.",
+        "requirements": "Allows customization beyond just the code identifying the kind of list.",
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "example": [
+          {
+            "label": "General",
+            "valueString": "Dr. Jane's Patients"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".title"
+          }
+        ]
+      },
+      {
+        "id": "List.code",
+        "path": "List.code",
+        "short": "What the purpose of this list is",
+        "definition": "This code defines the purpose of the list - why it was created.",
+        "comment": "If there is no code, the purpose of the list is implied where it is used, such as in a document section using Document.section.code.",
+        "requirements": "Lists often contain subsets of resources rather than an exhaustive list.  The code identifies what type of subset is included.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ListPurpose"
+            }
+          ],
+          "strength": "example",
+          "description": "What the purpose of a list is.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/list-example-codes"
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.what[x]"
+          },
+          {
+            "identity": "rim",
+            "map": ".code"
+          }
+        ]
+      },
+      {
+        "id": "List.subject",
+        "path": "List.subject",
+        "short": "If all resources have the same subject",
+        "definition": "The common subject (or patient) of the resources that are in the list if there is one.",
+        "comment": "Some purely arbitrary lists do not have a common subject, so this is optional.",
+        "requirements": "The primary purpose of listing the subject explicitly is to help with finding the right list.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Group",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Device",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Location"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject[x]"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode<SUB].role (and sometimes .player)"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject"
+          }
+        ]
+      },
+      {
+        "id": "List.encounter",
+        "path": "List.encounter",
+        "short": "Context in which list created",
+        "definition": "The encounter that is the context in which this list was created.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Encounter"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.context"
+          },
+          {
+            "identity": "rim",
+            "map": "inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "List.date",
+        "path": "List.date",
+        "short": "When the list was prepared",
+        "definition": "The date that the list was prepared.",
+        "comment": "The actual important date is the date of currency of the resources that were summarized, but it is usually assumed that these are current when the preparation occurs.",
+        "requirements": "Identifies how current the list is which affects relevance.",
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.recorded"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode<AUT].time[type=TS]"
+          }
+        ]
+      },
+      {
+        "id": "List.source",
+        "path": "List.source",
+        "short": "Who and/or what defined the list contents (aka Author)",
+        "definition": "The entity responsible for deciding what the contents of the list were. Where the list was created by a human, this is the same as the author of the list.",
+        "comment": "The primary source is the entity that made the decisions what items are in the list. This may be software or user.",
+        "requirements": "Allows follow-up as well as context.",
+        "alias": [
+          "Author"
+        ],
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Practitioner",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/PractitionerRole",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Device"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.author"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode<AUT].role[classCode=REL].player[classCode=PSN,determinerCode=INST] or .participation[typeCode<AUT].role[classCode=REL].player[classCode=DEV,determinerCode=INST]"
+          }
+        ]
+      },
+      {
+        "id": "List.orderedBy",
+        "path": "List.orderedBy",
+        "short": "What order the list has",
+        "definition": "What order applies to the items in the list.",
+        "comment": "Applications SHOULD render ordered lists in the order provided, but MAY allow users to re-order based on their own preferences as well. If there is no order specified, the order is unknown, though there may still be some order.",
+        "requirements": "Important for presentation and rendering.  Lists may be sorted to place more important information first or to group related entries.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ListOrder"
+            }
+          ],
+          "strength": "preferred",
+          "description": "What order applies to the items in a list.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/list-order"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=COMP].sequenceNumber > 1"
+          }
+        ]
+      },
+      {
+        "id": "List.note",
+        "path": "List.note",
+        "short": "Comments about the list",
+        "definition": "Comments that apply to the overall list.",
+        "type": [
+          {
+            "code": "Annotation"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=SUBJ].act.text"
+          }
+        ]
+      },
+      {
+        "id": "List.entry",
+        "path": "List.entry",
+        "short": "Entries in the list",
+        "definition": "Entries in this list.",
+        "comment": "If there are no entries in the list, an emptyReason SHOULD be provided.",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "condition": [
+          "lst-1"
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]"
+          }
+        ]
+      },
+      {
+        "id": "List.entry.flag",
+        "path": "List.entry.flag",
+        "short": "Status/Workflow information about this item",
+        "definition": "The flag allows the system constructing the list to indicate the role and significance of the item in the list.",
+        "comment": "The flag can only be understood in the context of the List.code. If the flag means that the entry has actually been deleted from the list, the deleted element SHALL be true. Deleted can only be used if the List.mode is \"changes\".",
+        "requirements": "This field is present to support various clinical uses of lists, such as a discharge summary medication list, where flags specify whether the medication was added, modified, or deleted from the list.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ListItemFlag"
+            }
+          ],
+          "strength": "example",
+          "description": "Codes that provide further information about the reason and meaning of the item in the list.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/list-item-flag"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outBoundRelationship[typeCode=COMP].target[classCode=OBS\"].value"
+          }
+        ]
+      },
+      {
+        "id": "List.entry.deleted",
+        "path": "List.entry.deleted",
+        "short": "If this item is actually marked as deleted",
+        "definition": "True if this item is marked as deleted in the list.",
+        "comment": "If the flag means that the entry has actually been deleted from the list, the deleted element SHALL be true. Both flag and deleted can only be used if the List.mode is \"changes\". A deleted entry should be displayed in narrative as deleted.  This element is labeled as a modifier because it indicates that an item is (to be) no longer in the list.",
+        "requirements": "The flag element may contain codes that an application processing the list does not understand. However there can be no ambiguity if a list item is actually marked as \"deleted\".",
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "meaningWhenMissing": "List items are generally only treated as deleted when this element explicitly carries a value of true. Systems SHOULD always populate this value when mode is 'changes'",
+        "condition": [
+          "lst-2"
+        ],
+        "isModifier": true,
+        "isModifierReason": "If deleted is true, then the item included in the list isn't actually part of the list anymore",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "added: .updateMode=(\"A\",\"AR\")  retained: .updateMode=\"NC\"  updated: .updateMode=\"R\"  deleted: .updateMode=\"D\""
+          }
+        ]
+      },
+      {
+        "id": "List.entry.date",
+        "path": "List.entry.date",
+        "short": "When item added to list",
+        "definition": "When this item was added to the list.",
+        "requirements": "The date may be significant for understanding the meaning of items in a working list.",
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".availabilityTime"
+          }
+        ]
+      },
+      {
+        "id": "List.entry.item",
+        "path": "List.entry.item",
+        "short": "Actual entry",
+        "definition": "A reference to the actual resource from which data was derived.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Resource"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".target or .role or .role.entity"
+          }
+        ]
+      },
+      {
+        "id": "List.emptyReason",
+        "path": "List.emptyReason",
+        "short": "Why list is empty",
+        "definition": "If the list is empty, why the list is empty.",
+        "comment": "The various reasons for an empty list make a significant interpretation to its interpretation. Note that this code is for use when the entire list has been suppressed, and not for when individual items are omitted - implementers may consider using a text note or a flag on an entry in these cases.",
+        "requirements": "Allows capturing things like \"none exist\" or \"not asked\" which can be important for most lists.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "condition": [
+          "lst-1"
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ListEmptyReason"
+            }
+          ],
+          "strength": "preferred",
+          "description": "If a list is empty, why it is empty.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/list-empty-reason"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=SUBJ,code<ListEmptyReason].value[type=CD]"
+          }
+        ]
+      }
+    ]
+  }
+}

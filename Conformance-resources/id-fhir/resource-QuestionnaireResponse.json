@@ -1,0 +1,649 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "QuestionnaireResponse",
+  "meta": {
+    "lastUpdated": "2022-10-05T04:55:43.9803736+00:00"
+  },
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Diagnostics"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 3
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    }
+  ],
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/QuestionnaireResponse",
+  "version": "4.0.1",
+  "name": "QuestionnaireResponse",
+  "status": "active",
+  "date": "2023-05-12T04:00:39.3091812+00:00",
+  "publisher": "Health Level Seven International (FHIR Infrastructure)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/fhir"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/fiwg/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.",
+  "purpose": "To support structured, hierarchical reporting of data gathered using digital forms and other questionnaires.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "QuestionnaireResponse",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/DomainResource",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "QuestionnaireResponse",
+        "path": "QuestionnaireResponse",
+        "short": "A structured set of questions and their answers",
+        "definition": "A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.",
+        "comment": "The QuestionnaireResponse contains enough information about the questions asked and their organization that it can be interpreted somewhat independently from the Questionnaire it is based on.  I.e. You don't need access to the Questionnaire in order to extract basic information from a QuestionnaireResponse.",
+        "alias": [
+          "Form",
+          "QuestionnaireAnswers"
+        ],
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event"
+          },
+          {
+            "identity": "rim",
+            "map": "Observation[moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.identifier",
+        "path": "QuestionnaireResponse.identifier",
+        "short": "Unique id for this set of answers",
+        "definition": "A business identifier assigned to a particular completed (or partially completed) questionnaire.",
+        "requirements": "Used for tracking, registration and other business purposes.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.identifier"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.identifier"
+          },
+          {
+            "identity": "rim",
+            "map": ".id"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.basedOn",
+        "path": "QuestionnaireResponse.basedOn",
+        "short": "Request fulfilled by this QuestionnaireResponse",
+        "definition": "The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.",
+        "requirements": "Supports traceability of responsibility for the action and allows linkage of an action to the recommendations acted upon.",
+        "alias": [
+          "order"
+        ],
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/CarePlan",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.basedOn"
+          },
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=FLFS].target"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.partOf",
+        "path": "QuestionnaireResponse.partOf",
+        "short": "Part of this action",
+        "definition": "A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.",
+        "comment": "Composition of questionnaire responses will be handled by the parent questionnaire having answers that reference the child questionnaire.  For relationships to referrals, and other types of requests, use basedOn.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Observation",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Procedure"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.partOf"
+          },
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=COMP].source[moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.questionnaire",
+        "path": "QuestionnaireResponse.questionnaire",
+        "short": "Form being answered",
+        "definition": "The Questionnaire that defines and organizes the questions for which answers are being provided.",
+        "comment": "If a QuestionnaireResponse references a Questionnaire, then the QuestionnaireResponse structure must be consistent with the Questionnaire (i.e. questions must be organized into the same groups, nested questions must still be nested, etc.).",
+        "requirements": "Needed to allow editing of the questionnaire response in a manner that enforces the constraints of the original form.",
+        "alias": [
+          "Form"
+        ],
+        "max": "1",
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Questionnaire"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.instantiates"
+          },
+          {
+            "identity": "rim",
+            "map": "./outboundRelationship[typeCode=INST]/target[classCode=OBS, moodCode=DEFN]"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.status",
+        "path": "QuestionnaireResponse.status",
+        "short": "in-progress | completed | amended | entered-in-error | stopped",
+        "definition": "The position of the questionnaire response within its overall lifecycle.",
+        "comment": "This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.",
+        "requirements": "The information on Questionnaire resources  may possibly be gathered during multiple sessions and altered after considered being finished.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": true,
+        "isModifierReason": "This element is labelled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid",
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "QuestionnaireResponseStatus"
+            }
+          ],
+          "strength": "required",
+          "description": "Lifecycle status of the questionnaire response.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers-status|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.status"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.status"
+          },
+          {
+            "identity": "rim",
+            "map": ".statusCode (also whether there's a revisionControlAct - and possibly mood to distinguish \"in-progress\" from \"published)"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.subject",
+        "path": "QuestionnaireResponse.subject",
+        "short": "The subject of the questions",
+        "definition": "The subject of the questionnaire response.  This could be a patient, organization, practitioner, device, etc.  This is who/what the answers apply to, but is not necessarily the source of information.",
+        "comment": "If the Questionnaire declared a subjectType, the resource pointed to by this element must be an instance of one of the listed types.",
+        "requirements": "Allows linking the answers to the individual the answers describe.  May also affect access control.",
+        "alias": [
+          "Patient",
+          "Focus"
+        ],
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Resource"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.subject"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject[x]"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=SBJ].role"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.encounter",
+        "path": "QuestionnaireResponse.encounter",
+        "short": "Encounter created as part of",
+        "definition": "The Encounter during which this questionnaire response was created or to which the creation of this record is tightly associated.",
+        "comment": "This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter. A questionnaire that was initiated during an encounter but not fully completed during the encounter would still generally be associated with the encounter.",
+        "requirements": "Provides context for the information that was captured.  May also affect access control.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Encounter"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.encounter"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.context"
+          },
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship(typeCode=COMP].source[classCode<=PCPR, moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.authored",
+        "path": "QuestionnaireResponse.authored",
+        "short": "Date the answers were gathered",
+        "definition": "The date and/or time that this set of answers were last changed.",
+        "comment": "May be different from the lastUpdateTime of the resource itself, because that reflects when the data was known to the server, not when the data was captured.\n\nThis element is optional to allow for systems that might not know the value, however it SHOULD be populated if possible.",
+        "requirements": "Clinicians need to be able to check the date that the information in the questionnaire was collected, to derive the context of the answers.",
+        "alias": [
+          "Date Created",
+          "Date published",
+          "Date Issued",
+          "Date updated"
+        ],
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.occurrence[x]"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.recorded"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=AUT].time"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.author",
+        "path": "QuestionnaireResponse.author",
+        "short": "Person who received and recorded the answers",
+        "definition": "Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system.",
+        "comment": "Mapping a subject's answers to multiple choice options and determining what to put in the textual answer is a matter of interpretation.  Authoring by device would indicate that some portion of the questionnaire had been auto-populated.",
+        "requirements": "Need to know who interpreted the subject's answers to the questions in the questionnaire, and selected the appropriate options for answers.",
+        "alias": [
+          "Laboratory",
+          "Service",
+          "Practitioner",
+          "Department",
+          "Company",
+          "Performer"
+        ],
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Device",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Practitioner",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/PractitionerRole",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/RelatedPerson",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.performer"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.author"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=AUT].role"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.source",
+        "path": "QuestionnaireResponse.source",
+        "short": "The person who answered the questions",
+        "definition": "The person who answered the questions about the subject.",
+        "comment": "If not specified, no inference can be made about who provided the data.",
+        "requirements": "When answering questions about a subject that is minor, incapable of answering or an animal, another human source may answer the questions.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Practitioner",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/PractitionerRole",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/RelatedPerson"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.source"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=INF].role"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item",
+        "path": "QuestionnaireResponse.item",
+        "short": "Groups and questions",
+        "definition": "A group or question item from the original questionnaire for which answers are provided.",
+        "comment": "Groups cannot have answers and therefore must nest directly within item. When dealing with questions, nesting must occur within each answer because some questions may have multiple answers (and the nesting occurs for each answer).",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "qrs-1",
+            "severity": "error",
+            "human": "Nested item can't be beneath both item and answer",
+            "expression": "(answer.exists() and item.exists()).not()",
+            "xpath": "not(exists(f:answer) and exists(f:item))",
+            "source": "https://fhir.kemkes.go.id/r4/StructureDefinition/QuestionnaireResponse"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item.linkId",
+        "path": "QuestionnaireResponse.item.linkId",
+        "short": "Pointer to specific item from Questionnaire",
+        "definition": "The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.",
+        "requirements": "Items can repeat in the answers, so a direct 1..1 correspondence by position might not exist - requiring correspondence by identifier.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=DEFN].target[classCode=OBS, moodCode=DEFN].id"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item.definition",
+        "path": "QuestionnaireResponse.item.definition",
+        "short": "ElementDefinition - details for the item",
+        "definition": "A reference to an [ElementDefinition](elementdefinition.html) that provides the details for the item.",
+        "comment": "The ElementDefinition must be in a [StructureDefinition](structuredefinition.html#), and must have a fragment identifier that identifies the specific data element by its id (Element.id). E.g. https://fhir.kemkes.go.id/r4/StructureDefinition/Observation#Observation.value[x].\n\nThere is no need for this element if the item pointed to by the linkId has a definition listed.",
+        "requirements": "A common pattern is to define a set of data elements, and then build multiple different questionnaires for different circumstances to gather the data. This element provides traceability to the common definition.",
+        "max": "1",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=DEFN].target[classCode=OBS, moodCode=DEFN].code"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item.text",
+        "path": "QuestionnaireResponse.item.text",
+        "short": "Name for group or question text",
+        "definition": "Text that is displayed above the contents of the group or as the text of the question being answered.",
+        "requirements": "Allows the questionnaire response to be read without access to the questionnaire.",
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".text"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item.answer",
+        "path": "QuestionnaireResponse.item.answer",
+        "short": "The response(s) to the question",
+        "definition": "The respondent's answer(s) to the question.",
+        "comment": "The value is nested because we cannot have a repeating structure that has variable type.",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".value[type=LIST_ANY]"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item.answer.value[x]",
+        "path": "QuestionnaireResponse.item.answer.value[x]",
+        "short": "Single-valued answer to the question",
+        "definition": "The answer (or one of the answers) provided by the respondent to the question.",
+        "comment": "More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire.",
+        "requirements": "Ability to retain a single-valued answer to a question.",
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          },
+          {
+            "code": "decimal"
+          },
+          {
+            "code": "integer"
+          },
+          {
+            "code": "date"
+          },
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "time"
+          },
+          {
+            "code": "string"
+          },
+          {
+            "code": "uri"
+          },
+          {
+            "code": "Attachment"
+          },
+          {
+            "code": "Coding"
+          },
+          {
+            "code": "Quantity"
+          },
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Resource"
+            ]
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "QuestionnaireAnswer"
+            }
+          ],
+          "strength": "example",
+          "description": "Code indicating the response provided for a question.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".item"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item.answer.item",
+        "path": "QuestionnaireResponse.item.answer.item",
+        "short": "Nested groups and questions",
+        "definition": "Nested groups and/or questions found within this particular answer.",
+        "requirements": "It is useful to have \"sub-questions\", questions which normally appear when certain answers are given and which collect additional details.",
+        "min": 0,
+        "max": "*",
+        "contentReference": "#QuestionnaireResponse.item",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item.item",
+        "path": "QuestionnaireResponse.item.item",
+        "short": "Nested questionnaire response items",
+        "definition": "Questions or sub-groups nested beneath a question or group.",
+        "requirements": "Reports can consist of complex nested groups.",
+        "min": 0,
+        "max": "*",
+        "contentReference": "#QuestionnaireResponse.item",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN]"
+          }
+        ]
+      }
+    ]
+  }
+}
