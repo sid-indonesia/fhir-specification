@@ -35,9 +35,24 @@ jobs:
       #   uses: actions/setup-dotnet@v4
       #   with:
       #     dotnet-version: 8.0.x
-      - run: ls -lah $GITHUB_WORKSPACE/Examples
+      - run: ls -lah $GITHUB_WORKSPACE/Examples/non-FHIR-to-FHIR
 
-      - run: git log
+      - run: |
+          for p in $PATH_TO_EXAMPLES; 
+          do
+            
+            # Ensure directory ends with "/"
+            if [[ ! "$p" =~ .*/$ ]]; then
+              p="$p/"
+            fi
+
+            echo $p
+          done
+        env:
+          PATH_TO_EXAMPLES: |
+            Examples/non-fhir-to-FHIR/sid-kobo
+            Examples
+            Examples/non-fhir-to-FHIR/ePus
 
       # Install Java runtime (only needed if you want to run the offical HL7 Java validator)
       - name: Setup Java JDK
