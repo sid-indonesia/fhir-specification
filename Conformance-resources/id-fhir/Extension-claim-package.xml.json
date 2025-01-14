@@ -1,0 +1,213 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/Package",
+  "name": "Package",
+  "status": "draft",
+  "date": "2023-05-12T03:38:24.117026+00:00",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Claim"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Extension.extension:tariffClass",
+        "path": "Extension.extension",
+        "sliceName": "tariffClass",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:tariffClass.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "tariffClass"
+      },
+      {
+        "id": "Extension.extension:tariffClass.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:basePackage",
+        "path": "Extension.extension",
+        "sliceName": "basePackage",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:basePackage.extension",
+        "path": "Extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Extension.extension:basePackage.extension:code",
+        "path": "Extension.extension.extension",
+        "sliceName": "code",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:basePackage.extension:code.url",
+        "path": "Extension.extension.extension.url",
+        "fixedUri": "code"
+      },
+      {
+        "id": "Extension.extension:basePackage.extension:code.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:basePackage.extension:value",
+        "path": "Extension.extension.extension",
+        "sliceName": "value",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:basePackage.extension:value.url",
+        "path": "Extension.extension.extension.url",
+        "fixedUri": "value"
+      },
+      {
+        "id": "Extension.extension:basePackage.extension:value.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:basePackage.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "basePackage"
+      },
+      {
+        "id": "Extension.extension:basePackage.value[x]",
+        "path": "Extension.extension.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:additionalPackage",
+        "path": "Extension.extension",
+        "sliceName": "additionalPackage",
+        "min": 0
+      },
+      {
+        "id": "Extension.extension:additionalPackage.extension",
+        "path": "Extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Extension.extension:additionalPackage.extension:code",
+        "path": "Extension.extension.extension",
+        "sliceName": "code",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:additionalPackage.extension:code.url",
+        "path": "Extension.extension.extension.url",
+        "fixedUri": "code"
+      },
+      {
+        "id": "Extension.extension:additionalPackage.extension:code.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:additionalPackage.extension:value",
+        "path": "Extension.extension.extension",
+        "sliceName": "value",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:additionalPackage.extension:value.url",
+        "path": "Extension.extension.extension.url",
+        "fixedUri": "value"
+      },
+      {
+        "id": "Extension.extension:additionalPackage.extension:value.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:additionalPackage.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "additionalPackage"
+      },
+      {
+        "id": "Extension.extension:additionalPackage.value[x]",
+        "path": "Extension.extension.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/Package"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

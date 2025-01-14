@@ -1,0 +1,105 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "DocumentStatus",
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/DocumentStatus",
+  "name": "DocumentStatus",
+  "status": "active",
+  "date": "2023-09-30T04:09:34.6317712+00:00",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Composition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:statusCode",
+        "path": "Extension.extension",
+        "sliceName": "statusCode",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:statusCode.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "statusCode"
+      },
+      {
+        "id": "Extension.extension:statusCode.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:statusTime",
+        "path": "Extension.extension",
+        "sliceName": "statusTime",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:statusTime.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "statusTime"
+      },
+      {
+        "id": "Extension.extension:statusTime.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:statusAssigner",
+        "path": "Extension.extension",
+        "sliceName": "statusAssigner",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:statusAssigner.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "statusAssigner"
+      },
+      {
+        "id": "Extension.extension:statusAssigner.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/DocumentStatus"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

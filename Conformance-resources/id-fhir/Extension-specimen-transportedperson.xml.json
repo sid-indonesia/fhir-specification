@@ -1,0 +1,41 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "TransportedPerson",
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/TransportedPerson",
+  "name": "TransportedPerson",
+  "status": "active",
+  "date": "2023-09-08T23:06:01.8973288+00:00",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Specimen"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/TransportedPerson"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Transported Persons of sample",
+        "definition": "Transported Persons of sample.",
+        "min": 1,
+        "type": [
+          {
+            "code": "ContactDetail"
+          }
+        ]
+      }
+    ]
+  }
+}
