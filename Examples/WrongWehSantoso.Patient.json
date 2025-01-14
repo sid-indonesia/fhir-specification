@@ -1,0 +1,16 @@
+{
+  "name": [
+    {
+      "family": "Santoso",
+      "given": [
+        "Weh"
+      ],
+      "suffix": [
+        "MSc"
+      ],
+      "text": "Weh Santoso",
+      "use": "official"
+    }
+  ],
+  "resourceType": "Patient"
+}

@@ -47,7 +47,10 @@ jobs:
         uses: FirelyTeam/firely-terminal-pipeline@v0.6.5
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Conformance-resources
-          PATH_TO_EXAMPLES: Examples
+          PATH_TO_EXAMPLES: |
+            Examples
+            Examples/non-fhir-to-FHIR/ePus
+            Examples/non-fhir-to-FHIR/sid-kobo
           PATH_TO_QUALITY_CONTROL_RULES: unittest
           DOTNET_VALIDATION_ENABLED: false
           JAVA_VALIDATION_ENABLED: true
