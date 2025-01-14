@@ -1,0 +1,68 @@
+{
+  "resourceType": "Location",
+  "name": "Puskemas Sangat Waras",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/location-type",
+          "code": "LT000002",
+          "display": "Tempat Meninggal Faskes"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/location-type",
+          "code": "LT000005",
+          "display": "Alamat Mati"
+        }
+      ]
+    }
+  ],
+  "managingOrganization": {
+    "reference": "Organization/10000004",
+    "display": "Puskesmas Sangat Waras"
+  },
+  "address": {
+    "use": "work",
+    "line": [
+      "Gd. Prof. Dr. Sujudi Lt.5, Jl. H.R. Rasuna Said Blok X5 Kav. 4-9 Kuningan"
+    ],
+    "city": "Jakarta",
+    "postalCode": "12950",
+    "country": "ID",
+    "extension": [
+      {
+        "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode",
+        "extension": [
+          {
+            "url": "province",
+            "valueCode": "10"
+          },
+          {
+            "url": "city",
+            "valueCode": "10101"
+          },
+          {
+            "url": "district",
+            "valueCode": "1010101"
+          },
+          {
+            "url": "village",
+            "valueCode": "1010101101"
+          },
+          {
+            "url": "rt",
+            "valueCode": "1"
+          },
+          {
+            "url": "rw",
+            "valueCode": "2"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "resourceType": "ServiceRequest",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/servicerequest/10000004",
+      "value": "00001"
+    }
+  ],
+  "status": "active",
+  "intent": "original-order",
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "code": "312880001",
+        "display": "Taking throat swab",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/66533eb2-723d-4e7c-b7aa-500cd67dd4c8"
+  },
+  "occurrenceDateTime": "2022-07-14T10:00:00+07:00",
+  "requester": {
+    "reference": "Practitioner/N10000001",
+    "display": "Dokter Bronsig"
+  },
+  "performer": [
+    {
+      "reference": "Patient/100000030009",
+      "display": "Budi Santoso"
+    }
+  ],
+  "reasonCode": [
+    {
+      "text": "Suspect ILI"
+    }
+  ]
+}

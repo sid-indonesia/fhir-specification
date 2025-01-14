@@ -1,0 +1,25 @@
+{
+  "resourceType": "Medication",
+  "code": {
+    "coding": [
+      {
+        "system": "http://sys-ids.kemkes.go.id/kfa",
+        "code": "1002930049",
+        "display": "Myleran 2mg tablet, film coated"
+      }
+    ]
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385057009",
+        "display": "Film-coated tablet (qualifier value)"
+      }
+    ]
+  },
+  "batch": {
+    "lotNumber": "9494788",
+    "expirationDate": "2017-05-22"
+  }
+}

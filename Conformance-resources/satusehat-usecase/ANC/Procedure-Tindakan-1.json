@@ -1,0 +1,42 @@
+{
+  "resourceType": "Procedure",
+  "status": "completed",
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "103693007",
+        "display": "Diagnostic procedure"
+      }
+    ],
+    "text": "Diagnostic procedure"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-9-cm",
+        "code": "88.78",
+        "display": "Diagnostic ultrasound of gravid uterus"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030006",
+    "display": "Jane Smith"
+  },
+  "encounter": {
+    "reference": "Encounter/dd5b8c34-6bb2-43af-b36a-8fcc60a70d4a"
+  },
+  "performedPeriod": {
+    "start": "2023-08-31T02:35:00+00:00",
+    "end": "2023-08-31T02:55:00+00:00"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/N10000001",
+        "display": "Dokter Bronsig"
+      }
+    }
+  ]
+}

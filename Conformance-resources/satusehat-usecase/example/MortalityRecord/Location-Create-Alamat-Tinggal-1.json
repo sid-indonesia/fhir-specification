@@ -1,0 +1,59 @@
+{
+  "resourceType": "Location",
+  "name": "Alamat Tinggal",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/location-type",
+          "code": "ra",
+          "display": "Residence Address"
+        }
+      ]
+    }
+  ],
+  "address": {
+    "use": "home",
+    "line": [
+      "Gd. Prof. Dr. Sujudi Lt.5, Jl. H.R. Rasuna Said Blok X5 Kav. 4-9 Kuningan"
+    ],
+    "city": "Jakarta",
+    "postalCode": "12950",
+    "country": "ID",
+    "extension": [
+      {
+        "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode",
+        "extension": [
+          {
+            "url": "province",
+            "valueCode": "10"
+          },
+          {
+            "url": "city",
+            "valueCode": "1010"
+          },
+          {
+            "url": "district",
+            "valueCode": "1010101"
+          },
+          {
+            "url": "village",
+            "valueCode": "1010101101"
+          },
+          {
+            "url": "rt",
+            "valueCode": "1"
+          },
+          {
+            "url": "rw",
+            "valueCode": "2"
+          }
+        ]
+      }
+    ],
+    "period": {
+      "start": "2020-01-01",
+      "end": "2022-01-01"
+    }
+  }
+}

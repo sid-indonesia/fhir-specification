@@ -1,0 +1,70 @@
+{
+  "resourceType": "ServiceRequest",
+  "status": "completed",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "3457005",
+          "display": "Patient referral"
+        }
+      ],
+      "text": "Patient referral"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "710830005",
+        "display": "Assessment of passive range of motion (procedure)"
+      }
+    ],
+    "text": "Assessment of passive range of motion"
+  },
+  "subject": {
+    "reference": "Patient/P00030004"
+  },
+  "occurrenceDateTime": "2016-09-27",
+  "authoredOn": "2016-09-20",
+  "requester": {
+    "reference": "Practitioner/N10000001",
+    "display": "Ollie Ortho, MD"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/N10000002",
+      "display": "Paul Therapist, PT"
+    },
+    {
+      "reference": "Organization/F10000001",
+      "display": "AMC Hospital"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "201886002",
+          "display": "osteoarthritis"
+        }
+      ],
+      "text": "assessment of mobility limitations due to osteoarthritis"
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "36701003",
+          "display": "Both knees (body structure)"
+        }
+      ],
+      "text": "Both knees"
+    }
+  ]
+}

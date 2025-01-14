@@ -1,0 +1,71 @@
+{
+  "resourceType": "ServiceRequest",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/servicerequest/10000004",
+      "value": "00001"
+    }
+  ],
+  "status": "active",
+  "intent": "original-order",
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "3457005",
+        "display": "Patient referral (procedure)"
+      }
+    ],
+    "text": "Kontrol rutin ANC bulan ke-3"
+  },
+  "subject": {
+    "reference": "Patient/100000030006"
+  },
+  "encounter": {
+    "reference": "Encounter/dd5b8c34-6bb2-43af-b36a-8fcc60a70d4a",
+    "display": "Kunjungan Jane Smith di hari Kamis, 31 Agustus 2023"
+  },
+  "occurrenceDateTime": "2023-08-31T04:25:00+00:00",
+  "authoredOn": "2023-08-31T04:25:00+00:00",
+  "requester": {
+    "reference": "Practitioner/N10000001",
+    "display": "Dokter Bronsig"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/N10000005",
+      "display": "Fatma"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "E44.1",
+          "display": "Mild protein-calorie malnutrition"
+        }
+      ],
+      "text": "Kontrol rutin bulanan"
+    }
+  ],
+  "locationCode": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "OF",
+          "display": "Outpatient Facility"
+        }
+      ]
+    }
+  ],
+  "locationReference": [
+    {
+      "reference": "Location/c87e0ca7-badc-4c60-9080-277aaaf27a88",
+      "display": "Ruang Poli ANC, Departemen KIA, Lantai 2, Gedung Utama"
+    }
+  ],
+  "patientInstruction": "Kontrol setelah 1 bulan minum obat anti tuberkulosis. Dalam keadaan darurat dapat menghubungi hotlineFasyankesdi nomor 14045"
+}

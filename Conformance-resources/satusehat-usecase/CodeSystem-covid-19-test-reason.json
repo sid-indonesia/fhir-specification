@@ -1,0 +1,70 @@
+{
+  "resourceType": "CodeSystem",
+  "language": "id-ID",
+  "url": "https://terminology.kemkes.go.id/v1-0201",
+  "version": "1.0.0",
+  "name": "v1-0201",
+  "title": "COVID-19 Test Reason Code v1-0201",
+  "status": "active",
+  "date": "2022-09-04T07:43:21.1983663+00:00",
+  "publisher": "Ministry of Health, Government of Indonesia",
+  "contact": [
+    {
+      "name": "DTO Kemkes",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "dto@kemkes.go.id"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR ValueSet/CodeSystem definition for table 0201 (COVID-19 Test Reason Code)",
+  "caseSensitive": true,
+  "compositional": false,
+  "versionNeeded": false,
+  "content": "complete",
+  "count": 7,
+  "concept": [
+    {
+      "code": "suspected",
+      "display": "Suspek",
+      "definition": "COVID-19 Test untuk pasien suspek"
+    },
+    {
+      "code": "contacted",
+      "display": "Kontak Erat",
+      "definition": "COVID-19 Test untuk pasien yang mengalami kontak erat dengan pasien positif COVID-19"
+    },
+    {
+      "code": "screening-traveler",
+      "display": "Skrining - Pelaku Perjalanan",
+      "definition": "COVID-19 Test untuk tujuan perjalanan"
+    },
+    {
+      "code": "screening-medical",
+      "display": "Skrining - Alasan Medis",
+      "definition": "COVID-19 Test karena alasan medis"
+    },
+    {
+      "code": "screening-onsite-learning",
+      "display": "Skrining - Pembelajaran Tatap Muka",
+      "definition": "COVID-19 Test untuk pembelajaran dengan tatap muka"
+    },
+    {
+      "code": "screening-onsite-event",
+      "display": "Skrining - Acara Tatap Muka",
+      "definition": "COVID-19 Test untuk acara dengan tatap muka"
+    },
+    {
+      "code": "screening-other",
+      "display": "Skrining - Alasan Lain",
+      "definition": "COVID-19 Test karena alasan lain-lain"
+    },
+    {
+      "code": "follow-up",
+      "display": "Follow Up",
+      "definition": "COVID-19 Test untuk tindak lanjut dari perawatan atau test sebelumnya"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "resourceType": "ServiceRequest",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/servicerequest/10000004",
+      "value": "00001"
+    }
+  ],
+  "status": "active",
+  "intent": "original-order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "108252007",
+          "display": "Laboratory procedure"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "3457005",
+          "display": "Patient referral"
+        }
+      ]
+    }
+  ],
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "92141-1",
+        "display": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/66533eb2-723d-4e7c-b7aa-500cd67dd4c8"
+  },
+  "occurrenceDateTime": "2022-07-14T10:00:00+07:00",
+  "requester": {
+    "reference": "Organization/10000004",
+    "display": "Puskesmas Bagelen"
+  },
+  "performer": [
+    {
+      "reference": "Organization/10083042",
+      "display": "IHS Hospital"
+    }
+  ],
+  "locationCode": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "HLAB",
+          "display": "hospital laboratory"
+        }
+      ]
+    }
+  ],
+  "locationReference": [
+    {
+      "reference": "Location/612fcf96-843a-45c7-a6f7-ff3a08eb7c88",
+      "display": "Laboratorium"
+    }
+  ],
+  "reasonCode": [
+    {
+      "text": "Suspect ILI"
+    }
+  ]
+}

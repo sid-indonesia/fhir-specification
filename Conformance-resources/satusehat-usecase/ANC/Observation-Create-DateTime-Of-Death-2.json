@@ -1,0 +1,49 @@
+{
+  "resourceType": "Observation",
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "exam",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "81956-5",
+        "display": "Date and time of death [TimeStamp]"
+      },
+      {
+        "system": "http://terminology.kemkes.go.id/CodeSystem/anc-custom-codes",
+        "code": "ANC.SS.DE56",
+        "display": "Waktu Kematian"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/P02280547535",
+    "display": "patient 6"
+  },
+  "encounter": {
+    "reference": "Encounter/66533eb2-723d-4e7c-b7aa-500cd67dd4c8"
+  },
+  "effectiveDateTime": "2022-06-14",
+  "issued": "2022-06-14T15:30:10+01:00",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001"
+    }
+  ],
+  "valueQuantity": {
+    "value": 7,
+    "unit": "cm",
+    "system": "http://unitsofmeasure.org",
+    "code": "cm"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "resourceType": "Composition",
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "28655-9"
+      }
+    ],
+    "text": "Discharge Summary"
+  },
+  "subject": {
+    "reference": "Patient/P1000001111",
+    "display": "Eve Everywoman"
+  },
+  "encounter": {
+    "reference": "#link-to-Encounter-fulURL"
+  },
+  "date": "2013-02-01T12:30:02Z",
+  "author": [
+    {
+      "reference": "Practitioner/10000001",
+      "display": "Doctor Dave"
+    }
+  ],
+  "title": "Discharge Summary",
+  "confidentiality": "N",
+  "section": [
+    {
+      "title": "Chief complaint",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "10154-3",
+            "display": "Chief complaint Narative"
+          }
+        ]
+      },
+      "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Chief complain ...</div>"
+      },
+      "entry": [
+        {
+          "reference": "#link-to-Condition"
+        }
+      ]
+    },
+    {
+      "title": "Reason for visit",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "29299-5",
+            "display": "Reason for visit Narrative"
+          }
+        ]
+      },
+      "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Reason for visit here ...</div>"
+      },
+      "entry": [
+        {
+          "reference": "urn:uuid:541a72a8-df75-4484-ac89-ac4923f03b81"
+        }
+      ]
+    },
+    {
+      "title": "Medications on Discharge",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "10183-2",
+            "display": "Hospital discharge medications Narrative"
+          }
+        ]
+      },
+      "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Discharge medications ...</div>"
+      },
+      "mode": "working",
+      "entry": [
+        {
+          "reference": "urn:uuid:124a6916-5d84-4b8c-b250-10cefb8e6e86"
+        },
+        {
+          "reference": "urn:uuid:673f8db5-0ffd-4395-9657-6da00420bbc1"
+        }
+      ]
+    },
+    {
+      "title": "Known allergies",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "48765-2",
+            "display": "Allergies and adverse reactions Document"
+          }
+        ]
+      },
+      "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Allergies ...</div>"
+      },
+      "entry": [
+        {
+          "reference": "urn:uuid:47600e0f-b6b5-4308-84b5-5dec157f7637"
+        }
+      ]
+    },
+    {
+      "title": "Plan of Care",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "Indent18776-5",
+            "display": "Plan of care"
+          }
+        ]
+      },
+      "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Plan of care ...</div>"
+      },
+      "entry": [
+        {
+          "reference": "urn:uuid:47600e0f-b6b5-4308-84b5-5dec157f7637"
+        }
+      ]
+    }
+  ]
+}

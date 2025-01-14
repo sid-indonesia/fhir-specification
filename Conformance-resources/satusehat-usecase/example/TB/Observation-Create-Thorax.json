@@ -1,0 +1,71 @@
+{
+  "resourceType": "Observation",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/observation/1000004",
+      "value": "O111112"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "RAD",
+          "display": "Radiology"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "24648-8",
+        "display": "XR Chest PA upright"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009"
+  },
+  "encounter": {
+    "reference": "Encounter/14e8398c-1016-44b8-b619-a802b80d2c94"
+  },
+  "effectiveDateTime": "2022-06-14",
+  "bodySite": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "51185008",
+        "display": "Chest"
+      }
+    ]
+  },
+  "valueString": "Uraian hasil pemeriksaan: foto thorax, proyeksi PA, posisi erect, asimetris, inspirasi dan kondisi cukup dengan hasil: 1) tampak cavitas inhomogen di proyeksi pulmo bilateral terutama dextra, batas tak tegas disertai penebalan fibrotic, cavitas (+), 2) tak tampak pemadatan limfonodi hilus bilateral, 3) tampak kedua costofrenicus lancip, 4) tampak kedua diafragma licin dan tak mendatar, 5) cor CTR tak valid dinilai (asimetri), tampak kalsifikasi di arcus aorta dengan bentuk crescent, 6) sistem tulang yang tervisualisasi intact. Kesan: TB paru lama aktif, besar cor tak valid dinilai, aortosclerosis",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001"
+    },
+    {
+      "reference": "Organization/10000004"
+    }
+  ],
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "POS",
+          "display": "Positive"
+        }
+      ]
+    }
+  ],
+  "referenceRange": [
+    {
+      "text": "No abnormalities found"
+    }
+  ]
+}

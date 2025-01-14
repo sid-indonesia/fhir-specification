@@ -1,0 +1,143 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="usecase-tb-kunjungan-bulanan" />
+  <type value="transaction" />
+  <entry>
+    <fullUrl value="urn:uuid:$GENERATED_UUID_ENCOUNTER" />
+    <resource>
+      <Encounter>
+        <identifier>
+          <use value="official" />
+          <system value="http://sys-ids.kemkes.go.id/encounter/$ID_ENCOUNTER_1" />
+          <value value="$ID_ENCOUNTER_2" />
+        </identifier>
+        <status value="finished" />
+        <class>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+          <code value="AMB" />
+          <display value="ambulatory" />
+        </class>
+        <priority>
+          <coding>
+            <system value="http://terminology.hl7.org/ValueSet/v3-ActPriority" />
+            <code value="R" />
+            <display value="routine" />
+          </coding>
+        </priority>
+        <subject>
+          <reference value="Patient/$IHS_NUMBER_PASIEN" />
+          <display value="$NAMA_PASIEN" />
+        </subject>
+        <serviceProvider>
+          <reference value="Organization/$IHS_NUMBER_FASYANKES" />
+        </serviceProvider>
+      </Encounter>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="Encounter" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:$GENERATED_UUID_SERVICE_REQUEST_1" />
+    <resource>
+      <ServiceRequest>
+        <identifier>
+          <system value="lab-x-service-request-number" />
+          <value value="$GENERATED_UUID_SERVICE_REQUEST_NUMBER_1" />
+          <assigner>
+            <reference value="Organization/$IHS_NUMBER_FASYANKES" />
+          </assigner>
+        </identifier>
+        <status value="completed" />
+        <intent value="directive" />
+        <priority value="routine" />
+        <code>
+          <coding>
+            <system value="http://loinc.org" />
+            <code value="647-8" />
+          </coding>
+          <text value="Microscopic observation [Identifier] in Sputum by Acid fast stain.Ziehl-Neelsen" />
+        </code>
+        <subject>
+          <reference value="Patient/$IHS_NUMBER_PASIEN" />
+        </subject>
+        <encounter>
+          <reference value="Encounter/$ID_ENCOUNTER_1" />
+        </encounter>
+        <occurrenceDateTime value="2022-02-01T08:00:00+07:00" />
+        <requester>
+          <reference value="Organization/$IHS_NUMBER_FASYANKES" />
+        </requester>
+        <performer>
+          <reference value="Organization/$IHS_NUMBER_FASYANKES" />
+        </performer>
+      </ServiceRequest>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="ServiceRequest" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:$GENERATED_UUID_OBSERVATION_1" />
+    <resource>
+      <Observation>
+        <code>
+          <coding>
+            <system value="http://loinc.org" />
+            <code value="647-8" />
+          </coding>
+          <text value="Microscopic observation [Identifier] in Sputum by Acid fast stain.Ziehl-Neelsen" />
+        </code>
+        <encounter>
+          <reference value="Encounter/$GENERATED_UUID_ENCOUNTER" />
+        </encounter>
+        <dataAbsentReason>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason" />
+            <code value="not-performed" />
+          </coding>
+        </dataAbsentReason>
+      </Observation>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="Observation" />
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:$GENERATED_UUID_DIAGNOSTIC_REPORT" />
+    <resource>
+      <DiagnosticReport>
+        <id value="$GENERATED_UUID_DIAGNOSTIC_REPORT" />
+        <status value="final" />
+        <code>
+          <coding>
+            <system value="http://loinc.org" />
+            <code value="????" />
+          </coding>
+          <text value="????" />
+        </code>
+        <subject>
+          <reference value="Patient/$IHS_NUMBER_PASIEN" />
+        </subject>
+        <encounter>
+          <reference value="Encounter/$GENERATED_UUID_ENCOUNTER" />
+        </encounter>
+        <effectiveDateTime value="2022-07-07" />
+        <issued value="2022-07-07T00:00:00+07:00" />
+        <performer>
+          <reference value="Organization/$IHS_NUMBER_FASYANKES" />
+          <display value="$NAMA_FASYANKES" />
+        </performer>
+        <result>
+          <reference value="Observation/$GENERATED_UUID_OBSERVATION_1" />
+        </result>
+      </DiagnosticReport>
+    </resource>
+    <request>
+      <method value="POST" />
+      <url value="DiagnosticReport" />
+    </request>
+  </entry>
+</Bundle>

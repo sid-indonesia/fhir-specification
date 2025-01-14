@@ -1,0 +1,80 @@
+{
+  "resourceType": "CareTeam",
+  "identifier": [
+    {
+      "value": "12345"
+    }
+  ],
+  "status": "active",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "LA27976-2",
+          "display": "Encounter-focused care team"
+        }
+      ]
+    }
+  ],
+  "name": "Mister Roel Care Team for Obesity",
+  "subject": {
+    "reference": "Patient/example",
+    "display": "Roel"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
+  },
+  "period": {
+    "end": "2013-01-01"
+  },
+  "participant": [
+    {
+      "role": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "116154003",
+              "display": "Patient"
+            }
+          ],
+          "text": "Patient himself"
+        }
+      ],
+      "member": {
+        "reference": "Patient/example",
+        "display": "Roel"
+      }
+    },
+    {
+      "role": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "159033005",
+              "display": "Dietician"
+            }
+          ],
+          "text": "adviser"
+        }
+      ],
+      "member": {
+        "reference": "#pr1",
+        "display": "Dorothy Dieticion"
+      },
+      "onBehalfOf": {
+        "reference": "Organization/f001"
+      },
+      "period": {
+        "end": "2013-01-01"
+      }
+    }
+  ],
+  "managingOrganization": [
+    {
+      "reference": "Organization/f001"
+    }
+  ]
+}

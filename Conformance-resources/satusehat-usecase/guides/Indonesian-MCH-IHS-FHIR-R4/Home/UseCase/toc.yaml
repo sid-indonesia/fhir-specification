@@ -1,0 +1,14 @@
+- name: Tuberkulosis (TB)
+  filename: Tuberkulosis--TB
+- name: Kesehatan Maternal dan Neonatal
+  filename: KESEHATAN-MATERNAL-DAN-NEONATAL
+- name: Klaim dan Pembayaran
+  filename: Klaim-dan-Pembayaran
+- name: ILI SARI
+  filename: ILI-SARI
+- name: Vaksinasi COVID-19
+  filename: Vaksinasi-COVID-19
+- name: HIV
+  filename: HIV
+- name: Rabies
+  filename: Rabies

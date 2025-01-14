@@ -1,0 +1,249 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "questionnaire": "https://fhir.kemkes.go.id/Questionnaire/Q0015",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/02bc44c5-5a53-48d0-9ed0-cf910355c20e"
+  },
+  "authored": "2023-07-18T10:30:00+07:00",
+  "author": {
+    "reference": "Practitioner/N10000001"
+  },
+  "source": {
+    "reference": "Patient/100000030009"
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Verifikasi Data Identitas",
+      "item": [
+        {
+          "linkId": "1.1",
+          "text": "Dosis terakhir imunisasi COVID-19 yang didapatkan",
+          "answer": [
+            {
+              "valueString": "booster 1"
+            }
+          ]
+        },
+        {
+          "linkId": "1.2",
+          "text": "Kapan terakhir kali menerima imunisasi COVID-19?",
+          "answer": [
+            {
+              "valueDate": "2024-01-16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "Penentuan Sasaran",
+      "item": [
+        {
+          "linkId": "2.1",
+          "text": "Usia",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "105436006",
+                "display": "Elderly person"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "2.2",
+          "text": "Ibu Hamil",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "2.3",
+          "text": "Tenaga Kesehatan",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "2.4",
+          "text": "Apakah Anda memiliki penyakit komorbid (jawaban boleh lebih dari satu)",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "2667000",
+                "display": "Absent"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "2.5",
+          "text": "Apakah Anda memiliki immunocompromised (jawaban boleh lebih dari satu)",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "737294004",
+                "display": "Transplant present"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "2.6",
+          "text": "Kategori Sasaran",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/b23ea76b-c345-476c-bc38-89df0d809d14"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "3",
+      "text": "Skrining",
+      "item": [
+        {
+          "linkId": "3.1",
+          "text": "Apakah Anda hari ini dalam keadaan sehat? (komorbid dan imunocompromised Anda dalam kondisi terkontrol)",
+          "answer": [
+            {
+              "valueBoolean": true
+            }
+          ]
+        },
+        {
+          "linkId": "3.2",
+          "text": "Suhu",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/50b5d7db-e4e1-4e67-956d-b3237cbe77b9"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.3",
+          "text": "Tekanan Darah Sistolik",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/a902fd97-af05-4ba6-aa7e-fc4020e1c073"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.4",
+          "text": "Tekanan Darah Diastolik",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/dd0d4793-c25d-4a11-9f35-f6dc4bbd1cb3"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "3.5",
+          "text": "Apakah Anda memiliki riwayat alergi berat seperti sesak napas, bengkak dan urtikaria seluruh badan atau reaksi berat lainnya karena vaksin?",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "3.6",
+          "text": "Apakah Anda seorang yang mengidap penyakit autoimun, dan saat ini dalam kondisi aktif?",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "3.7",
+          "text": "Apakah Anda pernah terkonfirmasi menderita COVID-19?",
+          "answer": [
+            {
+              "valueBoolean": true
+            }
+          ]
+        },
+        {
+          "linkId": "3.8",
+          "text": "Apakah Anda sedang hamil?",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "3.9",
+          "text": "Hasil Skrining",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Immunization/41550e1a-b0eb-473f-a8b6-b7b198fbe2c3"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "4",
+      "text": "Hasil Pelayanan Imunisasi",
+      "answer": [
+        {
+          "valueReference": {
+            "reference": "Immunization/41550e1a-b0eb-473f-a8b6-b7b198fbe2c3"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "5",
+      "text": "Hasil Observasi",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "105721009",
+            "display": "General problem AND/OR complaint"
+          },
+          "item": [
+            {
+              "linkId": "5.1",
+              "text": "Sebutkan keluhan jika ada",
+              "answer": [
+                {
+                  "valueString": "Pusing"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

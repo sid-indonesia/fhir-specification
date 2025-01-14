@@ -1,0 +1,42 @@
+{
+  "resourceType": "Procedure",
+  "status": "completed",
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "103693007",
+        "display": "Diagnostic procedure"
+      }
+    ],
+    "text": "Diagnostic procedure"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "424489006",
+        "display": "Mantoux test"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030015",
+    "display": "Diana Smith"
+  },
+  "encounter": {
+    "reference": "Encounter/a6134895-372d-43db-a5b5-4989aef4068b"
+  },
+  "performedPeriod": {
+    "start": "2023-03-02T03:30:00+00:00",
+    "end": "2023-03-02T04:00:00+00:00"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/N10000001",
+        "display": "Dokter Bronsig"
+      }
+    }
+  ]
+}

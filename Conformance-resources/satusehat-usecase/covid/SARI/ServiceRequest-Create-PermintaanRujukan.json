@@ -1,0 +1,44 @@
+{
+  "resourceType": "ServiceRequest",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/servicerequest/10000004",
+      "value": "00001"
+    }
+  ],
+  "status": "active",
+  "intent": "original-order",
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "3457005",
+        "display": "Patient referral"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/447222f4-32bc-4ec0-9a53-3be1506a8e8a"
+  },
+  "occurrenceDateTime": "2022-12-23T07:00:00+00:00",
+  "requester": {
+    "reference": "Organization/10000004",
+    "display": "Puskesmas Bagelen"
+  },
+  "performer": [
+    {
+      "reference": "Organization/10083042",
+      "display": "IHS Hospital"
+    }
+  ],
+  "reasonCode": [
+    {
+      "text": "Perburukan"
+    }
+  ]
+}

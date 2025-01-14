@@ -1,0 +1,70 @@
+{
+  "resourceType": "ServiceRequest",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/servicerequest/{{Org_id}}",
+      "value": "00001"
+    }
+  ],
+  "status": "active",
+  "intent": "original-order",
+  "priority": "routine",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "3457005",
+          "display": "Patient referral"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "185389009",
+        "display": "Follow-up visit"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/{{Patient_id}}"
+  },
+  "encounter": {
+    "reference": "Encounter/{{Encounter_id}}",
+    "display": "Kunjungan {{Patient_Name}} di hari Kamis, 31 Agustus 2023"
+  },
+  "occurrenceDateTime": "2023-08-31T04:25:00+00:00",
+  "authoredOn": "2023-08-31T04:25:00+00:00",
+  "requester": {
+    "reference": "Practitioner/{{Practitioner_id}}",
+    "display": "{{Practitioner_Name}}"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/{{Practitioner_id}}",
+      "display": "{{Practitioner_Name}}"
+    }
+  ],
+  "locationReference": [
+    {
+      "reference": "Location/{{Location_Poli_uuid}}",
+      "display": "{{Location_Poli_Name}}"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "Z11.4",
+          "display": "Special screening examination for human immunodeficiency virus [hiv]"
+        }
+      ],
+      "text": "Kontrol rutin bulanan"
+    }
+  ],
+  "patientInstruction": "Kontrol rutin setelah 7 hari. Dalam keadaan darurat dapat menghubungi hotline Fasyankes di nomor 14045"
+}

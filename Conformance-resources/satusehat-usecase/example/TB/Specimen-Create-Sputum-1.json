@@ -1,0 +1,66 @@
+{
+  "resourceType": "Specimen",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/specimen/10000004",
+      "value": "00001",
+      "assigner": {
+        "reference": "Organization/10000004"
+      }
+    }
+  ],
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "45710003",
+        "display": "Sputum"
+      }
+    ]
+  },
+  "collection": {
+    "method": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "386089008",
+          "display": "Collection of coughed sputum"
+        }
+      ]
+    },
+    "bodySite": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "303417002",
+          "display": "Larynx and/or tracheal structures"
+        }
+      ]
+    },
+    "collectedDateTime": "2023-08-31T04:00:00+00:00"
+  },
+  "container": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "702223006",
+            "display": "Sputum specimen container"
+          }
+        ]
+      }
+    }
+  ],
+  "subject": {
+    "reference": "Patient/100000030006",
+    "display": "Jane Smith"
+  },
+  "request": [
+    {
+      "reference": "ServiceRequest/766c1116-f30c-4c39-a047-8a24c2415ea2"
+    }
+  ],
+  "receivedTime": "2023-08-31T03:42:00+00:00"
+}

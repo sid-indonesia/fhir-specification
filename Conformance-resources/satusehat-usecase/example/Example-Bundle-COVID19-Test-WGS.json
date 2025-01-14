@@ -1,0 +1,321 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "identifier": [
+          {
+            "system": "lab-x-service-request-number",
+            "value": "00012",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "completed",
+        "intent": "order",
+        "priority": "routine",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "94764-8",
+              "display": "SARS-CoV-2 genome Islt/Spm-Seq"
+            }
+          ],
+          "text": "Order WGS Test"
+        },
+        "subject": {
+          "reference": "Patient/100000030004"
+        },
+        "occurrenceDateTime": "2022-02-10T08:00:00+07:00",
+        "requester": {
+          "reference": "Organization/10000001"
+        },
+        "performer": [
+          {
+            "reference": "Organization/10000001"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "https://terminology.kemkes.go.id/v1-0201",
+                "code": "follow-up",
+                "display": "Follow up"
+              }
+            ]
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+            "display": "Nasopharyngeal swab"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+      "resource": {
+        "resourceType": "Specimen",
+        "identifier": [
+          {
+            "system": "lab-x-specimen-number",
+            "value": "52225",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "258500001",
+              "display": "Nasopharyngeal swab"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "receivedTime": "2022-02-10T08:25:00+07:00",
+        "collection": {
+          "collectedDateTime": "2022-02-10T08:25:00+07:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Specimen"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a181acb4-8724-11ec-a8a3-0242ac120002",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "identifier": [
+          {
+            "system": "lab-x-report-number",
+            "value": "5234349",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "MB",
+                "display": "Microbiology"
+              }
+            ]
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "94764-8",
+              "display": "SARS-CoV-2 genome Islt/Spm-Seq"
+            }
+          ],
+          "text": "WGS Test"
+        },
+        "subject": {
+          "reference": "Patient/100000030004"
+        },
+        "effectiveDateTime": "2022-02-10T08:30:00+07:00",
+        "issued": "2022-02-10T11:45:33+07:00",
+        "performer": [
+          {
+            "reference": "Organization/10000001",
+            "display": "X Laboratory, Inc"
+          }
+        ],
+        "result": [
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-0242ac130002"
+          },
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-0242ac130003"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-0242ac130002",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111337",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "96766-1",
+              "display": "GISAID seq accession ID"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-10T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Organization/10000001",
+            "display": "X Laboratory, Inc"
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueString": "EPI_ISL_468159",
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Nasopharyngeal swab"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-0242ac130003",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111338",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "96741-4",
+              "display": "SARS-CoV-2 variant Spec Seq"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-10T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Organization/10000001",
+            "display": "X Laboratory, Inc"
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://terminology.kemkes.go.id/v1-0219",
+              "code": "omicron",
+              "display": "Omicron"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Nasopharyngeal swab"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-0242ac130999",
+      "resource": {
+        "resourceType": "QuestionnaireResponse",
+        "status": "completed",
+        "questionnaire": "Questionnaire/Q0001",
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "author": {
+          "reference": "Organization/10000001"
+        },
+        "item": [
+          {
+            "linkId": "1",
+            "text": "Whether the patient has symptoms related to condition of interest",
+            "definition": "http://loinc.org/95419-8",
+            "answer": [
+              {
+                "valueCoding": {
+                  "system": "http://loinc.org",
+                  "code": "LA32-8",
+                  "display": "No"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "QuestionnaireResponse"
+      }
+    }
+  ]
+}

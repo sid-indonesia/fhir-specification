@@ -1,0 +1,8 @@
+- name: Index
+  filename: Index.page.md
+- name: Fasyankes
+  filename: Fasyankes.page.md
+- name: E-Klaim
+  filename: E-Klaim.page.md
+- name: BPJS
+  filename: BPJS.page.md

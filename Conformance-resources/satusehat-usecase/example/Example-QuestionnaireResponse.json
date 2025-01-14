@@ -1,0 +1,27 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "status": "completed",
+  "questionnaire": "Questionnaire/Q0001",
+  "subject": {
+    "reference": "Patient/P00-030-004"
+  },
+  "author": {
+    "reference": "Organization/F00-000-001"
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Whether the patient has symptoms related to condition of interest",
+      "definition": "http://loinc.org/95419-8",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "http://loinc.org",
+            "code": "LA33-6",
+            "display": "Yes"
+          }
+        }
+      ]
+    }
+  ]
+}

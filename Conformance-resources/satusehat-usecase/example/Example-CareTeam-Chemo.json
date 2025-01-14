@@ -1,0 +1,105 @@
+{
+  "resourceType": "CareTeam",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/careteam/1000001",
+      "value": "1200045"
+    }
+  ],
+  "status": "active",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "LA27976-2",
+          "display": "Encounter-focused care team"
+        }
+      ]
+    }
+  ],
+  "name": "Mister Roel Care Team for Chemotherapy",
+  "subject": {
+    "reference": "Patient/P00030004",
+    "display": "Roel"
+  },
+  "encounter": {
+    "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd"
+  },
+  "period": {
+    "end": "2013-01-01"
+  },
+  "participant": [
+    {
+      "role": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "116154003",
+              "display": "Patient"
+            }
+          ],
+          "text": "Patient"
+        }
+      ],
+      "member": {
+        "reference": "Patient/P00030004",
+        "display": "Roel"
+      }
+    },
+    {
+      "role": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "310512001 ",
+              "display": "Medical Oncologist"
+            }
+          ],
+          "text": "medical oncologist"
+        }
+      ],
+      "member": {
+        "reference": "Practitioner/N10000001",
+        "display": "Dokter Bronsig"
+      },
+      "onBehalfOf": {
+        "reference": "Organization/F10000001"
+      },
+      "period": {
+        "end": "2013-01-01"
+      }
+    },
+    {
+      "role": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "224552008",
+              "display": "Oncology Nurse"
+            }
+          ],
+          "text": "Oncology Nurse"
+        }
+      ],
+      "member": {
+        "reference": "Practitioner/N10000007",
+        "display": "Dorothy"
+      },
+      "onBehalfOf": {
+        "reference": "Organization/F10000001"
+      },
+      "period": {
+        "end": "2013-01-01"
+      }
+    }
+  ],
+  "managingOrganization": [
+    {
+      "reference": "Organization/F10000001"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "resourceType": "ChargeItem",
+  "status": "billable",
+  "code": {
+    "coding": [
+      {
+        "system": "http://terminology.kemkes.go.id/CodeSystem/chargeitem-code",
+        "code": "CIC000020",
+        "display": "Tarif Rumah Sakit"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030006"
+  },
+  "context": {
+    "reference": "Encounter/29e3e814-4c9b-4f24-a8cb-54ba597d746f"
+  },
+  "occurrencePeriod": {
+    "start": "2022-06-14T07:00:00+07:00",
+    "end": "2022-06-21T07:00:00+07:00"
+  },
+  "performer": [
+    {
+      "function": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "17561000",
+            "display": "Cardiologist"
+          }
+        ]
+      },
+      "actor": {
+        "reference": "Practitioner/N10000001"
+      }
+    }
+  ],
+  "quantity": {
+    "value": 1
+  },
+  "priceOverride": {
+    "value": 21500000,
+    "currency": "IDR"
+  },
+  "enterer": {
+    "reference": "Practitioner/N10000001"
+  },
+  "enteredDate": "2022-06-21T07:00:00+07:00",
+  "reason": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "I21.9",
+          "display": "Acute myocardial infarction, unspecified"
+        }
+      ]
+    }
+  ],
+  "account": [
+    {
+      "reference": "Account/75e932a6-b528-4d5f-8340-20265300229a"
+    }
+  ]
+}

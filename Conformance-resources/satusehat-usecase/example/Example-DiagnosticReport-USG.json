@@ -1,0 +1,53 @@
+{
+  "resourceType": "DiagnosticReport",
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394914008",
+          "display": "Radiology"
+        },
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "RAD"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "45036003",
+        "display": "Ultrasonography of abdomen"
+      }
+    ],
+    "text": "Abdominal Ultrasound"
+  },
+  "subject": {
+    "reference": "Patient/P00030004"
+  },
+  "encounter": {
+    "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+    "display": "Roel's encounter on January 28th, 2013"
+  },
+  "effectiveDateTime": "2012-12-01T12:00:00+01:00",
+  "issued": "2012-12-01T12:00:00+01:00",
+  "performer": [
+    {
+      "reference": "Practitioner/example"
+    }
+  ],
+  "media": [
+    {
+      "comment": "A comment about the image",
+      "link": {
+        "reference": "Media/50a2865b-680a-4501-90ae-e57e3e68312f",
+        "display": "WADO URL of the example image"
+      }
+    }
+  ],
+  "conclusion": "Unremarkable study"
+}

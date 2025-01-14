@@ -1,0 +1,91 @@
+{
+  "resourceType": "ServiceRequest",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/servicerequest/10000004",
+      "value": "00001"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "108252007",
+          "display": "Laboratory procedure"
+        }
+      ]
+    }
+  ],
+  "status": "active",
+  "intent": "original-order",
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "11477-7",
+        "display": "Microscopic observation [Identifier] in Sputum by Acid fast stain"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "68961-2",
+        "display": "HIV 1 Ab [Presence] in Serum, Plasma or Blood by Rapid immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "718-7",
+        "display": "Hemoglobin [Mass/volume] in Blood"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "20508-8",
+        "display": "Reagin Ab [Units/volume] in Serum or Plasma by RPR"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "14904-7",
+        "display": "Reagin Ab [Presence] in Specimen by VDRL"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "75410-1",
+        "display": "Hepatitis B virus surface Ag [Presence] in Serum, Plasma or Blood by Rapid immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "74774-1",
+        "display": "Glucose [Mass/volume] in Serum, Plasma or Blood"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "5804-0",
+        "display": "Protein [mass/volume] in urine by test strip"
+      }
+    ],
+    "text": "Pemeriksaan Sputum BTA dan 10T"
+  },
+  "subject": {
+    "reference": "Patient/100000030006"
+  },
+  "encounter": {
+    "reference": "Encounter/dd5b8c34-6bb2-43af-b36a-8fcc60a70d4a",
+    "display": "Permintaan BTA Sputum dan 10T Ny. Jane Smith di hari Kamis, 31 Agustus 2023 pukul 10:45 WIB"
+  },
+  "occurrenceDateTime": "2023-08-31T03:45:00+00:00",
+  "requester": {
+    "reference": "Practitioner/N10000001",
+    "display": "Dokter Bronsig"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/N10000005",
+      "display": "Fatma"
+    }
+  ],
+  "reasonCode": [
+    {
+      "text": "Periksa jika ada kemungkinan Tuberculosis dan skrining 10T"
+    }
+  ]
+}

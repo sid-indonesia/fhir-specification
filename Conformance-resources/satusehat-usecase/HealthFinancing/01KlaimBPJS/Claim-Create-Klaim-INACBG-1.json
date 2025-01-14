@@ -1,0 +1,287 @@
+{
+  "resourceType": "Claim",
+  "id": "960151",
+  "meta": {
+    "profile": [
+      "https://fhir.kemkes.go.id/r4/StructureDefinition/Claim"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/jkn-claim-batch-number",
+      "value": "96123451"
+    }
+  ],
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code": "institutional",
+        "display": "Institutional"
+      }
+    ]
+  },
+  "use": "claim",
+  "patient": {
+    "reference": "Patient/100000030006"
+  },
+  "billablePeriod": {
+    "start": "2022-06-14",
+    "end": "2022-06-21"
+  },
+  "created": "2022-06-21",
+  "enterer": {
+    "identifier": {
+      "system": "https://fhir.kemkes.go.id/id/nik",
+      "value": "3657746633553535555"
+    },
+    "reference": "Practitioner/N10000001"
+  },
+  "insurer": {
+    "reference": "Organization/10080028"
+  },
+  "provider": {
+    "reference": "Organization/10085103"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+        "code": "normal",
+        "display": "Normal"
+      }
+    ]
+  },
+  "payee": {
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/payeetype",
+          "code": "provider",
+          "display": "Provider"
+        }
+      ]
+    },
+    "party": {
+      "reference": "Organization/10085103"
+    }
+  },
+  "facility": {
+    "reference": "Location/ec3e8a16-437b-4eba-b8f6-ce93c13ac480"
+  },
+  "supportingInfo": [
+    {
+      "sequence": 1,
+      "category": {
+        "coding": [
+          {
+            "system": "http://terminology.kemkes.go.id/CodeSystem/claiminformationcategory",
+            "code": "upgrade-class-indicator",
+            "display": "Indikator Naik Kelas"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://terminology.kemkes.go.id/CodeSystem/upgradeClassIndicator",
+            "code": "upgrade",
+            "display": "Ada Kenaikan Kelas"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "category": {
+        "coding": [
+          {
+            "system": "http://terminology.kemkes.go.id/CodeSystem/claiminformationcategory",
+            "code": "upgrade-class-class"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://terminology.kemkes.go.id/CodeSystem/locationServiceClass",
+            "code": "2"
+          }
+        ]
+      },
+      "timingPeriod": {
+        "start": "2022-06-14",
+        "end": "2022-06-21"
+      }
+    },
+    {
+      "sequence": 3,
+      "category": {
+        "coding": [
+          {
+            "system": "http://terminology.kemkes.go.id/CodeSystem/claiminformationcategory",
+            "code": "claim-text-encoded"
+          }
+        ]
+      },
+      "valueAttachment": {
+        "contentType": "text/plain;base64",
+        "data": "REVNTyBWRVJTSU9OCUQJMwlBUAkxCTI0LzAxLzIwMjMJMjQvMDEvMjAyMwkyNC8wMS8yMDIzCTMwMDAJMQkxCVAwMS42CTk5LjAzCS0JLQlOb25lCU5vbmUJTm9uZQlOb25lCVAtOC0xNy1JCU5vbmUJTm9uZQlOb25lCU5vbmUJTm9uZQlOb25lCU5FT05BVEFMLCBCQkwgPiAyNDk5IEdSIFRBTlBBIFBST1NFRFVSIE1BWU9SIChSSU5HQU4pCTQ1NTk4MDAJMAkwCS0JMAktCTAJLQkwCS0JMAk0NTU5ODAwCTEwMDAwMAkwCTEJMQkwCTAJVEVTVCBCQVlJCTIwMDM5OQkwCTAJCURFTU8gVkVSU0lPTgkxMjIyMzMzNDQJMztKS04JMTExMDEwMTs5MDIyQzAxO0FETQk1LjcuMC4yMDIyMDkyNzEzMDMJNAk2NjgJMSMwIyMwIzAjMC4wIzIwMjMtMDEtMjMgMTc6MTM6MDMjMCMxMzoyOToyOSMxMzoyOToyOSMwMDowMDowMCN7ImNvX2luc2lkZW5zZV9pbmQiOiIwIn0jI3siY2FyYV9tYXN1ayI6ImVtZCIsInNpc3RvbGUiOiIxMTAiLCJkaWFzdG9sZSI6IjcwIiwidG90YWxfdGFyaWZfcnMiOiIxMDAwMDAiLCJiaWxsaW5nX2dyb3VwIjp7InByb2NlZHVyZV9hbXQiOiIxMDAwMDAiLCJzdXJnaWNhbF9hbXQiOiIwIiwiY29uc3VsX2FtdCI6IjAiLCJleHBlcnRfYW10IjoiMCIsIm51cnNpbmdfYW10IjoiMCIsImFuY2lsbGFyeV9hbXQiOiIwIiwiYmxvb2RfYW10IjoiMCIsImxhYm9yYXRvcnlfYW10IjoiMCIsInJhZGlvbG9neV9hbXQiOiIwIiwicmVoYWJfYW10IjoiMCIsInJvb21fYW10IjoiMCIsImludGVuc2l2ZV9hbXQiOiIwIiwiZHJ1Z19hbXQiOiIwIiwiZGV2aWNlX2FtdCI6IjAiLCJjb25zdW1hYmxlX2FtdCI6IjAiLCJkZXZpY2VfcmVudF9hbXQiOiIwIiwiZHJ1Z19jaHJvbmljX2FtdCI6IjAiLCJkcnVnX2NoZW1vX2FtdCI6IjAifSwic2VsaXNpaF9iaWF5YSI6eyJuaWxhaSI6IjAiLCJwZW1iYXlhciI6IiIsIm5haWtfa2VsYXMiOiIifSwidmVudGlsYXRvciI6eyJ1c2VfaW5kIjoiMSIsInN0YXJ0X2R0dG0iOiIyMDIzLTAxLTE5IDE3OjI2OjA4Iiwic3RvcF9kdHRtIjoiMjAyMy0wMS0yMCAxNzoyNjoyCg=="
+      }
+    },
+    {
+      "sequence": 4,
+      "category": {
+        "coding": [
+          {
+            "system": "http://terminology.kemkes.go.id/CodeSystem/claiminformationcategory",
+            "code": "unu-grouper-version"
+          }
+        ]
+      },
+      "valueString": "4"
+    },
+    {
+      "sequence": 5,
+      "category": {
+        "coding": [
+          {
+            "system": "http://terminology.kemkes.go.id/CodeSystem/claiminformationcategory",
+            "code": "e-klaim-version"
+          }
+        ]
+      },
+      "valueString": "5.8.3.202301311257"
+    }
+  ],
+  "diagnosis": [
+    {
+      "sequence": 1,
+      "diagnosisCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10",
+            "code": "I21.9",
+            "display": "Acute myocardial infarction, unspecified"
+          }
+        ]
+      },
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+              "code": "billing",
+              "display": "Billing"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "procedure": [
+    {
+      "sequence": 1,
+      "procedureCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-9-cm",
+            "code": "36.06",
+            "display": "Insertion of non-drug -eluting coronary artery stent(s)"
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "procedureCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-9-cm",
+            "code": "00.66",
+            "display": "Parcutaneous transluminal coronary angioplasty (PTCA) or coronary atherectomy"
+          }
+        ]
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "reference": "Coverage/acc4c2ac-5b2b-4002-a278-a1ce4559802d"
+      },
+      "identifier": {
+        "system": "http://sys-ids.kemkes.go.id/jkn-claim-number",
+        "value": "100R01V0010002"
+      }
+    }
+  ],
+  "total": {
+    "value": 28868200,
+    "currency": "IDR"
+  },
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/Package",
+      "extension": [
+        {
+          "url": "tariffClass",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://terminology.kemkes.go.id/CodeSystem/tariffClass",
+                "code": "AP",
+                "display": "Tarif Kelas A Pemerintah"
+              }
+            ]
+          }
+        },
+        {
+          "url": "basePackage",
+          "extension": [
+            {
+              "url": "code",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://terminology.kemkes.go.id/CodeSystem/inacbg-v5",
+                    "code": "I-1-40-I",
+                    "display": "PROSEDUR KARDIOVASKULAR PERKUTAN (RINGAN)"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "value",
+              "valueInteger": 14434100
+            }
+          ]
+        },
+        {
+          "url": "additionalPackage",
+          "extension": [
+            {
+              "url": "code",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://terminology.kemkes.go.id/CodeSystem/inacbg-special-cmg-v5",
+                    "code": "YY-02-III",
+                    "display": "PCI"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "value",
+              "valueInteger": 14434100
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

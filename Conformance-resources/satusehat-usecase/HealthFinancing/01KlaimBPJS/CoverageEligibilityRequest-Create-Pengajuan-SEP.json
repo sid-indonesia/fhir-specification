@@ -1,0 +1,70 @@
+{
+  "resourceType": "CoverageEligibilityRequest",
+  "identifier": {
+    "period": {
+      "start": "2022-06-14",
+      "end": "2022-06-17"
+    }
+  },
+  "status": "active",
+  "priority": {
+    "coding": [
+      {
+        "code": "normal"
+      }
+    ]
+  },
+  "purpose": [
+    "validation"
+  ],
+  "patient": {
+    "reference": "Patient/100000030006"
+  },
+  "servicedDate": "2022-06-14",
+  "created": "2022-06-14",
+  "enterer": {
+    "reference": "Practitioner/N10000001"
+  },
+  "provider": {
+    "reference": "Organization/10085103"
+  },
+  "insurer": {
+    "reference": "Organization/10080028"
+  },
+  "facility": {
+    "reference": "Location/ec3e8a16-437b-4eba-b8f6-ce93c13ac480"
+  },
+  "supportingInfo": [
+    {
+      "sequence": 1,
+      "information": {
+        "reference": "QuestionnaireResponse/636bf55a-dd47-4235-8f65-3430b48ccf49"
+      }
+    }
+  ],
+  "insurance": [
+    {
+      "focal": true,
+      "coverage": {
+        "reference": "Coverage/acc4c2ac-5b2b-4002-a278-a1ce4559802d"
+      }
+    }
+  ],
+  "item": [
+    {
+      "diagnosis": [
+        {
+          "diagnosisCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "code": "I21.9",
+                "display": "Acute myocardial infarction, unspecified"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

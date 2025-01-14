@@ -1,0 +1,59 @@
+{
+  "extension": [
+    {
+      "transportedTime": "2022-07-14T10:00:00+07:00"
+    }
+  ],
+  "id": "cb2adef7-3971-4239-9cc2-6ae9981fe57d",
+  "identifier": [
+    {
+      "assigner": {
+        "reference": "Organization/10000004"
+      },
+      "system": "http://sys-ids.kemkes.go.id/specimen/10000004",
+      "value": "00001"
+    }
+  ],
+  "collection": {
+    "collectedDateTime": "2022-07-14T10:00:00+07:00",
+    "method": {
+      "coding": [
+        {
+          "code": "312880001",
+          "display": "Taking throat swab",
+          "system": "http://snomed.info/sct"
+        },
+        {
+          "code": "312882009",
+          "display": "Taking nasal swab",
+          "system": "http://snomed.info/sct"
+        }
+      ]
+    }
+  },
+  "request": [
+    {
+      "reference": "ServiceRequest/65b8a884-7a79-41e1-96ab-3fc30837ac66"
+    }
+  ],
+  "resourceType": "Specimen",
+  "status": "available",
+  "subject": {
+    "display": "Budi Santoso",
+    "reference": "Patient/100000030009"
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "258529004",
+        "display": "Throat swab",
+        "system": "http://snomed.info/sct"
+      },
+      {
+        "code": "445297001",
+        "display": "Swab of internal nose",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "resourceType": "Observation",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/observation/1000004",
+      "value": "O111111"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "64710-7",
+        "display": "Was your pregnancy a live birth, stillbirth, miscarriage, abortion, or ectopic pregnancy [PhenX]"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Baby of Teresa Lee (Fetus Not Named)"
+  },
+  "encounter": {
+    "reference": "Encounter/45e436ea-d6c7-4059-8cbe-e00fb2c665d8"
+  },
+  "effectiveDateTime": "2022-01-01",
+  "issued": "2022-01-01T15:30:10+01:00",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001",
+      "display": "Dokter Bronsig"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "237361005",
+        "display": "Antepartum fetal death"
+      }
+    ]
+  }
+}

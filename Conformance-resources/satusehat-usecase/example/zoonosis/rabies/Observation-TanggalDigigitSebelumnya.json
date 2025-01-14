@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/observation/{{Org_id}}",
+      "value": "O111111"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://terminology.kemkes.go.id",
+        "code": "TK000122",
+        "display": "Tanggal pernah digigit sebelumnya"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/{{Patient_id}}",
+    "display": "{{Patient_Name}}"
+  },
+  "encounter": {
+    "reference": "Encounter/{{Encounter_id}}"
+  },
+  "effectiveDateTime": "2023-08-31T07:15:00+00:00",
+  "issued": "2023-08-31T07:15:00+00:00",
+  "performer": [
+    {
+      "reference": "Practitioner/{{Practitioner_id}}",
+      "display": "{{Practitioner_Name}}"
+    }
+  ],
+  "valueDateTime": "2023-07-01T00:00:00+00:00"
+}

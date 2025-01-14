@@ -1,0 +1,114 @@
+{
+  "resourceType": "MedicationRequest",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://sys-ids.kemkes.go.id/prescription/1000001",
+      "value": "12345690"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "medicationReference": {
+    "reference": "urn:uuid:c442c6d9-0d17-4f35-a014-e167478ee8b6",
+    "display": "Ointment (Compound)"
+  },
+  "subject": {
+    "reference": "Patient/P00030004",
+    "display": "Roel"
+  },
+  "encounter": {
+    "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+    "display": "Roel's encounter on January 28th, 2013"
+  },
+  "authoredOn": "2015-01-15",
+  "requester": {
+    "reference": "Practitioner/N10000001",
+    "display": "Patrick Pump"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "L21.1",
+          "display": "Seborrhoeic infantile dermatitis"
+        }
+      ]
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "sequence": 1,
+      "text": "Apply twice daily to affected area on left arm",
+      "additionalInstruction": [
+        {
+          "text": "Apply sparingly"
+        }
+      ],
+      "timing": {
+        "repeat": {
+          "frequency": 2,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "site": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "72098002",
+            "display": "Entire left upper arm (body structure)"
+          }
+        ]
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "359540000",
+            "display": "Topical (qualifier value)"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                "code": "ordered",
+                "display": "Ordered"
+              }
+            ]
+          },
+          "doseQuantity": {
+            "value": 1,
+            "unit": "ea",
+            "system": "http://unitsofmeasure.org",
+            "code": "ea"
+          }
+        }
+      ]
+    }
+  ],
+  "dispenseRequest": {
+    "validityPeriod": {
+      "start": "2015-01-15",
+      "end": "2016-01-15"
+    },
+    "numberOfRepeatsAllowed": 3,
+    "quantity": {
+      "value": 30,
+      "unit": "g",
+      "system": "http://unitsofmeasure.org",
+      "code": "g"
+    },
+    "expectedSupplyDuration": {
+      "value": 10,
+      "unit": "days",
+      "system": "http://unitsofmeasure.org",
+      "code": "d"
+    }
+  }
+}

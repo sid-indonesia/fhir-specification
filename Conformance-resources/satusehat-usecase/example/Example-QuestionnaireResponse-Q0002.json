@@ -1,0 +1,85 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "status": "completed",
+  "questionnaire": "Questionnaire/Q0002",
+  "subject": {
+    "reference": "Patient/P00-030-004"
+  },
+  "author": {
+    "reference": "Organization/F00-000-001"
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Proses penyakit, diagnosis, dan rencana asuhan",
+      "answer": [
+        {
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "Obat-obatan",
+      "answer": [
+        {
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "3",
+      "text": "Rehabilitasi medis",
+      "answer": [
+        {
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "4",
+      "text": "Manajemen nyeri",
+      "answer": [
+        {
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "5",
+      "text": "Gizi",
+      "answer": [
+        {
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "6",
+      "text": "Cuci tangan",
+      "answer": [
+        {
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "7",
+      "text": "Penggunaan alat medis",
+      "answer": [
+        {
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "8",
+      "text": "Lain-lain (free text)",
+      "answer": [
+        {
+          "valueText": "Lain........"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "resourceType": "ServiceRequest",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/servicerequest/10000004",
+      "value": "00001"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "409063005",
+          "display": "Counselling"
+        }
+      ]
+    }
+  ],
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "103696004",
+        "display": "Patient referral to specialist"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/4f9f6229-1dc1-4322-ae4c-92ade956c908"
+  },
+  "authoredOn": "2023-01-01T15:30:00+07:00",
+  "occurrenceDateTime": "2023-01-01T15:30:00+07:00",
+  "requester": {
+    "reference": "Organization/6e6f600c-7aa3-4723-befb-356d3b19e2f6",
+    "display": "RS SATUSEHAT"
+  },
+  "performer": [
+    {
+      "reference": "Organization/10000004",
+      "display": "Puskesmas Sangat Waras"
+    }
+  ],
+  "reasonCode": [
+    {
+      "text": "Rujukan kembali pasien kasus TB RO"
+    }
+  ],
+  "reasonReference": [
+    {
+      "reference": "DiagnosticReport/ca59ba87-fd79-4e5a-9ffc-f7b13a978e3c"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "questionnaire": "https://fhir.kemkes.go.id/Questionnaire/Q0002",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/100000030006",
+    "display": "Jane Smith"
+  },
+  "encounter": {
+    "reference": "Encounter/dd5b8c34-6bb2-43af-b36a-8fcc60a70d4a"
+  },
+  "authored": "2023-08-31T01:55:00+00:00",
+  "author": {
+    "reference": "Practitioner/N10000001"
+  },
+  "source": {
+    "reference": "Patient/100000030006"
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Mendapatkan MT",
+      "item": [
+        {
+          "linkId": "1.1",
+          "text": "Jika LILA <23,5, Apakah mendapatkan MT",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "1.2",
+          "text": "Jenis MT",
+          "answer": [
+            {
+              "valueCoding": {
+                "system": "http://terminology.kemkes.go.id/CodeSystem/clinical-term",
+                "code": "FO000001",
+                "display": "MT Lokal"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

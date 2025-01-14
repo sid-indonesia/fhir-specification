@@ -1,0 +1,935 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "identifier": [
+          {
+            "system": "lab-x-service-request-number",
+            "value": "00001",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "completed",
+        "intent": "directive",
+        "priority": "routine",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "58410-2",
+              "display": "CBC panel - Blood by Automated count"
+            }
+          ],
+          "text": "Complete Blood Count"
+        },
+        "subject": {
+          "reference": "Patient/100000030004"
+        },
+        "occurrenceDateTime": "2022-02-01T08:00:00+07:00",
+        "requester": {
+          "reference": "Organization/10000001"
+        },
+        "performer": [
+          {
+            "reference": "Organization/10000001"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+            "display": "Nasopharyngeal swab"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+      "resource": {
+        "resourceType": "Specimen",
+        "identifier": [
+          {
+            "system": "lab-x-specimen-number",
+            "value": "52222",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+              "code": "BLD",
+              "display": "Whole blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "receivedTime": "2022-02-01T08:25:00+07:00",
+        "collection": {
+          "collectedDateTime": "2022-02-01T08:25:00+07:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Specimen"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a181acb4-8724-11ec-a8a3-0242ac120002",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "identifier": [
+          {
+            "system": "lab-x-report-number",
+            "value": "5234342",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "HM",
+                "display": "Hematology"
+              }
+            ]
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "58410-2",
+              "display": "CBC panel - Blood by Automated count"
+            }
+          ],
+          "text": "Complete Blood Count"
+        },
+        "subject": {
+          "reference": "Patient/100000030004"
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "issued": "2022-02-01T11:45:33+07:00",
+        "performer": [
+          {
+            "reference": "Organization/10000001",
+            "display": "X Laboratory, Inc"
+          },
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "resultsInterpreter": [
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "result": [
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131001",
+            "display": "Leukocytes"
+          },
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131002",
+            "display": "Erythrocytes"
+          },
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131003",
+            "display": "Hemoglobin"
+          },
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131004",
+            "display": "Hematocrit"
+          },
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131005",
+            "display": "MCV"
+          },
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131006",
+            "display": "MCH"
+          },
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131007",
+            "display": "MCHC"
+          },
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131008",
+            "display": "Platelets count"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "conclusion": "Example conclusion of the test results, narative ..."
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131001",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111333",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6690-2",
+              "display": "Leukocytes [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 6.6,
+          "unit": "10^3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3.4,
+              "unit": "10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "high": {
+              "value": 10.8,
+              "unit": "10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131002",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111333",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "789-8",
+              "display": "Erythrocytes [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 4.12,
+          "unit": "10^6/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*6/uL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 4.6,
+              "unit": "10^6/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*6/uL"
+            },
+            "high": {
+              "value": 5.4,
+              "unit": "10^6/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*6/uL"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131003",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111333",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 7.2,
+          "unit": "g/dl",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 7.5,
+              "unit": "g/dl",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "high": {
+              "value": 10,
+              "unit": "g/dl",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131004",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111333",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4544-3",
+              "display": "Hematocrit [Volume Fraction] of Blood by Automated count"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 45.5,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 37.5,
+              "unit": "%",
+              "system": "http://unitsofmeasure.org",
+              "code": "%"
+            },
+            "high": {
+              "value": 51.0,
+              "unit": "%",
+              "system": "http://unitsofmeasure.org",
+              "code": "%"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131005",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111333",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "787-2",
+              "display": "MCV [Entitic volume] by Automated count"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 112,
+          "unit": "fL",
+          "system": "http://unitsofmeasure.org",
+          "code": "fL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 79,
+              "unit": "fL",
+              "system": "http://unitsofmeasure.org",
+              "code": "fL"
+            },
+            "high": {
+              "value": 97,
+              "unit": "fL",
+              "system": "http://unitsofmeasure.org",
+              "code": "fL"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131006",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111333",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "785-6",
+              "display": "MCH [Entitic mass] by Automated count"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 38.3,
+          "unit": "pg",
+          "system": "http://unitsofmeasure.org",
+          "code": "pg"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 26.6,
+              "unit": "pg",
+              "system": "http://unitsofmeasure.org",
+              "code": "pg"
+            },
+            "high": {
+              "value": 33.0,
+              "unit": "pg",
+              "system": "http://unitsofmeasure.org",
+              "code": "pg"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131007",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111333",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "786.4",
+              "display": "MCHC [Mass/volume] by Automated count"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 34.3,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 31.5,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "high": {
+              "value": 35.7,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131008",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "lab-x-observation-number",
+            "value": "111333",
+            "assigner": {
+              "reference": "Organization/10000001"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelets [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/100000030004",
+          "display": "John Smith"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 256,
+          "unit": "10^3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 150,
+              "unit": "10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "high": {
+              "value": 379,
+              "unit": "10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:9b5f6db0-8717-11ec-a8a3-0242ac120002",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ]
+}

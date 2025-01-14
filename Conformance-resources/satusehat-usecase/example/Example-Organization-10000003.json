@@ -1,0 +1,23 @@
+{
+  "resourceType": "Organization",
+  "id": "10000003",
+  "identifier": [
+    {
+      "system": "https://fhir.kemkes.go.id/id/org-number",
+      "value": "10000003"
+    }
+  ],
+  "name": "Z Laboratory, Inc",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+1 555 234 1234",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "contact@labs.z.org",
+      "use": "work"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "resourceType": "Specimen",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/specimen/{{Org_id}}",
+      "value": "00001",
+      "assigner": {
+        "reference": "Organization/{{Org_id}}"
+      }
+    }
+  ],
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "258580003",
+        "display": "Whole blood specimen"
+      }
+    ]
+  },
+  "collection": {
+    "collectedDateTime": "2023-08-31T15:15:00+00:00"
+  },
+  "processing": [
+    {
+      "procedure": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "9265001",
+            "display": "Specimen processing"
+          }
+        ]
+      },
+      "timeDateTime": "2023-08-31T15:15:00+00:00"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/{{Patient_id}}",
+    "display": "{{Patient_Name}}"
+  },
+  "request": [
+    {
+      "reference": "ServiceRequest/{{ServiceRequest_Lab}}"
+    }
+  ],
+  "receivedTime": "2023-08-31T08:25:00+00:00"
+}

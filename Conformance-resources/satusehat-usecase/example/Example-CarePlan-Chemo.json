@@ -1,0 +1,41 @@
+{
+  "resourceType": "CarePlan",
+  "status": "active",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/P00030004",
+    "display": "Roel"
+  },
+  "careTeam": [
+    {
+      "reference": "#careteam"
+    }
+  ],
+  "addresses": [
+    {
+      "reference": "urn:uuid:560a749f-2475-44d8-bf7e-435ceef0ee49",
+      "display": "Roel's head-neck tumor"
+    }
+  ],
+  "activity": [
+    {
+      "detail": {
+        "kind": "ServiceRequest",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Chemotherapy"
+            }
+          ]
+        },
+        "status": "in-progress",
+        "doNotPerform": false,
+        "productReference": {
+          "reference": "urn:uuid:d74a56d1-7a74-44e8-b927-f743729d72de"
+        }
+      }
+    }
+  ]
+}

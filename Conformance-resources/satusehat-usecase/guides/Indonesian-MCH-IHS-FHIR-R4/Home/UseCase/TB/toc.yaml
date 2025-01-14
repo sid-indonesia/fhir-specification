@@ -1,0 +1,12 @@
+- name: Beranda
+  filename: Beranda.guide.md
+- name: A. Registrasi Kasus
+  filename: CaseRegistration.guide.md
+- name: B. Pemeriksaan Penunjang
+  filename: CaseFinding.guide.md
+- name: C. Verifikasi Kasus
+  filename: CaseVerification.guide.md
+- name: D. Kunjungan Pengobatan Bulanan
+  filename: MonthlyVisit.guide.md
+- name: E. Kunungan Akhir Pengobatan
+  filename: EndOfCareVisit.guide.md

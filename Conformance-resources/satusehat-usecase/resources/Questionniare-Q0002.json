@@ -1,0 +1,61 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "Q0002",
+  "name": "patient-education-checklist",
+  "title": "Patient Education Checklist",
+  "status": "active",
+  "subjectType": [
+    "Encounter"
+  ],
+  "date": "2022-07-08T15:10:50.6856647+00:00",
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Proses penyakit, diagnosis, dan rencana asuhan",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "linkId": "2",
+      "text": "Obat-obatan",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "linkId": "3",
+      "text": "Rehabilitasi medis",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "linkId": "4",
+      "text": "Manajemen nyeri",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "linkId": "5",
+      "text": "Gizi",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "linkId": "6",
+      "text": "Cuci tangan",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "linkId": "7",
+      "text": "Penggunaan alat medis",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "linkId": "8",
+      "text": "Lain-lain (free text)",
+      "type": "text",
+      "required": false
+    }
+  ]
+}

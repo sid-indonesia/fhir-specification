@@ -1,0 +1,8 @@
+- name: Index
+  filename: Index.guide.md
+- name: AdministrativeCode
+  filename: AdministrativeCode.guide.md
+- name: BirthPlace
+  filename: BirthPlace.guide.md
+- name: CitizenshipStatus
+  filename: CitizenshipStatus.guide.md

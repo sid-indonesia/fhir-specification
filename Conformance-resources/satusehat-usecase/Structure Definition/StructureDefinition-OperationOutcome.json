@@ -1,0 +1,298 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "OperationOutcome",
+  "meta": {
+    "lastUpdated": "2019-11-01T09:29:23.356+11:00"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "normative"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+      "valueCode": "4.0.0"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 5
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    }
+  ],
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/OperationOutcome",
+  "version": "4.0.1",
+  "name": "OperationOutcome",
+  "status": "active",
+  "date": "2022-07-08T15:10:50.6856647+00:00",
+  "publisher": "Health Level Seven International (FHIR Infrastructure)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/fhir"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/fiwg/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "A collection of error, warning, or information messages that result from a system action.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "OperationOutcome",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DomainResource",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "OperationOutcome",
+        "path": "OperationOutcome",
+        "short": "Information about the success/failure of an action",
+        "definition": "A collection of error, warning, or information messages that result from a system action.",
+        "comment": "Can result from the failure of a REST call or be part of the response message returned from a request message.",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "Grouping is handled through multiple repetitions from whatever context references the outcomes (no specific grouper required)"
+          }
+        ]
+      },
+      {
+        "id": "OperationOutcome.issue",
+        "path": "OperationOutcome.issue",
+        "short": "A single issue associated with the action",
+        "definition": "An error, warning, or information message that results from a system action.",
+        "min": 1,
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "ERR"
+          },
+          {
+            "identity": "rim",
+            "map": "AcknowledgementDetail or Observation[classCode=\"ALRT\" and moodCode=\"EVN\"]"
+          }
+        ]
+      },
+      {
+        "id": "OperationOutcome.issue.severity",
+        "path": "OperationOutcome.issue.severity",
+        "short": "fatal | error | warning | information",
+        "definition": "Indicates whether the issue indicates a variation from successful processing.",
+        "comment": "This is labeled as \"Is Modifier\" because applications should not confuse hints and warnings with errors.",
+        "requirements": "Indicates how relevant the issue is to the overall success of the action.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "IssueSeverity"
+            }
+          ],
+          "strength": "required",
+          "description": "How the issue affects the success of the action.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/issue-severity|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "ERR-4"
+          },
+          {
+            "identity": "rim",
+            "map": "./typeCode[parent::AcknowledgmentDetail] or unique(./inboundRelationship[parent::Observation and typeCode='SUBJ' and isNormalActRelationship()]/source[classCode=\"OBS\" and moodCode=\"EVN\" and implies(code, ActCode#SEV and isNormalAct())/value[xsi:type=\"CD\"]"
+          }
+        ]
+      },
+      {
+        "id": "OperationOutcome.issue.code",
+        "path": "OperationOutcome.issue.code",
+        "short": "Error or warning code",
+        "definition": "Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.",
+        "requirements": "Expresses the issue in a human and computer-friendly way, allowing the requesting system to behave differently based on the type of issue.\n\nThe required element provides a base level of computable interoperability across all systems for processing an outcome, allowing systems to respond appropriately regardless of the internal system error codes returned.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "IssueType"
+            }
+          ],
+          "strength": "required",
+          "description": "A code that describes the type of issue.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/issue-type|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "ERR-3"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          }
+        ]
+      },
+      {
+        "id": "OperationOutcome.issue.details",
+        "path": "OperationOutcome.issue.details",
+        "short": "Additional details about the error",
+        "definition": "Additional details about the error. This may be a text description of the error or a system code that identifies the error.",
+        "comment": "A human readable description of the error issue SHOULD be placed in details.text.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "IssueDetails"
+            }
+          ],
+          "strength": "example",
+          "description": "A code that provides details as the exact issue.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/operation-outcome"
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "ERR-5"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          }
+        ]
+      },
+      {
+        "id": "OperationOutcome.issue.diagnostics",
+        "path": "OperationOutcome.issue.diagnostics",
+        "short": "Additional diagnostic information about the issue",
+        "definition": "Additional diagnostic information about the issue.",
+        "comment": "This may be a description of how a value is erroneous, a stack dump to help trace the issue or other troubleshooting information.",
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "ERR-8"
+          },
+          {
+            "identity": "rim",
+            "map": "./text[parent::AcknowledgmentDetail]"
+          }
+        ]
+      },
+      {
+        "id": "OperationOutcome.issue.location",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "deprecated"
+          }
+        ],
+        "path": "OperationOutcome.issue.location",
+        "short": "Deprecated: Path of element(s) related to issue",
+        "definition": "This element is deprecated because it is XML specific. It is replaced by issue.expression, which is format independent, and simpler to parse. \n\nFor resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be \"http.\" + the parameter name.",
+        "comment": "The root of the XPath is the resource or bundle that generated OperationOutcome.  Each XPath SHALL resolve to a single node.  This element is deprecated, and is being replaced by expression.",
+        "requirements": "Allows systems to highlight or otherwise guide users to elements implicated in issues to allow them to be fixed more easily.",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "ERR-2"
+          },
+          {
+            "identity": "rim",
+            "map": "./location[parent::AcknowledgmentDetail]"
+          }
+        ]
+      },
+      {
+        "id": "OperationOutcome.issue.expression",
+        "path": "OperationOutcome.issue.expression",
+        "short": "FHIRPath of element(s) related to issue",
+        "definition": "A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.",
+        "comment": "The root of the FHIRPath is the resource or bundle that generated OperationOutcome.  Each FHIRPath SHALL resolve to a single node.",
+        "requirements": "Allows systems to highlight or otherwise guide users to elements implicated in issues to allow them to be fixed more easily.",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "ERR-2"
+          },
+          {
+            "identity": "rim",
+            "map": "./location[parent::AcknowledgmentDetail]"
+          }
+        ]
+      }
+    ]
+  }
+}

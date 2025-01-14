@@ -1,0 +1,2579 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:d8743f0d-f9b8-43ab-83fb-14ac653a0c48",
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "28655-9"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd"
+        },
+        "date": "2013-02-01T08:00:00+07:00",
+        "author": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Dokter Bronsig"
+          }
+        ],
+        "title": "Discharge Summary",
+        "confidentiality": "N",
+        "section": [
+          {
+            "title": "Chief complaint",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10154-3",
+                  "display": "Chief complaint Narative"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">1. High fever and severe headache\n2. The patient is treated for a tumor</div>"
+            }
+          },
+          {
+            "title": "Reason for visit",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "29299-5",
+                  "display": "Reason for visit Narrative"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Fever, complications from Roel's TPF chemotherapy</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:24d1ad87-1edf-40db-b01a-f67938e4b646"
+              }
+            ]
+          },
+          {
+            "title": "Medications on Discharge",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10183-2",
+                  "display": "Hospital discharge medications Narrative"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Discharge medications ...</div>"
+            },
+            "mode": "working",
+            "entry": [
+              {
+                "reference": "urn:uuid:8e278565-0e84-4834-87d1-030a7a497597"
+              }
+            ]
+          },
+          {
+            "title": "Known allergies",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Penicillin G Allergies</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:43bbd031-6dc0-4a32-b5ad-795b8aeab85d"
+              }
+            ]
+          },
+          {
+            "title": "Plan of Care",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "18776-5",
+                  "display": "Plan of care"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Plan of care: address Roel's head-neck tumor</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:64c3941e-f2a7-4a1b-a3d5-48b6a47db073"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Composition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/encounter/1000001",
+            "use": "official",
+            "value": "R001"
+          }
+        ],
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "11429006",
+                "display": "Consultation"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "367336001",
+                "display": "Chemotherapy"
+              }
+            ]
+          }
+        ],
+        "priority": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/ValueSet/v3-ActPriority",
+              "code": "R",
+              "display": "routine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "participant": [
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                    "code": "ATND"
+                  }
+                ]
+              }
+            ],
+            "individual": {
+              "reference": "Practitioner/N10000001"
+            }
+          }
+        ],
+        "period": {
+          "start": "2015-01-17T16:00:00+07:00",
+          "end": "2015-01-17T16:30:00+07:00"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "4114003",
+                "display": "Parenteral chemotherapy for malignant neoplasm"
+              }
+            ],
+            "text": "Oral chemotherapy"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:24d1ad87-1edf-40db-b01a-f67938e4b646",
+              "display": "Fever, complications from Roel's TPF chemotherapy on January 28th, 2013"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            },
+            "rank": 1
+          },
+          {
+            "condition": {
+              "reference": "urn:uuid:560a749f-2475-44d8-bf7e-435ceef0ee49",
+              "display": "Malignant neoplasm in head & neck area"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge diagnosis"
+                }
+              ]
+            },
+            "rank": 1
+          },
+          {
+            "condition": {
+              "reference": "urn:uuid:d9db54a3-2723-4b2a-9ae5-8aa113fe3160",
+              "display": "Pneumonia"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge diagnosis"
+                }
+              ]
+            },
+            "rank": 2
+          },
+          {
+            "condition": {
+              "display": "high fever and severe headache"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "CC",
+                  "display": "Chief complaint"
+                }
+              ]
+            },
+            "rank": 1
+          },
+          {
+            "condition": {
+              "display": "The patient is treated for a tumor"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "CC",
+                  "display": "Chief complaint"
+                }
+              ]
+            },
+            "rank": 2
+          }
+        ],
+        "location": [
+          {
+            "location": {
+              "reference": "Location/b017aa54-f1df-4ec2-9d84-8823815d7228",
+              "display": "Ruang 1A, IRJT"
+            }
+          }
+        ],
+        "hospitalization": {
+          "dietPreference": [
+            {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "276026009",
+                  "display": "Fluid balance regulation"
+                }
+              ]
+            }
+          ],
+          "specialCourtesy": [
+            {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+                  "code": "NRM",
+                  "display": "normal courtesy"
+                }
+              ]
+            }
+          ],
+          "specialArrangement": [
+            {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements",
+                  "code": "wheel",
+                  "display": "Wheelchair"
+                }
+              ]
+            }
+          ],
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "306689006",
+                "display": "Discharge to home"
+              }
+            ]
+          }
+        },
+        "serviceProvider": {
+          "reference": "Organization/F10000004"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/procedure/1000001",
+            "value": "022101"
+          }
+        ],
+        "status": "completed",
+        "intent": "directive",
+        "priority": "routine",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "58410-2",
+              "display": "CBC panel - Blood by Automated count"
+            }
+          ],
+          "text": "Complete Blood Count"
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "occurrenceDateTime": "2022-02-01T08:00:00+07:00",
+        "requester": {
+          "reference": "Organization/F10000004"
+        },
+        "performer": [
+          {
+            "reference": "Organization/F10000004"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:ffb1594c-28f9-419c-a390-614d06163b7c",
+            "display": "Whole blood"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6680b60f-e625-42a5-aa81-d9d9fb395a97",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/diagnostic/1000001/lab",
+            "value": "5234342"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "HM",
+                "display": "Hematology"
+              }
+            ]
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "58410-2",
+              "display": "CBC panel - Blood by Automated count"
+            }
+          ],
+          "text": "Complete Blood Count"
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "issued": "2022-02-01T11:45:33+07:00",
+        "performer": [
+          {
+            "reference": "Organization/F10000004",
+            "display": "Vertical District Hospital"
+          },
+          {
+            "reference": "Practitioner/N10000002",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "resultsInterpreter": [
+          {
+            "reference": "Practitioner/N10000002",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "result": [
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131001",
+            "display": "Leukocytes"
+          },
+          {
+            "reference": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131003",
+            "display": "Hemoglobin"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:ffb1594c-28f9-419c-a390-614d06163b7c"
+          }
+        ],
+        "conclusion": "Example conclusion of the test results, narative ..."
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131001",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/1000001",
+            "value": "111333"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6690-2",
+              "display": "Leukocytes [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000002",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 6.6,
+          "unit": "10^3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3.4,
+              "unit": "10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "high": {
+              "value": 10.8,
+              "unit": "10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:ffb1594c-28f9-419c-a390-614d06163b7c",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:686b2fac-93fd-11ea-bb37-2242ac131003",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/1000001",
+            "value": "111333",
+            "assigner": {
+              "reference": "Organization/F10000004"
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000002",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:40b3f72a-8729-11ec-a8a3-0242ac120002"
+          }
+        ],
+        "valueQuantity": {
+          "value": 7.2,
+          "unit": "g/dl",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 7.5,
+              "unit": "g/dl",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "high": {
+              "value": 10,
+              "unit": "g/dl",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "code": "normal",
+                  "display": "Normal Range"
+                }
+              ],
+              "text": "Normal Range"
+            }
+          }
+        ],
+        "specimen": {
+          "reference": "urn:uuid:ffb1594c-28f9-419c-a390-614d06163b7c",
+          "display": "Whole blood"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ffb1594c-28f9-419c-a390-614d06163b7c",
+      "resource": {
+        "resourceType": "Specimen",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/specimen/1000001",
+            "value": "52222"
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+              "code": "BLD",
+              "display": "Whole blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "receivedTime": "2022-02-01T08:25:00+07:00",
+        "collection": {
+          "collectedDateTime": "2022-02-01T08:25:00+07:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Specimen"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:849ee411-8a9c-4c6f-aaf3-b837eddb7bcd",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "RAD"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429858000",
+              "display": "Computed tomography (CT) of head and neck"
+            }
+          ],
+          "text": "CT of head-neck"
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "effectiveDateTime": "2012-12-01T12:00:00+01:00",
+        "issued": "2012-12-01T12:00:00+01:00",
+        "performer": [
+          {
+            "reference": "Organization/F10000004",
+            "display": "Vertical District Hospital"
+          }
+        ],
+        "resultsInterpreter": [
+          {
+            "reference": "Practitioner/N10000003",
+            "display": "Dr. dr. Ray Sp.Rad."
+          }
+        ],
+        "media": [
+          {
+            "comment": "A comment about the image",
+            "link": {
+              "reference": "urn:uuid:255bb67a-8722-42d7-92ed-1997adb28bfd",
+              "display": "WADO URL of the CT DICOM image"
+            }
+          }
+        ],
+        "conclusion": "CT brains: large tumor sphenoid/clivus.",
+        "conclusionCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "188340000",
+                "display": "Malignant tumor of craniopharyngeal duct"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:255bb67a-8722-42d7-92ed-1997adb28bfd",
+      "resource": {
+        "resourceType": "Media",
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "text": "InstanceUID"
+            },
+            "system": "urn:dicom:uid",
+            "value": "urn:oid:1.2.840.11361907579238403408700.3.1.04.19970327150033"
+          },
+          {
+            "type": {
+              "text": "accessionNo"
+            },
+            "system": "http://sys-ids.kemkes.go.id/accessionno/1000001",
+            "value": "1234567"
+          },
+          {
+            "type": {
+              "text": "studyId"
+            },
+            "system": "urn:dicom:uid",
+            "value": "urn:oid:1.2.840.113619.2.21.848.34082.0.538976288.3"
+          },
+          {
+            "type": {
+              "text": "seriesId"
+            },
+            "system": "urn:dicom:uid",
+            "value": "urn:oid:1.2.840.113619.2.21.3408.700.0.757923840.3.0"
+          }
+        ],
+        "status": "completed",
+        "modality": {
+          "coding": [
+            {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "CT"
+            }
+          ]
+        },
+        "view": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399067008",
+              "display": "Lateral projection"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "device": {
+          "display": "G.E. Medical Systems"
+        },
+        "height": 480,
+        "width": 640,
+        "content": {
+          "contentType": "application/dicom",
+          "url": "http://imaging.acme.com/wado/server?requestType=WADO&contentType=application%2Fdicom&studyUid=1.2.840.113619.2.21.848.34082.0.538976288.3&seriesUid=1.2.840.113619.2.21.3408.700.0.757923840.3.0&objectUid=1.2.840.11361907579238403408700.3.1.04.19970327150033"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Media"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a25fbc02-309e-47a6-9612-adb4c8346379",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "RUS"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "45036003",
+              "display": "Ultrasonography of abdomen"
+            }
+          ],
+          "text": "Abdominal Ultrasound"
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "effectiveDateTime": "2012-12-01T12:00:00+01:00",
+        "issued": "2012-12-01T12:00:00+01:00",
+        "performer": [
+          {
+            "reference": "Practitioner/N10000006",
+            "display": "Rus, MD."
+          }
+        ],
+        "media": [
+          {
+            "comment": "A comment about the image",
+            "link": {
+              "reference": "urn:uuid:941c2fa9-bb57-47e8-a043-0f9b3ce62f38",
+              "display": "WADO URL of the US DICOM image"
+            }
+          }
+        ],
+        "conclusion": "Unremarkable study"
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:941c2fa9-bb57-47e8-a043-0f9b3ce62f38",
+      "resource": {
+        "resourceType": "Media",
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "text": "InstanceUID"
+            },
+            "system": "urn:dicom:uid",
+            "value": "urn:oid:1.2.840.11361907579238403408700.3.1.04.19970327150033"
+          },
+          {
+            "type": {
+              "text": "accessionNo"
+            },
+            "system": "http://sys-ids.kemkes.go.id/accessionno/1000001",
+            "value": "1234567"
+          },
+          {
+            "type": {
+              "text": "studyId"
+            },
+            "system": "urn:dicom:uid",
+            "value": "urn:oid:1.2.840.113619.2.21.848.34082.0.538976288.3"
+          },
+          {
+            "type": {
+              "text": "seriesId"
+            },
+            "system": "urn:dicom:uid",
+            "value": "urn:oid:1.2.840.113619.2.21.3408.700.0.757923840.3.0"
+          }
+        ],
+        "status": "completed",
+        "modality": {
+          "coding": [
+            {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "US"
+            }
+          ]
+        },
+        "view": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399067008",
+              "display": "Lateral projection"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "device": {
+          "display": "G.E. Medical Systems"
+        },
+        "height": 480,
+        "width": 640,
+        "content": {
+          "contentType": "application/dicom",
+          "url": "http://imaging.acme.com/wado/server?requestType=WADO&contentType=application%2Fdicom&studyUid=1.2.840.113619.2.21.848.34082.0.538976288.3&seriesUid=1.2.840.113619.2.21.3408.700.0.757923840.3.0&objectUid=1.2.840.11361907579238403408700.3.1.04.19970327150033"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Media"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:560a749f-2475-44d8-bf7e-435ceef0ee49",
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "TBOO",
+              "display": "taboo"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24484000",
+              "display": "Severe"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "C47.0",
+              "display": "Malignant neoplasm, peripheral nerves of head, face and neck"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "361355005",
+                "display": "Entire head and neck"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "onsetAge": {
+          "value": 52,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        },
+        "abatementAge": {
+          "value": 54,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        },
+        "recordedDate": "2012-12-01",
+        "recorder": {
+          "reference": "Practitioner/N10000001",
+          "display": "Dokter Bronsig"
+        },
+        "asserter": {
+          "reference": "Practitioner/N10000001",
+          "display": "Dokter Bronsig"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "urn:uuid:849ee411-8a9c-4c6f-aaf3-b837eddb7bcd",
+                "display": "Erasmus' diagnostic report of Roel's tumor"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d9db54a3-2723-4b2a-9ae5-8aa113fe3160",
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24484000",
+              "display": "Severe"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "J16.8",
+              "display": "Pneumonia due to other specified infectious organisms"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "onsetDateTime": "2012-12-01",
+        "recordedDate": "2012-12-01",
+        "recorder": {
+          "reference": "Practitioner/N10000001",
+          "display": "Dokter Bronsig"
+        },
+        "asserter": {
+          "reference": "Practitioner/N10000001",
+          "display": "Dokter Bronsig"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:24d1ad87-1edf-40db-b01a-f67938e4b646",
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255604002",
+              "display": "Mild"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "R50.9",
+              "display": "Fever, unspecified"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "onsetDateTime": "2012-12-01",
+        "recordedDate": "2012-12-01",
+        "recorder": {
+          "reference": "Practitioner/N10000001",
+          "display": "Dokter Bronsig"
+        },
+        "asserter": {
+          "reference": "Practitioner/N10000001",
+          "display": "Dokter Bronsig"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0e625729-4487-4bca-b1e9-3a22313e0fbb",
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "409063005",
+              "display": "Counselling"
+            }
+          ],
+          "text": "Consultation"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-9-cm",
+              "code": "89.07",
+              "display": "Consultation, described as comprehensive"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "performedPeriod": {
+          "start": "2013-01-28T13:31:00+01:00",
+          "end": "2013-01-28T14:27:00+01:00"
+        },
+        "performer": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "310512001",
+                  "display": "Medical oncologist"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/N10000001",
+              "display": "Dokter Bronsig"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "code": "R50.9",
+                "display": "Fever, unspecified"
+              }
+            ],
+            "text": "Fever"
+          }
+        ],
+        "note": [
+          {
+            "text": "Catatan konsultasi ...."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:331bbf47-2057-4e35-98ef-8b0801e308b9",
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "277132007",
+              "display": "Therapeutic procedure"
+            }
+          ],
+          "text": "Therapeutic procedure"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-9-cm",
+              "code": "99.25",
+              "display": "Injection or infusion of cancer chemotherapeutic substance"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "performedPeriod": {
+          "start": "2013-01-28T13:31:00+01:00",
+          "end": "2013-01-28T14:27:00+01:00"
+        },
+        "performer": [
+          {
+            "function": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "310512001",
+                  "display": "Medical oncologist"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/N10000001",
+              "display": "Dokter Bronsig"
+            }
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:560a749f-2475-44d8-bf7e-435ceef0ee49"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "272676008",
+                "display": "Sphenoid bone"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "TPF neoadjuvant pertama pada proses besar di sphenoid dengan ekstensi intrakranial."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5904c5b9-7d0b-4eb6-bec4-42f667b809ae",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://sys-ids.kemkes.go.id/prescription/1000001",
+            "value": "12345689"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "medicationReference": {
+          "reference": "urn:uuid:d74a56d1-7a74-44e8-b927-f743729d72de",
+          "display": "Myleran 2mg tablet"
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "authoredOn": "2015-01-15",
+        "requester": {
+          "reference": "Practitioner/N10000001",
+          "display": "Patrick Pump"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "code": "C50.1",
+                "display": "Malignant neoplasm, central portion of breast"
+              }
+            ]
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "sequence": 1,
+            "text": "6 mg PO daily for remission induction; adjust dosage to white blood cell (WBC) count.  With hold treatment if WBC is less than 15,000/ÂµL; resume when WBC is greater than 50,000/ÂµL",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006",
+                  "display": "Oral route (qualifier value)"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 6,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d74a56d1-7a74-44e8-b927-f743729d72de",
+      "resource": {
+        "resourceType": "Medication",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/ndc",
+              "code": "76388-713-25",
+              "display": "Myleran 2mg tablet, film coated"
+            }
+          ]
+        },
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385057009",
+              "display": "Film-coated tablet (qualifier value)"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Medication"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8e278565-0e84-4834-87d1-030a7a497597",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://sys-ids.kemkes.go.id/prescription/1000001",
+            "value": "12345690"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "medicationReference": {
+          "reference": "urn:uuid:c442c6d9-0d17-4f35-a014-e167478ee8b6",
+          "display": "Ointment (Compound)"
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "authoredOn": "2015-01-15",
+        "requester": {
+          "reference": "Practitioner/N10000001",
+          "display": "Patrick Pump"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "code": "L21.1",
+                "display": "Seborrhoeic infantile dermatitis"
+              }
+            ]
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "sequence": 1,
+            "text": "Apply twice daily to affected area on left arm",
+            "additionalInstruction": [
+              {
+                "text": "Apply sparingly"
+              }
+            ],
+            "timing": {
+              "repeat": {
+                "frequency": 2,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "site": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "72098002",
+                  "display": "Entire left upper arm (body structure)"
+                }
+              ]
+            },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "359540000",
+                  "display": "Topical (qualifier value)"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 1,
+                  "unit": "ea",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "ea"
+                }
+              }
+            ]
+          }
+        ],
+        "dispenseRequest": {
+          "validityPeriod": {
+            "start": "2015-01-15",
+            "end": "2016-01-15"
+          },
+          "numberOfRepeatsAllowed": 3,
+          "quantity": {
+            "value": 30,
+            "unit": "g",
+            "system": "http://unitsofmeasure.org",
+            "code": "g"
+          },
+          "expectedSupplyDuration": {
+            "value": 10,
+            "unit": "days",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+          }
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c442c6d9-0d17-4f35-a014-e167478ee8b6",
+      "resource": {
+        "resourceType": "Medication",
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385101003",
+              "display": "Ointment"
+            }
+          ],
+          "text": "Ointment"
+        },
+        "ingredient": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "387253001",
+                  "display": "Salicyclic Acid (substance)"
+                }
+              ]
+            },
+            "strength": {
+              "numerator": {
+                "value": 5,
+                "system": "http://unitsofmeasure.org",
+                "code": "g"
+              },
+              "denominator": {
+                "value": 100,
+                "system": "http://unitsofmeasure.org",
+                "code": "g"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "396458002",
+                  "display": "Hydrocortisone (substance)"
+                }
+              ]
+            },
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "system": "http://unitsofmeasure.org",
+                "code": "g"
+              },
+              "denominator": {
+                "value": 100,
+                "system": "http://unitsofmeasure.org",
+                "code": "g"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "126066007",
+                  "display": "White Petrolatum (substance)"
+                }
+              ]
+            },
+            "strength": {
+              "numerator": {
+                "value": 94,
+                "system": "http://unitsofmeasure.org",
+                "code": "g"
+              },
+              "denominator": {
+                "value": 100,
+                "system": "http://unitsofmeasure.org",
+                "code": "g"
+              }
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Medication"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:43bbd031-6dc0-4a32-b5ad-795b8aeab85d",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "unconfirmed",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "category": [
+          "medication"
+        ],
+        "criticality": "high",
+        "code": {
+          "coding": [
+            {
+              "system": "http://sys-ids.kemkes.go.id/kfa",
+              "code": "7980",
+              "display": "Penicillin G"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "recordedDate": "2010-03-01",
+        "recorder": {
+          "reference": "Practitioner/N10000001"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "247472004",
+                    "display": "Hives"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "AllergyIntolerance"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a07b4de0-4048-4f8b-9ae8-58157a4a9e56",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/1000001",
+            "value": "111333"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1104441000000107",
+              "display": "ACVPU (Alert Confusion Voice Pain Unresponsive) scale score"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Dr. dr. Voigt MARS."
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "450847001",
+              "display": "Response to pain"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:564694b1-1dfa-48ce-8860-cd01e51c0ff1",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "effectiveDateTime": "2015-01-17T16:00:00+07:00",
+        "valueQuantity": {
+          "value": 44,
+          "unit": "beats/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4bcbb9b0-6fc1-433e-ae01-1de8c7c933bd",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Respiratory rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "effectiveDateTime": "2015-01-17T16:00:00+07:00",
+        "valueQuantity": {
+          "value": 26,
+          "unit": "breaths/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:12a91a6a-083f-48e6-a8a9-8dbd71a1af9a",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "effectiveDateTime": "2021-07-02",
+        "bodySite": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "368209003",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 107,
+          "unit": "mm[Hg]",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "normal"
+              }
+            ],
+            "text": "Normal"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:51f3ca0e-cff1-4766-9c57-4e75645d5e81",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "effectiveDateTime": "2021-07-02",
+        "bodySite": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "368209003",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 60,
+          "unit": "mm[Hg]",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "low"
+              }
+            ],
+            "text": "Below low normal"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e58ef22e-d384-4215-bc66-77ac3a5b9f87",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ],
+            "text": "Vital Signs"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ],
+          "text": "Body temperature"
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "effectiveDateTime": "1999-07-02",
+        "valueQuantity": {
+          "value": 36.5,
+          "unit": "C",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f569fe20-2b94-4021-8938-d94b80a2e25d",
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "status": "completed",
+        "medicationReference": {
+          "reference": "urn:uuid:34c20ccf-d7db-4088-bafb-006c673e24f7",
+          "display": "Myleran 2mg tablet"
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "context": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/N10000001"
+            }
+          }
+        ],
+        "authorizingPrescription": [
+          {
+            "reference": "urn:uuid:5904c5b9-7d0b-4eb6-bec4-42f667b809ae"
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "RFP",
+              "display": "Refill - Part Fill"
+            }
+          ]
+        },
+        "quantity": {
+          "value": 90,
+          "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+          "code": "TAB"
+        },
+        "daysSupply": {
+          "value": 30,
+          "unit": "Day",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "whenPrepared": "2015-01-15T10:20:00Z",
+        "whenHandedOver": "2015-01-15T16:20:00Z",
+        "dosageInstruction": [
+          {
+            "sequence": 1,
+            "text": "Take 3 tablets (6mg) once daily",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "calculated",
+                      "display": "Calculated"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 6,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationDispense"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:34c20ccf-d7db-4088-bafb-006c673e24f7",
+      "resource": {
+        "resourceType": "Medication",
+        "code": {
+          "coding": [
+            {
+              "system": "http://sys-ids.kemkes.go.id/kfa",
+              "code": "1002930049",
+              "display": "Myleran 2mg tablet, film coated"
+            }
+          ]
+        },
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385057009",
+              "display": "Film-coated tablet (qualifier value)"
+            }
+          ]
+        },
+        "batch": {
+          "lotNumber": "9494788",
+          "expirationDate": "2017-05-22"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Medication"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5c2988b2-97d2-43b8-8e01-8f956cd55a47",
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "311401005",
+              "display": "Patient education (procedure)"
+            }
+          ],
+          "text": "Education"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://terminology.kemkes.go.id/procedure",
+              "code": "48023004",
+              "display": "Proses penyakit, diagnosis, dan rencana asuhan"
+            }
+          ],
+          "text": "Edukasi: Proses penyakit, diagnosis, dan rencana asuhan"
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "performedDateTime": "2014-08-16",
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/N10000001",
+              "display": "Pamela Educator, RN"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Catatan mengenai edukasi pasien"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:61a5ee62-fe88-47f9-ba78-f0296f6cea2b",
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "311401005",
+              "display": "Patient education (procedure)"
+            }
+          ],
+          "text": "Education"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://terminology.kemkes.go.id/procedure",
+              "code": "48023005",
+              "display": "Obat-obatan"
+            }
+          ],
+          "text": "Edukasi: Obat-obatan"
+        },
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "performedDateTime": "2014-08-16",
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/N10000004",
+              "display": "Pamela Educator, RN"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Catatan mengenai edukasi pasien"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:64c3941e-f2a7-4a1b-a3d5-48b6a47db073",
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "careTeam": [
+          {
+            "reference": "urn:uuid:f7e94b0e-35a8-4c6e-b816-10bae8d5f71e"
+          }
+        ],
+        "addresses": [
+          {
+            "reference": "urn:uuid:560a749f-2475-44d8-bf7e-435ceef0ee49",
+            "display": "Roel's head-neck tumor"
+          }
+        ],
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "367336001",
+                    "display": "Chemotherapy"
+                  }
+                ]
+              },
+              "status": "in-progress",
+              "doNotPerform": false,
+              "productReference": {
+                "reference": "urn:uuid:d74a56d1-7a74-44e8-b927-f743729d72de"
+              }
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "CarePlan"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f7e94b0e-35a8-4c6e-b816-10bae8d5f71e",
+      "resource": {
+        "resourceType": "CareTeam",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/careteam/1000001",
+            "value": "1200045"
+          }
+        ],
+        "status": "active",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA27976-2",
+                "display": "Encounter-focused care team"
+              }
+            ]
+          }
+        ],
+        "name": "Mister Roel Care Team for Chemotherapy",
+        "subject": {
+          "reference": "Patient/P00030004",
+          "display": "Roel"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd"
+        },
+        "period": {
+          "end": "2013-01-01"
+        },
+        "participant": [
+          {
+            "role": [
+              {
+                "text": "Patient"
+              }
+            ],
+            "member": {
+              "reference": "Patient/P00030004",
+              "display": "Roel"
+            }
+          },
+          {
+            "role": [
+              {
+                "text": "medical oncologist"
+              }
+            ],
+            "member": {
+              "reference": "Practitioner/N10000001",
+              "display": "Dokter Bronsig"
+            },
+            "onBehalfOf": {
+              "reference": "Organization/F10000004"
+            },
+            "period": {
+              "end": "2013-01-01"
+            }
+          },
+          {
+            "role": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "224552008",
+                    "display": "Oncology Nurse"
+                  }
+                ],
+                "text": "Oncology Nurse"
+              }
+            ],
+            "member": {
+              "reference": "Practitioner/N10000007",
+              "display": "Dorothy"
+            },
+            "onBehalfOf": {
+              "reference": "Organization/F10000004"
+            },
+            "period": {
+              "end": "2013-01-01"
+            }
+          }
+        ],
+        "managingOrganization": [
+          {
+            "reference": "Organization/F10000004"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "CareTeam"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e49a7ce1-7523-4aed-ba0a-f78bf14936f7",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "status": "active",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "3457005",
+                "display": "Patient referral"
+              }
+            ],
+            "text": "Patient referral"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "710830005",
+              "display": "Assessment of passive range of motion (procedure)"
+            }
+          ],
+          "text": "Assessment of passive range of motion"
+        },
+        "subject": {
+          "reference": "Patient/P00030004"
+        },
+        "encounter": {
+          "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+          "display": "Roel's encounter on January 28th, 2013"
+        },
+        "occurrenceDateTime": "2016-09-27",
+        "authoredOn": "2016-09-20",
+        "requester": {
+          "reference": "Practitioner/N10000001",
+          "display": "Dokter Bronsig"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000005",
+            "display": "Paul Therapist, PT"
+          },
+          {
+            "reference": "Organization/F10000002",
+            "display": "Horizontal District Hospital"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "201886002",
+                "display": "osteoarthritis"
+              }
+            ],
+            "text": "assessment of mobility limitations due to osteoarthritis"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "36701003",
+                "display": "Both knees (body structure)"
+              }
+            ],
+            "text": "Both knees"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    }
+  ]
+}

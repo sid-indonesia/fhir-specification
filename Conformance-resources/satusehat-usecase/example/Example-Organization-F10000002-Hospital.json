@@ -1,0 +1,23 @@
+{
+  "resourceType": "Organization",
+  "id": "F10000002",
+  "identifier": [
+    {
+      "system": "https://fhir.kemkes.go.id/id/org-number",
+      "value": "F10000002"
+    }
+  ],
+  "name": "Vertical District Hospital",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+1 555 234 1234",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "contact@labs.z.org",
+      "use": "work"
+    }
+  ]
+}

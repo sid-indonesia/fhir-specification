@@ -1,0 +1,39 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "questionnaire": "https://fhir.kemkes.go.id/Questionnaire/Q0002",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/2823ed1d-3e3e-434e-9a5b-9c579d192787"
+  },
+  "authored": "2022-07-14T10:00:00+07:00",
+  "author": {
+    "reference": "Practitioner/N10000001"
+  },
+  "source": {
+    "reference": "Patient/100000030009"
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Kelompok Penerima?",
+      "answer": [
+        {
+          "valueString": "Umum"
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "Kategori?",
+      "answer": [
+        {
+          "valueString": "Ibu Hamil"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "resourceType": "Medication",
+  "meta": {
+    "profile": [
+      "https://fhir.kemkes.go.id/r4/StructureDefinition/Medication"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/medication/10000004",
+      "use": "official",
+      "value": "123456789"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://sys-ids.kemkes.go.id/kfa",
+        "code": "93006500",
+        "display": "Ferrous Fumarate 60 mg / Folic Acid 0.4 mg Tablet Salut Selaput (KIMIA FARMA)"
+      }
+    ]
+  },
+  "status": "active",
+  "manufacturer": {
+    "reference": "Organization/900001"
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://terminology.kemkes.go.id/CodeSystem/medication-form",
+        "code": "BS077",
+        "display": "Tablet Salut Selaput"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/kfa",
+            "code": "91000205",
+            "display": "FERROUS FUMARATE"
+          }
+        ]
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 60,
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "TAB",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+          "code": "TAB"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/kfa",
+            "code": "91000289",
+            "display": "FOLIC ACID"
+          }
+        ]
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 0.4,
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "TAB",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+          "code": "TAB"
+        }
+      }
+    }
+  ],
+  "batch": {
+    "lotNumber": "1625042A",
+    "expirationDate": "2025-07-28"
+  },
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/MedicationType",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://terminology.kemkes.go.id/CodeSystem/medication-type",
+            "code": "NC",
+            "display": "Non-compound"
+          }
+        ]
+      }
+    }
+  ]
+}

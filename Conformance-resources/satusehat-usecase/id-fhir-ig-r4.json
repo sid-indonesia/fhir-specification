@@ -1,0 +1,242 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.fhir.r4.id.core",
+  "url": "https://fhir.kemkes.go.id/r4/ihs-fhir-ig",
+  "version": "0.1.0",
+  "name": "IHS FHIR R4 Implementation Guide",
+  "status": "draft",
+  "date": "2022-07-08T15:10:50.6856647+00:00",
+  "description": "Version 0.1.0 of the Indonesian Health Service FHIR Implementation Guide",
+  "packageId": "hl7.fhir.r4.id.core",
+  "fhirVersion": [
+    "4.0.0"
+  ],
+  "dependsOn": [
+    {
+      "id": "hl7.fhir.r4.core",
+      "uri": "https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1",
+      "packageId": "hl7.fhir.r4.core",
+      "version": "4.0.1"
+    }
+  ],
+  "global": [
+    {
+      "type": "Patient",
+      "profile": "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient"
+    },
+    {
+      "type": "Organization",
+      "profile": "https://fhir.kemkes.go.id/r4/StructureDefinition/Organization"
+    },
+    {
+      "type": "ServiceRequest",
+      "profile": "https://fhir.kemkes.go.id/r4/StructureDefinition/ServiceRequest"
+    },
+    {
+      "type": "DiagnosticReport",
+      "profile": "https://fhir.kemkes.go.id/r4/StructureDefinition/DiagnosticReport"
+    },
+    {
+      "type": "Observation",
+      "profile": "https://fhir.kemkes.go.id/r4/StructureDefinition/Observation"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "Patient/f001"
+        },
+        "name": "Test Example",
+        "description": "A test example to show how an implementation guide works",
+        "exampleCanonical": "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient"
+      }
+    ],
+    "page": {
+      "nameUrl": "Home",
+      "title": "Home",
+      "generation": "generated",
+      "page": [
+        {
+          "nameUrl": "Home/Overview.guide.md",
+          "title": "Overview",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Home/DataTypes",
+          "title": "Data Types",
+          "generation": "generated",
+          "page": [
+            {
+              "nameUrl": "Home/DataTypes/PrimitiveDataTypes.guide.md",
+              "title": "Primitive Data Types",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/DataTypes/ComplexDataTypes.guide.md",
+              "title": "Complex Data Types",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "Home/FHIRProfiles",
+          "title": "FHIR Profiles",
+          "generation": "generated",
+          "page": [
+            {
+              "nameUrl": "Home/FHIRProfiles/AllergyIntolerance.guide.md",
+              "title": "AllergyIntolerance",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Claim.guide.md",
+              "title": "Claim",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Composition.guide.md",
+              "title": "Composition",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Condition.guide.md",
+              "title": "Condition",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/DiagnosticReport.guide.md",
+              "title": "DiagnosticReport",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Encounter.guide.md",
+              "title": "Encounter",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/EpisodeOfCare.guide.md",
+              "title": "EpisodeOfCare",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/HealthcareService.guide.md",
+              "title": "HealthcareService",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Immunization.guide.md",
+              "title": "Immunization",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/List.guide.md",
+              "title": "List",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Location.guide.md",
+              "title": "Location",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Medication.guide.md",
+              "title": "Medication",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/MedicationAdministration.guide.md",
+              "title": "MedicationAdministration",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/MedicationDispense.guide.md",
+              "title": "MedicationDispense",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/MedicationRequest.guide.md",
+              "title": "MedicationRequest",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/MedicationStatement.guide.md",
+              "title": "MedicationStatement",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Observation.guide.md",
+              "title": "Observation",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/OperationOutcome.guide.md",
+              "title": "OperationOutcome",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Organization.guide.md",
+              "title": "Organization",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Patient.guide.md",
+              "title": "Patient",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Practitioner.guide.md",
+              "title": "Practitioner",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/PractitionerRole.guide.md",
+              "title": "PractitionerRole",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/Procedure.guide.md",
+              "title": "Procedure",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/RelatedPerson.guide.md",
+              "title": "RelatedPerson",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "Home/FHIRProfiles/ServiceRequest.guide.md",
+              "title": "ServiceRequest",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "Home/Extensions",
+          "title": "Extensions",
+          "generation": "generated"
+        },
+        {
+          "nameUrl": "Home/Terminology",
+          "title": "Terminology",
+          "generation": "generated"
+        },
+        {
+          "nameUrl": "Home/Developer",
+          "title": "Developer",
+          "generation": "generated"
+        },
+        {
+          "nameUrl": "Home/Security.guide.md",
+          "title": "Security",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Home/Support",
+          "title": "Support",
+          "generation": "generated"
+        }
+      ]
+    }
+  }
+}

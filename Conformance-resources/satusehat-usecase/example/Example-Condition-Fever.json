@@ -1,0 +1,90 @@
+{
+  "resourceType": "Condition",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/condition/1000001",
+      "value": "12345"
+    }
+  ],
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "resolved"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis"
+        }
+      ]
+    }
+  ],
+  "severity": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "255604002",
+        "display": "Mild"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "R50.9",
+        "display": "Fever, unspecified"
+      }
+    ]
+  },
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "38266002",
+          "display": "Entire body as a whole"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/P0100000001",
+    "display": "Roel"
+  },
+  "encounter": {
+    "reference": "Encounter/90cdb96a-f9e0-41d2-9a69-ec7465ac89c8"
+  },
+  "onsetDateTime": "2013-04-02",
+  "abatementString": "around April 9, 2013",
+  "recordedDate": "2013-04-04",
+  "recorder": {
+    "reference": "Practitioner/f201"
+  },
+  "asserter": {
+    "reference": "Practitioner/f201"
+  },
+  "evidence": [
+    {
+      "detail": [
+        {
+          "reference": "#Link-to-body-temperature-observation",
+          "display": "Temperature"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "resourceType": "Observation",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/observation/1000004",
+      "value": "O111111"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "276654001",
+        "display": "Congenital malformation"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Baby of Teresa Lee (Fetus Not Named)"
+  },
+  "encounter": {
+    "reference": "Encounter/45e436ea-d6c7-4059-8cbe-e00fb2c665d8"
+  },
+  "effectiveDateTime": "2023-06-22T14:30:00+07:00",
+  "issued": "2023-06-22T14:30:00+07:00",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001",
+      "display": "Dokter Bronsig"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "89369001",
+        "display": "Anencephaly"
+      }
+    ]
+  }
+}

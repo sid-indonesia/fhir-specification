@@ -1,0 +1,140 @@
+{
+  "resourceType": "DiagnosticReport",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/diagnostic/10000004/lab",
+      "use": "official",
+      "value": "5234342"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "MB",
+          "display": "Micriobiology"
+        },
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "HM",
+          "display": "Hematology"
+        },
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "SR",
+          "display": "Serology"
+        },
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "LAB",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "11477-7",
+        "display": "Microscopic observation [Identifier] in Sputum by Acid fast stain"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "68961-2",
+        "display": "HIV 1 Ab [Presence] in Serum, Plasma or Blood by Rapid immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "718-7",
+        "display": "Hemoglobin [Mass/volume] in Blood"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "20508-8",
+        "display": "Reagin Ab [Units/volume] in Serum or Plasma by RPR"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "14904-7",
+        "display": "Reagin Ab [Presence] in Specimen by VDRL"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "75410-1",
+        "display": "Hepatitis B virus surface Ag [Presence] in Serum, Plasma or Blood by Rapid immunoassay"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "74774-1",
+        "display": "Glucose [Mass/volume] in Serum, Plasma or Blood"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "5804-0",
+        "display": "Protein [mass/volume] in urine by test strip"
+      }
+    ],
+    "text": "Pemeriksaan Sputum BTA dan 10T"
+  },
+  "subject": {
+    "reference": "Patient/100000030006"
+  },
+  "encounter": {
+    "reference": "Encounter/dd5b8c34-6bb2-43af-b36a-8fcc60a70d4a"
+  },
+  "effectiveDateTime": "2023-08-31T04:05:00+00:00",
+  "issued": "2023-08-31T04:05:00+00:00",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001"
+    },
+    {
+      "reference": "Organization/10000004"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/935ab5f7-7535-4a73-97ac-e37f8ae5c19d"
+    },
+    {
+      "reference": "Observation/e6089ea9-0ca7-49eb-a837-4da4c8dd0418"
+    },
+    {
+      "reference": "Observation/ac410bbf-733e-40f1-8691-c814526b8fb3"
+    },
+    {
+      "reference": "Observation/72d5c154-084d-4aea-9467-4a9a4f2dfb5a"
+    },
+    {
+      "reference": "Observation/6a558388-3350-4021-ade7-187578151878"
+    },
+    {
+      "reference": "Observation/336a4254-f215-4bf8-8f59-b76e460a708c"
+    },
+    {
+      "reference": "Observation/dcd70f3f-2739-46ae-8604-e189d8f95a33"
+    },
+    {
+      "reference": "Observation/ab85fd5d-eb64-4236-aff7-44ef28e71421"
+    }
+  ],
+  "specimen": [
+    {
+      "reference": "Specimen/ff14615d-4d3c-4c75-9b5e-3504ff4bab68"
+    },
+    {
+      "reference": "Specimen/0c4401ad-c926-4510-aa1f-cca7886bf804"
+    },
+    {
+      "reference": "Specimen/c81e2dc5-831d-4074-9809-2b024c5e9d4e"
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/766c1116-f30c-4c39-a047-8a24c2415ea2"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "resourceType": "CoverageEligibilityResponse",
+  "identifier": {
+    "use": {
+      "system": "http://hl7.org/fhir/identifier-use",
+      "code": "official",
+      "display": "Official"
+    },
+    "system": "http://sys-ids.kemkes.go.id/jkn-claim-number",
+    "value": "0301R0011117V000008",
+    "type": {
+      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+      "code": "NIIP",
+      "display": "National Insurance Payor Identifier (Payor)"
+    },
+    "period": {
+      "start": "2022-06-14",
+      "end": "2022-08-14"
+    }
+  },
+  "status": "active",
+  "purpose": [
+    "validation"
+  ],
+  "patient": {
+    "reference": "Patient/100000030006"
+  },
+  "created": "2022-06-14",
+  "requestor": {
+    "reference": "Organization/10085103"
+  },
+  "request": {
+    "reference": "CoverageEligibilityRequest/484e6912-1a7f-493f-aac7-0ec80a97a5d1"
+  },
+  "outcome": "complete",
+  "disposition": "Peserta aktif",
+  "insurer": {
+    "reference": "Organization/10080028"
+  },
+  "insurance": [
+    {
+      "coverage": {
+        "reference": "Coverage/acc4c2ac-5b2b-4002-a278-a1ce4559802d"
+      },
+      "inforce": true,
+      "item": [
+        {
+          "category": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-benefitcategory",
+                "code": "30",
+                "display": "Health Benefit Plan Coverage"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
