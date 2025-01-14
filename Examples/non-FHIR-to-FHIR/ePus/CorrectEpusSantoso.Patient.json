@@ -1,0 +1,48 @@
+{
+  "active": true,
+  "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "code": "id",
+            "display": "Indonesian",
+            "system": "urn:ietf:bcp:47"
+          }
+        ],
+        "text": "Indonesian"
+      },
+      "preferred": true
+    }
+  ],
+  "deceasedBoolean": false,
+  "gender": "male",
+  "id": "100000030009",
+  "identifier": [
+    {
+      "system": "https://fhir.kemkes.go.id/id/ihs-number",
+      "use": "official",
+      "value": "100000030009"
+    },
+    {
+      "system": "https://fhir.kemkes.go.id/id/nik",
+      "use": "official",
+      "value": "################"
+    }
+  ],
+  "multipleBirthBoolean": false,
+  "name": [
+    {
+      "family": "Santoso",
+      "given": [
+        "Epus"
+      ],
+      "suffix": [
+        "MSc"
+      ],
+      "text": "Epus Santoso",
+      "use": "official"
+    }
+  ],
+  "resourceType": "Patient"
+}
