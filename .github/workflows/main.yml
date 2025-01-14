@@ -35,6 +35,9 @@ jobs:
       #   uses: actions/setup-dotnet@v4
       #   with:
       #     dotnet-version: 8.0.x
+      - run: ls -lah $GITHUB_WORKSPACE/Examples
+
+      - run: git log
 
       # Install Java runtime (only needed if you want to run the offical HL7 Java validator)
       - name: Setup Java JDK
