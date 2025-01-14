@@ -30,14 +30,6 @@
       "value": "################"
     }
   ],
-  "meta": {
-    "lastUpdated": "2022-06-13T16:50:39.368307+00:00",
-    "profile": [
-      "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient|4.0.1",
-      "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient"
-    ],
-    "versionId": "MTY1NTEzOTAzOTM2ODMwNzAwMA"
-  },
   "multipleBirthBoolean": false,
   "name": [
     {
