@@ -48,9 +48,9 @@ jobs:
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Conformance-resources
           PATH_TO_EXAMPLES: |
-            Examples/NonFHIRToFHIR/sidKobo
-            Examples
-            Examples/NonFHIRToFHIR/ePus
+            Examples/Correct
+            Examples/Correct/NonFHIRToFHIR/sidKobo
+            Examples/Correct/NonFHIRToFHIR/ePus
           PATH_TO_QUALITY_CONTROL_RULES: unittest
           DOTNET_VALIDATION_ENABLED: false
           JAVA_VALIDATION_ENABLED: true

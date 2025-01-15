@@ -1,0 +1,85 @@
+{
+  "resourceType": "Encounter",
+  "id": "bcfbb431-0c33-4997-8716-de4c8210af56",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2024-11-07T03:40:09.435+00:00",
+    "source": "#JXXxTirz0BbQPf18",
+    "tag": [
+      {
+        "system": "https://smartregister.org/care-team-tag-id",
+        "code": "Not defined",
+        "display": "Practitioner CareTeam"
+      },
+      {
+        "system": "https://smartregister.org/location-tag-id",
+        "code": "4ede9fae-18b0-4b36-962c-1407cc3cd0f3",
+        "display": "Practitioner Location"
+      },
+      {
+        "system": "https://smartregister.org/organisation-tag-id",
+        "code": "80bda950-b465-4b48-89e2-3d3c71aae563",
+        "display": "Practitioner Organization"
+      },
+      {
+        "system": "https://smartregister.org/practitioner-tag-id",
+        "code": "5528ac2e-c2d5-452e-8c2e-9f3519d52a44",
+        "display": "Practitioner"
+      },
+      {
+        "system": "https://smartregister.org/app-version",
+        "code": "2.1.0-sidBunda",
+        "display": "Application Version"
+      }
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "HH"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "184048005",
+          "display": "Patient registration-form used (finding)"
+        }
+      ],
+      "text": "Registration"
+    }
+  ],
+  "priority": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/ValueSet/v3-ActPriority",
+        "code": "EL",
+        "display": "elective"
+      }
+    ],
+    "text": "elective"
+  },
+  "subject": {
+    "reference": "Group/c93ac847-a955-4304-a835-06a1b862f93e"
+  },
+  "participant": [
+    {
+      "individual": {
+        "reference": "Practitioner/5528ac2e-c2d5-452e-8c2e-9f3519d52a44"
+      }
+    }
+  ],
+  "period": {
+    "start": "2024-11-07T10:38:55+07:00",
+    "end": "2024-11-07T10:38:55+07:00"
+  },
+  "reasonCode": [
+    {
+      "text": "Family Registration Task"
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/80bda950-b465-4b48-89e2-3d3c71aae563"
+  }
+}
