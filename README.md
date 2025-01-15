@@ -11,3 +11,26 @@ The template repository includes a preconfigured GitHub Action to validate your 
 ## Synchronization with Simplifier.net FHIR projects
 
 The template repository can be connected to a [Simplifier.net](http://simplifier.net) project for easy visualization, documentation and publishing. For the current project the `main` branch automatically synchronizes with [this Simplifier.net FHIR project](https://simplifier.net/id-fhir) on every commit. Learn how to set up [Simplifier.net GitHub synchronization](https://docs.fire.ly/projects/Simplifier/simplifierGithub.html).
+
+## How to make use of the CI within the remote GitHub repository
+
+1. Create / copy the FHIR resources (resulting from the conversion scripts) into a new/existing folder within [sid-indonesia/fhir-specification/Examples/Correct/NonFHIRToFHIR](https://github.com/sid-indonesia/fhir-specification/tree/main/Examples/Correct/NonFHIRToFHIR) (e.g. for conversion results from Kobo can be placed within [this folder](https://github.com/sid-indonesia/fhir-specification/tree/main/Examples/Correct/NonFHIRToFHIR/sidKobo))
+2. Git commit the changes to a new/existing branch other than `main`/`master` and push it to the remote repository
+3. Open a Pull Request from that branch to the `main` branch.
+4. Monitor the [workflow runs](https://github.com/sid-indonesia/fhir-specification/actions/)
+   - [Guide on monitoring workflows](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/monitoring-workflows/viewing-workflow-run-history)
+   - Fix the errors as suggested by the FHIR validator, then repeat step 2, then step 4.
+
+## How to run the FHIR validator locally
+
+### Prerequisites
+
+- `java` version 21 installed, preferably via https://sdkman.io/.
+- [`jq`](https://jqlang.github.io/jq/download/) installed
+- Java FHIR Validator JAR downloaded and put into folder `FHIR-validator`, see [here](https://github.com/sid-indonesia/fhir-specification/tree/main/FHIR-validator).
+
+### Steps
+
+- Within a command line (e.g. [Git Bash](https://www.atlassian.com/git/tutorials/git-bash)), go to the root folder of the project (`fhir-specification`)
+- Optionally, within `scripts/validate_locally_examples.sh` change the `PATH_TO_EXAMPLES` value to only the folder containing all the FHIR resources that you want to check for their validity.
+- Execute `./scripts/validate_locally_examples.sh`

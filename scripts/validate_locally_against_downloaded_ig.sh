@@ -2,12 +2,8 @@
 java \
   -Dfile.encoding=UTF-8 \
   -jar FHIR-validator/validator_cli.jar \
-  ./Examples/Correct/*.xml \
-  ./Examples/Correct/*.json \
-  ./Examples/Correct/NonFHIRToFHIR/ePus/*.xml \
-  ./Examples/Correct/NonFHIRToFHIR/ePus/*.json \
-  ./Examples/Correct/NonFHIRToFHIR/sidKobo/*.xml \
-  ./Examples/Correct/NonFHIRToFHIR/sidKobo/*.json \
+  ./Examples/Correct/**/*.xml \
+  ./Examples/Correct/**/*.json \
   -version 4.0 \
   -output-style compact \
   \
