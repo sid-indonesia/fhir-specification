@@ -1,0 +1,43 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ReceivedPerson",
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/ReceivedPerson",
+  "name": "ReceivedPerson",
+  "status": "active",
+  "date": "2023-09-08T23:06:01.8973288+00:00",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Specimen"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/ReceivedPerson"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Received Persons of sample",
+        "definition": "Received Persons of sample.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Practitioner"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

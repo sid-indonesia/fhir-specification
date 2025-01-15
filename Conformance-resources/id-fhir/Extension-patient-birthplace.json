@@ -1,0 +1,129 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "birthPlace",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2022-02-02T03:23:15.404+00:00"
+  },
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-wg",
+      "valueCode": "pa"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 1
+    }
+  ],
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/birthPlace",
+  "version": "4.0.1",
+  "name": "BirthPlace",
+  "title": "Birth Place",
+  "status": "draft",
+  "date": "2023-05-12T03:38:24.117026+00:00",
+  "publisher": "HL7",
+  "description": "The registered place of birth of the patient. A sytem may use the address.text if they don't store the birthPlace address in discrete elements.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Patient"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Place of Birth for patient",
+        "definition": "The registered place of birth of the patient. A sytem may use the address.text if they don't store the birthPlace address in discrete elements.",
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/birthPlace"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Address"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x].extension",
+        "path": "Extension.value[x].extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "Extension.value[x].extension:administrativeCode",
+        "path": "Extension.value[x].extension",
+        "sliceName": "administrativeCode",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/AdministrativeCode"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x].extension:administrativeCode.extension",
+        "path": "Extension.value[x].extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Extension.value[x].extension:administrativeCode.extension:city",
+        "path": "Extension.value[x].extension.extension",
+        "sliceName": "city",
+        "min": 1
+      },
+      {
+        "id": "Extension.value[x].country",
+        "path": "Extension.value[x].country",
+        "short": "Country ISO 3166 2 letter code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iso3166-1-2"
+        }
+      }
+    ]
+  }
+}

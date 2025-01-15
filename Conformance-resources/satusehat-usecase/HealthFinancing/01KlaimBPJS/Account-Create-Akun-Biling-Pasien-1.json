@@ -1,0 +1,37 @@
+{
+  "resourceType": "Account",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "PBILLACCT",
+        "display": "patient billing account"
+      }
+    ],
+    "text": "patient"
+  },
+  "name": "Akun Billing Pasien",
+  "subject": [
+    {
+      "reference": "Patient/100000030006",
+      "display": "Jane Smith"
+    }
+  ],
+  "servicePeriod": {
+    "start": "2022-06-14",
+    "end": "2022-06-21"
+  },
+  "coverage": [
+    {
+      "coverage": {
+        "reference": "Coverage/acc4c2ac-5b2b-4002-a278-a1ce4559802d"
+      },
+      "priority": 1
+    }
+  ],
+  "owner": {
+    "reference": "Organization/10085103"
+  },
+  "description": "Akun Billing Pasien untuk Tarif, Pembiayaan, dan Penyesuaian"
+}

@@ -1,0 +1,191 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "administrativeCode",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2022-02-02T03:21:58.8+00:00"
+  },
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/AdministrativeCode",
+  "version": "1.0.0",
+  "name": "AdministrativeCode",
+  "title": "Administrative Code",
+  "status": "active",
+  "date": "2023-05-12T03:38:24.117026+00:00",
+  "description": "The administrative code of the address, represented in six levels: province, city/regency, district, village, rt and rw.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Address"
+    },
+    {
+      "type": "element",
+      "expression": "Patient.address"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "The regional administrative code",
+        "definition": "The regional administrative code of the address, represented in six levels: province, city/regency, district, village, rt and rw."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:rt",
+        "path": "Extension.extension",
+        "sliceName": "rt",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:rt.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "rt"
+      },
+      {
+        "id": "Extension.extension:rt.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:rw",
+        "path": "Extension.extension",
+        "sliceName": "rw",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:rw.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "rw"
+      },
+      {
+        "id": "Extension.extension:rw.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:village",
+        "path": "Extension.extension",
+        "sliceName": "village",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:village.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "village"
+      },
+      {
+        "id": "Extension.extension:village.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:district",
+        "path": "Extension.extension",
+        "sliceName": "district",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:district.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "district"
+      },
+      {
+        "id": "Extension.extension:district.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:city",
+        "path": "Extension.extension",
+        "sliceName": "city",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:city.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "city"
+      },
+      {
+        "id": "Extension.extension:city.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:province",
+        "path": "Extension.extension",
+        "sliceName": "province",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:province.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "province"
+      },
+      {
+        "id": "Extension.extension:province.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/AdministrativeCode"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

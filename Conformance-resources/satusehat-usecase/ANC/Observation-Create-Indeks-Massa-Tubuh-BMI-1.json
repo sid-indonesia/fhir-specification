@@ -1,0 +1,125 @@
+{
+  "resourceType": "Observation",
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "39156-5",
+        "display": "Body mass index (BMI) [Ratio]"
+      },
+      {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+        "code": "ANC.B8.DE4",
+        "display": "BMI"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030006",
+    "display": "Jane Smith"
+  },
+  "encounter": {
+    "reference": "Encounter/dd5b8c34-6bb2-43af-b36a-8fcc60a70d4a"
+  },
+  "effectiveDateTime": "2023-08-31T01:19:00+00:00",
+  "issued": "2023-08-31T01:19:00+00:00",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001"
+    }
+  ],
+  "valueQuantity": {
+    "value": 25.2,
+    "unit": "kg/m2",
+    "system": "http://unitsofmeasure.org",
+    "code": "kg/m2"
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/ObservationInterpretation",
+          "code": "BMI-Normal",
+          "display": "Normal weight"
+        }
+      ]
+    }
+  ],
+  "referenceRange": [
+    {
+      "high": {
+        "value": 17,
+        "unit": "kg/m2",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg/m2"
+      },
+      "text": "Sangat kurus"
+    },
+    {
+      "low": {
+        "value": 17,
+        "unit": "kg/m2",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg/m2"
+      },
+      "high": {
+        "value": 18.5,
+        "unit": "kg/m2",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg/m2"
+      },
+      "text": "Kurus"
+    },
+    {
+      "low": {
+        "value": 18.5,
+        "unit": "kg/m2",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg/m2"
+      },
+      "high": {
+        "value": 25,
+        "unit": "kg/m2",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg/m2"
+      },
+      "text": "Normal"
+    },
+    {
+      "low": {
+        "value": 25,
+        "unit": "kg/m2",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg/m2"
+      },
+      "high": {
+        "value": 27,
+        "unit": "kg/m2",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg/m2"
+      },
+      "text": "Gemuk"
+    },
+    {
+      "low": {
+        "value": 27,
+        "unit": "kg/m2",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg/m2"
+      },
+      "text": "Obesitas"
+    }
+  ]
+}

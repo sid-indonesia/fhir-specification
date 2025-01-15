@@ -1,0 +1,63 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "questionnaire": "https://fhir.kemkes.go.id/Questionnaire/Q0002",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/100000030006",
+    "display": "Jane Smith"
+  },
+  "encounter": {
+    "reference": "Encounter/dd5b8c34-6bb2-43af-b36a-8fcc60a70d4a"
+  },
+  "authored": "2023-08-31T03:30:00+00:00",
+  "author": {
+    "reference": "Practitioner/N10000001"
+  },
+  "source": {
+    "reference": "Patient/100000030006"
+  },
+  "item": [
+    {
+      "linkId": "2",
+      "text": "Pemantauan & Pendampingan",
+      "item": [
+        {
+          "linkId": "2.1",
+          "text": "Terlalu muda usia melahirkan dibawah 21 tahun",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "2.2",
+          "text": "Terlalu rapat jarak kelahiran (<2 tahun)",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "2.3",
+          "text": "Terlalu tua (kehamilan diatas 35 tahun)",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "2.4",
+          "text": "Terlalu sering melahirkan (anak>3)",
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

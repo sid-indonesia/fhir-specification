@@ -1,0 +1,159 @@
+{
+  "resourceType": "Composition",
+  "identifier": {
+    "system": "http://sys-ids.kemkes.go.id/composition/10000004",
+    "value": "2361720002"
+  },
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.kemkes.go.id/CodeSystem/composition-type",
+        "code": "COM000002",
+        "display": "Form Lahir Mati"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/8571fcf0-a699-4c73-81c5-bae97b6e68ad"
+  },
+  "date": "2022-06-14T08:15:00+00:00",
+  "author": [
+    {
+      "reference": "Practitioner/N10000001",
+      "display": "Dokter Bronsig"
+    }
+  ],
+  "title": "Kuesioner Kasus ILI",
+  "attester": [
+    {
+      "mode": "legal",
+      "party": {
+        "reference": "Organization/10000004",
+        "display": "Puskesmas Sangat Waras"
+      }
+    }
+  ],
+  "section": [
+    {
+      "title": "Keadaan Saat Masuk",
+      "focus": {
+        "reference": "Patient/100000030009",
+        "display": "Budi Santoso"
+      },
+      "entry": [
+        {
+          "display": "Suhu",
+          "reference": "Observation/d8aad3cd-188a-439d-ac20-e055ad386c26"
+        },
+        {
+          "display": "Frekuensi Nafas",
+          "reference": "Observation/91f7cf4a-470a-49cb-ba24-ed055fa116f1"
+        },
+        {
+          "display": "Gejala dan Tanda Mulai Sakit/Gejala",
+          "reference": "Condition/6d4bf02b-1913-4af5-bbb7-b351c7399132"
+        }
+      ]
+    },
+    {
+      "title": "Kondisi Medis/Faktor Risiko",
+      "focus": {
+        "reference": "Patient/100000030009",
+        "display": "Budi Santoso"
+      },
+      "entry": [
+        {
+          "display": "Kondisi Medis",
+          "reference": "Observation/02c40c71-8912-4f6e-b821-eec578b8cfb7"
+        },
+        {
+          "display": "Faktor Penularan",
+          "reference": "QuestionnaireResponse/791224e2-9145-47c3-a0f8-4ce323bc7399"
+        }
+      ]
+    },
+    {
+      "title": "Pengambilan Spesimen",
+      "focus": {
+        "reference": "Patient/100000030009",
+        "display": "Budi Santoso"
+      },
+      "entry": [
+        {
+          "display": "Alasan Tidak Mau Diambil Spesimen",
+          "reference": "QuestionnaireResponse/791224e2-9145-47c3-a0f8-4ce323bc7399"
+        },
+        {
+          "display": "Permintaan Pemeriksaan COVID-19 PCR",
+          "reference": "ServiceRequest/5dd79cf6-b799-44b0-ae13-db0a95d63f77"
+        },
+        {
+          "display": "Permintaan Pemeriksaan Influenza A",
+          "reference": "ServiceRequest/0391a2e5-ca06-4a73-b3c9-bf1770d90275"
+        },
+        {
+          "display": "Permintaan Pemeriksaan Influenza B",
+          "reference": "ServiceRequest/db1ea185-8836-4e2c-9468-4e4b43475a4a"
+        },
+        {
+          "display": "Spesimen",
+          "reference": "Specimen/2ae3a5e8-416d-4dab-b5c9-cfcef5fd0471"
+        }
+      ]
+    },
+    {
+      "title": "Hasil Pemeriksaan Laboratorium",
+      "focus": {
+        "reference": "Patient/100000030009",
+        "display": "Budi Santoso"
+      },
+      "entry": [
+        {
+          "display": "Hasil Pemeriksaan Laboratorium COVID-19 PCR",
+          "reference": "Observation/56c3135e-8659-4b02-a73e-3aaa10f48e7f"
+        },
+        {
+          "display": "Hasil Pemeriksaan Laboratorium Influenza A",
+          "reference": "Observation/0a074e30-0816-4f13-8e77-55f20704e4f7"
+        },
+        {
+          "display": "Hasil Pemeriksaan Laboratorium Influenza A subtype",
+          "reference": "Observation/89db8afb-c09d-4184-a512-f3f7a61e72a5"
+        },
+        {
+          "display": "Hasil Pemeriksaan Laboratorium Influenza B",
+          "reference": "Observation/7ddc5fe6-64a6-4cb7-877e-1f9fd37d4814"
+        },
+        {
+          "display": "Hasil Pemeriksaan Laboratorium Influenza B subtype",
+          "reference": "Observation/5e574975-3ae0-4bfe-96c1-cb5b4d30c18f"
+        },
+        {
+          "display": "Laporan Hasil Pemeriksaan Laboratorium COVID-19 PCR",
+          "reference": "DiagnosticReport/a60b9fb4-cfc0-4568-9524-31a7921b67e8"
+        },
+        {
+          "display": "Laporan Hasil Pemeriksaan Laboratorium Influenza A",
+          "reference": "DiagnosticReport/c0543144-2fff-4365-81c6-053d6323b057"
+        },
+        {
+          "display": "Laporan Hasil Pemeriksaan Laboratorium Influenza A Subtype",
+          "reference": "DiagnosticReport/cd98a04a-99ae-41d8-a844-3a55bb19dac6"
+        },
+        {
+          "display": "Laporan Hasil Pemeriksaan Laboratorium Influenza B",
+          "reference": "DiagnosticReport/df498577-e61b-458d-8001-146af6be610d"
+        },
+        {
+          "display": "Laporan Hasil Pemeriksaan Laboratorium Influenza B Subtype",
+          "reference": "DiagnosticReport/7d6a9f6c-158c-4c51-8195-cb7be87a6721"
+        }
+      ]
+    }
+  ]
+}

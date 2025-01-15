@@ -1,0 +1,44 @@
+{
+  "resourceType": "Specimen",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/specimen/10000004",
+      "value": "00001",
+      "assigner": {
+        "reference": "Organization/10000004"
+      }
+    }
+  ],
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "45710003",
+        "display": "Sputum"
+      }
+    ]
+  },
+  "collection": {
+    "method": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "386089008",
+          "display": "Collection of coughed sputum"
+        }
+      ]
+    },
+    "collectedDateTime": "2022-06-14T08:15:00+07:00"
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "request": [
+    {
+      "reference": "ServiceRequest/a3dfba4b-4be8-4a27-b8a2-b97c6847f795"
+    }
+  ],
+  "receivedTime": "2022-06-14T08:25:00+07:00"
+}

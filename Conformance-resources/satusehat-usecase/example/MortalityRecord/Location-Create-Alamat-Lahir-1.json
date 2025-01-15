@@ -1,0 +1,55 @@
+{
+  "resourceType": "Location",
+  "name": "Puskemas Ibu Anak",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/location-type",
+          "code": "LT000004",
+          "display": "Alamat Lahir"
+        }
+      ]
+    }
+  ],
+  "address": {
+    "use": "work",
+    "line": [
+      "Gd. Prof. Dr. Sujudi Lt.5, Jl. H.R. Rasuna Said Blok X5 Kav. 4-9 Kuningan"
+    ],
+    "city": "Jakarta",
+    "postalCode": "12950",
+    "country": "ID",
+    "extension": [
+      {
+        "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode",
+        "extension": [
+          {
+            "url": "province",
+            "valueCode": "10"
+          },
+          {
+            "url": "city",
+            "valueCode": "1010"
+          },
+          {
+            "url": "district",
+            "valueCode": "1010101"
+          },
+          {
+            "url": "village",
+            "valueCode": "1010101101"
+          },
+          {
+            "url": "rt",
+            "valueCode": "1"
+          },
+          {
+            "url": "rw",
+            "valueCode": "2"
+          }
+        ]
+      }
+    ]
+  }
+}

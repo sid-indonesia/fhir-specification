@@ -1,0 +1,59 @@
+{
+  "resourceType": "Specimen",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/specimen/10000004",
+      "value": "00001",
+      "assigner": {
+        "reference": "Organization/10000004"
+      }
+    }
+  ],
+  "status": "unsatisfactory",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "258500001",
+        "display": "Nasopharyngeal swab"
+      }
+    ]
+  },
+  "collection": {
+    "collectedDateTime": "2022-06-14T08:15:00+00:00",
+    "extension": [
+      {
+        "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/CollectorOrganization",
+        "valueReference": {
+          "reference": "Organization/10083042"
+        }
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "request": [
+    {
+      "reference": "ServiceRequest/6c37226f-cac3-4731-93ed-60fc9c74e399"
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/TransportedTime",
+      "valueDateTime": "2022-06-14T09:23:00+00:00"
+    }
+  ],
+  "receivedTime": "2022-11-14T15:25:00+00:00",
+  "note": [
+    {
+      "authorReference": {
+        "reference": "Practitioner/N10000001",
+        "display": "Dokter Bronsig"
+      },
+      "time": "2022-06-14T09:30:00+00:00",
+      "text": "Waktu Entry Spesimen"
+    }
+  ]
+}

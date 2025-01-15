@@ -1,0 +1,689 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ClinicalImpression",
+  "meta": {
+    "lastUpdated": "2022-11-15T10:06:59.0070182+00:00"
+  },
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Summary"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 0
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-wg",
+      "valueCode": "pc"
+    }
+  ],
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/ClinicalImpression",
+  "version": "4.0.1",
+  "name": "ClinicalImpression",
+  "status": "active",
+  "date": "2023-05-12T03:54:04.8907436+00:00",
+  "publisher": "Health Level Seven International (Patient Care)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/fhir"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/patientcare/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called \"ClinicalImpression\" rather than \"ClinicalAssessment\" to avoid confusion with the recording of assessment tools such as Apgar score.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "ClinicalImpression",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/DomainResource",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "ClinicalImpression",
+        "path": "ClinicalImpression",
+        "short": "A clinical assessment performed when planning treatments and management strategies for a patient",
+        "definition": "A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called \"ClinicalImpression\" rather than \"ClinicalAssessment\" to avoid confusion with the recording of assessment tools such as Apgar score.",
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event"
+          },
+          {
+            "identity": "v2",
+            "map": "Partial mapping for problem evaluation"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.identifier",
+        "path": "ClinicalImpression.identifier",
+        "short": "Business identifier",
+        "definition": "Business identifiers assigned to this clinical impression by the performer or other systems which remain constant as the resource is updated and propagates from server to server.",
+        "comment": "This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.",
+        "requirements": "Allows identification of the clinical impression as it is known by various participating systems and in a way that remains consistent across servers.",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.identifier"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.identifier"
+          },
+          {
+            "identity": "v2",
+            "map": "PID-3"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.status",
+        "path": "ClinicalImpression.status",
+        "short": "in-progress | completed | entered-in-error",
+        "definition": "Identifies the workflow status of the assessment.",
+        "comment": "This element is labeled as a modifier because the status contains the code entered-in-error that marks the clinical impression as not currently valid.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": true,
+        "isModifierReason": "This element is labelled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid",
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ClinicalImpressionStatus"
+            }
+          ],
+          "strength": "required",
+          "description": "The workflow state of a clinical impression.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/clinicalimpression-status|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.status"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.status"
+          },
+          {
+            "identity": "v2",
+            "map": "PRB-14"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.statusReason",
+        "path": "ClinicalImpression.statusReason",
+        "short": "Reason for current status",
+        "definition": "Captures the reason for the current state of the ClinicalImpression.",
+        "comment": "This is generally only used for \"exception\" statuses such as \"not-done\", \"suspended\" or \"cancelled\".\n\n[distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].",
+        "alias": [
+          "Suspended Reason",
+          "Cancelled Reason"
+        ],
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ClinicalImpressionStatusReason"
+            }
+          ],
+          "strength": "example",
+          "description": "Codes identifying the reason for the current state of a clinical impression."
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.statusReason"
+          },
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=SUBJ].source[classCode=CACT, moodCode=EVN].reasonCOde"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.code",
+        "path": "ClinicalImpression.code",
+        "short": "Kind of assessment performed",
+        "definition": "Categorizes the type of clinical assessment performed.",
+        "comment": "This is present as a place-holder only and may be removed based on feedback/work group opinion.",
+        "alias": [
+          "type"
+        ],
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ClinicalImpressionCode"
+            }
+          ],
+          "strength": "example",
+          "description": "Identifies categories of clinical impressions.  This is a place-holder only.  It may be removed."
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.code"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.what[x]"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.description",
+        "path": "ClinicalImpression.description",
+        "short": "Why/how the assessment was performed",
+        "definition": "A summary of the context and/or cause of the assessment - why / where it was performed, and what patient events/status prompted it.",
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "ClinicalImpression.subject",
+        "path": "ClinicalImpression.subject",
+        "short": "Patient or group assessed",
+        "definition": "The patient or group of individuals assessed as part of this record.",
+        "requirements": "Group is typically for veterinary and/or public health purposes.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Group"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.subject"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject[x]"
+          },
+          {
+            "identity": "v2",
+            "map": "PID-3"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.encounter",
+        "path": "ClinicalImpression.encounter",
+        "short": "Encounter created as part of",
+        "definition": "The Encounter during which this ClinicalImpression was created or to which the creation of this record is tightly associated.",
+        "comment": "This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Encounter"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.context"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.context"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.effective[x]",
+        "path": "ClinicalImpression.effective[x]",
+        "short": "Time of assessment",
+        "definition": "The point in time or period over which the subject was assessed.",
+        "comment": "This SHOULD be accurate to at least the minute, though some assessments only have a known date.",
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "Period"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.occurrence[x]"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.done[x]"
+          },
+          {
+            "identity": "v2",
+            "map": "PRB-2"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.date",
+        "path": "ClinicalImpression.date",
+        "short": "When the assessment was documented",
+        "definition": "Indicates when the documentation of the assessment was complete.",
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.recorded"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.assessor",
+        "path": "ClinicalImpression.assessor",
+        "short": "The clinician performing the assessment",
+        "definition": "The clinician performing the assessment.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Practitioner",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/PractitionerRole"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.performer.actor"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.author"
+          },
+          {
+            "identity": "v2",
+            "map": "ROL-4"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.previous",
+        "path": "ClinicalImpression.previous",
+        "short": "Reference to last assessment",
+        "definition": "A reference to the last assessment that was conducted on this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.",
+        "comment": "It is always likely that multiple previous assessments exist for a patient. The point of quoting a previous assessment is that this assessment is relative to it (see resolved).",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/ClinicalImpression"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.problem",
+        "path": "ClinicalImpression.problem",
+        "short": "Relevant impressions of patient state",
+        "definition": "A list of the relevant problems/conditions for a patient.",
+        "comment": "e.g. The patient is a pregnant, has congestive heart failure, has an ‎Adenocarcinoma, and is allergic to penicillin.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Condition",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/AllergyIntolerance"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.why[x]"
+          },
+          {
+            "identity": "v2",
+            "map": "PRB-3 / IAM-7"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.investigation",
+        "path": "ClinicalImpression.investigation",
+        "short": "One or more sets of investigations (signs, symptoms, etc.)",
+        "definition": "One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.investigation.code",
+        "path": "ClinicalImpression.investigation.code",
+        "short": "A name/code for the set",
+        "definition": "A name/code for the group (\"set\") of investigations. Typically, this will be something like \"signs\", \"symptoms\", \"clinical\", \"diagnostic\", but the list is not constrained, and others such groups such as (exposure|family|travel|nutritional) history may be used.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "InvestigationGroupType"
+            }
+          ],
+          "strength": "example",
+          "description": "A name/code for a set of investigations.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/investigation-sets"
+        }
+      },
+      {
+        "id": "ClinicalImpression.investigation.item",
+        "path": "ClinicalImpression.investigation.item",
+        "short": "Record of a specific investigation",
+        "definition": "A record of a specific investigation that was undertaken.",
+        "comment": "Most investigations are observations of one kind or another but some other specific types of data collection resources can also be used.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Observation",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/QuestionnaireResponse",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/FamilyMemberHistory",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/DiagnosticReport",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/RiskAssessment",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/ImagingStudy",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Media"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "OBX-21"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.protocol",
+        "path": "ClinicalImpression.protocol",
+        "short": "Clinical Protocol followed",
+        "definition": "Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.summary",
+        "path": "ClinicalImpression.summary",
+        "short": "Summary of the assessment",
+        "definition": "A text summary of the investigations and the diagnosis.",
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "OBX"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.finding",
+        "path": "ClinicalImpression.finding",
+        "short": "Possible or likely findings and diagnoses",
+        "definition": "Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.finding.itemCodeableConcept",
+        "path": "ClinicalImpression.finding.itemCodeableConcept",
+        "short": "What was found",
+        "definition": "Specific text or code for finding or diagnosis, which may include ruled-out or resolved conditions.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ConditionKind"
+            }
+          ],
+          "strength": "example",
+          "description": "Identification of the Condition or diagnosis.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-code"
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "OBX"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.finding.itemReference",
+        "path": "ClinicalImpression.finding.itemReference",
+        "short": "What was found",
+        "definition": "Specific reference for finding or diagnosis, which may include ruled-out or resolved conditions.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Condition",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Observation",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Media"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "OBX"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.finding.basis",
+        "path": "ClinicalImpression.finding.basis",
+        "short": "Which investigations support finding",
+        "definition": "Which investigations support finding or diagnosis.",
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.prognosisCodeableConcept",
+        "path": "ClinicalImpression.prognosisCodeableConcept",
+        "short": "Estimate of likely outcome",
+        "definition": "Estimate of likely outcome.",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ClinicalImpressionPrognosis"
+            }
+          ],
+          "strength": "example",
+          "description": "Prognosis or outlook findings.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/clinicalimpression-prognosis"
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PRB-22"
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.prognosisReference",
+        "path": "ClinicalImpression.prognosisReference",
+        "short": "RiskAssessment expressing likely outcome",
+        "definition": "RiskAssessment expressing likely outcome.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/RiskAssessment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.supportingInfo",
+        "path": "ClinicalImpression.supportingInfo",
+        "short": "Information supporting the clinical impression",
+        "definition": "Information supporting the clinical impression.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Resource"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ClinicalImpression.note",
+        "path": "ClinicalImpression.note",
+        "short": "Comments made about the ClinicalImpression",
+        "definition": "Commentary about the impression, typically recorded after the impression itself was made, though supplemental notes by the original author could also appear.",
+        "comment": "Don't use this element for content that should more properly appear as one of the specific elements of the impression.",
+        "type": [
+          {
+            "code": "Annotation"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.note"
+          }
+        ]
+      }
+    ]
+  }
+}

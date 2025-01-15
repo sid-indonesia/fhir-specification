@@ -1,0 +1,43 @@
+{
+  "resourceType": "Observation",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/observation/1000001",
+      "value": "111333"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "1104441000000107",
+        "display": "ACVPU (Alert Confusion Voice Pain Unresponsive) scale score"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/P00030004",
+    "display": "Roel"
+  },
+  "encounter": {
+    "reference": "urn:uuid:10494a2e-0410-4ec7-834d-bd7f77de4ebd",
+    "display": "Roel's encounter on January 28th, 2013"
+  },
+  "effectiveDateTime": "2022-02-01T08:30:00+07:00",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001",
+      "display": "Dr. dr. Voigt MARS."
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "450847001",
+        "display": "Response to pain"
+      }
+    ]
+  }
+}

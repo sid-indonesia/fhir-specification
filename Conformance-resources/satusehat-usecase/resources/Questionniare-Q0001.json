@@ -1,0 +1,21 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "Q0001",
+  "name": "covid-19-test-screening",
+  "title": "COVID-19 Test Screening",
+  "status": "active",
+  "subjectType": [
+    "Patient"
+  ],
+  "date": "2022-07-08T15:10:50.6856647+00:00",
+  "item": [
+    {
+      "linkId": "1",
+      "definition": "http://loinc.org/95419-8",
+      "text": "Whether the patient has symptoms related to condition of interest",
+      "type": "choice",
+      "required": true,
+      "answerValueSet": "http://loinc.org/vs/LL5605-2"
+    }
+  ]
+}

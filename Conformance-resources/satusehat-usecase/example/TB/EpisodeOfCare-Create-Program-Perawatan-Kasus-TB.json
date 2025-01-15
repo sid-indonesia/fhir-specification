@@ -1,0 +1,71 @@
+{
+  "resourceType": "EpisodeOfCare",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/episode-of-care/10000004",
+      "value": "EOC12345"
+    }
+  ],
+  "status": "active",
+  "statusHistory": [
+    {
+      "status": "active",
+      "period": {
+        "start": "2023-01-01T15:30:00+07:00",
+        "end": "2023-01-30T15:30:00+07:00"
+      }
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/episodeofcare-type",
+          "code": "TB-SO",
+          "display": "Tuberkulosis Sensitif Obat"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "https:terminology.kemkes.go.id/CodeSystem/prev-tb-treatment",
+          "code": "new",
+          "display": "Kasus Baru"
+        }
+      ]
+    }
+  ],
+  "diagnosis": [
+    {
+      "condition": {
+        "reference": "Condition/cdb6b143-85bc-471b-84e9-2a43b2a85d30",
+        "display": "Tuberculosis of lung, confirmed by sputum microscopy with or without culture"
+      },
+      "role": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+            "code": "DD",
+            "display": "Discharged Diagnosis"
+          }
+        ]
+      },
+      "rank": 1
+    }
+  ],
+  "patient": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "managingOrganization": {
+    "reference": "Organization/10000004"
+  },
+  "period": {
+    "start": "2022-06-01"
+  },
+  "careManager": {
+    "reference": "Practitioner/N10000001",
+    "display": "Petugas Poli TB"
+  }
+}

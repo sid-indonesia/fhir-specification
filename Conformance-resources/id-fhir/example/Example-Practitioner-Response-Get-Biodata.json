@@ -1,0 +1,278 @@
+{
+  "id": "Example-Practitioner-Get-Biodata",
+  "entry": [
+    {
+      "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Practitioner/1000635881",
+      "resource": {
+        "address": [
+          {
+            "city": "Kota Adm. Jakarta Selatan",
+            "country": "ID",
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "province",
+                    "valueCode": "31"
+                  },
+                  {
+                    "url": "city",
+                    "valueCode": "3174"
+                  }
+                ],
+                "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode"
+              }
+            ],
+            "use": "home"
+          }
+        ],
+        "gender": "male",
+        "id": "1000635881",
+        "identifier": [
+          {
+            "system": "https://fhir.kemkes.go.id/id/nakes-id",
+            "value": "1000635881"
+          },
+          {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "use": "official",
+            "value": "3671131012720001"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2022-04-22T09:04:18.045494+00:00",
+          "versionId": "MTY1MDYxODI1ODA0NTQ5NDAwMA"
+        },
+        "name": [
+          {
+            "text": "BAMBANG WALUYO",
+            "use": "official"
+          }
+        ],
+        "resourceType": "Practitioner"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Practitioner/1001181589",
+      "resource": {
+        "address": [
+          {
+            "city": "Kota Tegal",
+            "country": "ID",
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "province",
+                    "valueCode": "33"
+                  },
+                  {
+                    "url": "city",
+                    "valueCode": "3376"
+                  }
+                ],
+                "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode"
+              }
+            ],
+            "use": "home"
+          }
+        ],
+        "gender": "male",
+        "id": "1001181589",
+        "identifier": [
+          {
+            "system": "https://fhir.kemkes.go.id/id/nakes-id",
+            "value": "1001181589"
+          },
+          {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "use": "official",
+            "value": "3328112107900004"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2022-04-22T08:03:33.898282+00:00",
+          "versionId": "MTY1MDYxNDYxMzg5ODI4MjAwMA"
+        },
+        "name": [
+          {
+            "text": "BAMBANG TRI WALUYO,S.Kep.Ners",
+            "use": "official"
+          }
+        ],
+        "resourceType": "Practitioner"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Practitioner/1000971631",
+      "resource": {
+        "address": [
+          {
+            "city": "Kab. Banyumas",
+            "country": "ID",
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "province",
+                    "valueCode": "33"
+                  },
+                  {
+                    "url": "city",
+                    "valueCode": "3302"
+                  }
+                ],
+                "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode"
+              }
+            ],
+            "use": "home"
+          }
+        ],
+        "gender": "male",
+        "id": "1000971631",
+        "identifier": [
+          {
+            "system": "https://fhir.kemkes.go.id/id/nakes-id",
+            "value": "1000971631"
+          },
+          {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "use": "official",
+            "value": "3302251905820002"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2022-04-22T05:52:09.238448+00:00",
+          "versionId": "MTY1MDYwNjcyOTIzODQ0ODAwMA"
+        },
+        "name": [
+          {
+            "text": "BAMBANG WALUYOJATI, S.Kom",
+            "use": "official"
+          }
+        ],
+        "resourceType": "Practitioner"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Practitioner/1001096618",
+      "resource": {
+        "address": [
+          {
+            "city": "Kab. Pekalongan",
+            "country": "ID",
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "province",
+                    "valueCode": "33"
+                  },
+                  {
+                    "url": "city",
+                    "valueCode": "3326"
+                  }
+                ],
+                "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode"
+              }
+            ],
+            "use": "home"
+          }
+        ],
+        "gender": "male",
+        "id": "1001096618",
+        "identifier": [
+          {
+            "system": "https://fhir.kemkes.go.id/id/nakes-id",
+            "value": "1001096618"
+          },
+          {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "use": "official",
+            "value": "3376040302700002"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2022-04-22T00:26:19.950916+00:00",
+          "versionId": "MTY1MDU4NzE3OTk1MDkxNjAwMA"
+        },
+        "name": [
+          {
+            "text": "TEGUH BAMBANG WALUYO, AMK",
+            "use": "official"
+          }
+        ],
+        "resourceType": "Practitioner"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Practitioner/1000400104",
+      "resource": {
+        "address": [
+          {
+            "city": "Kab. Musi Rawas",
+            "country": "ID",
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "province",
+                    "valueCode": "16"
+                  },
+                  {
+                    "url": "city",
+                    "valueCode": "1605"
+                  }
+                ],
+                "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode"
+              }
+            ],
+            "use": "home"
+          }
+        ],
+        "gender": "male",
+        "id": "1000400104",
+        "identifier": [
+          {
+            "system": "https://fhir.kemkes.go.id/id/nakes-id",
+            "value": "1000400104"
+          },
+          {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "use": "official",
+            "value": "1673022601750002"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2022-04-21T23:57:50.201972+00:00",
+          "versionId": "MTY1MDU4NTQ3MDIwMTk3MjAwMA"
+        },
+        "name": [
+          {
+            "text": "Bambang Untung Waluyo",
+            "use": "official"
+          }
+        ],
+        "resourceType": "Practitioner"
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ],
+  "resourceType": "Bundle",
+  "total": 5,
+  "type": "searchset"
+}

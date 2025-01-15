@@ -1,0 +1,73 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "questionnaire": "https://fhir.kemkes.go.id/Questionnaire/Q0001",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/14e8398c-1016-44b8-b619-a802b80d2c94"
+  },
+  "authored": "2022-07-26T10:00:00+07:00",
+  "author": {
+    "reference": "Practitioner/N10000001"
+  },
+  "source": {
+    "reference": "Patient/100000030009"
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Tipe diagnosis tuberkulosis",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "https://terminology.kemkes.go.id/CodeSystem/tb-case-definition",
+            "code": "tb-bac",
+            "display": "Terkonfirmasi bakteriologis"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "Klasifikasi tuberkulosis berdasarkan lokasi anatomis",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "https://terminology.kemkes.go.id/CodeSystem/tb-anatomical",
+            "code": "PTB",
+            "display": "Tuberkulosis Paru"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "3",
+      "text": "Klasifikasi tuberkulosis berdasarkan riwayat pengobatan",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "https://terminology.kemkes.go.id/CodeSystem/prev-tb-treatment",
+            "code": "new",
+            "display": "Kasus Baru"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "4",
+      "text": "Hasil akhir pengobatan tuberkulosis",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "https://terminology.kemkes.go.id/CodeSystem/tb-outcome-class",
+            "code": "cured",
+            "display": "Sembuh"
+          }
+        }
+      ]
+    }
+  ]
+}

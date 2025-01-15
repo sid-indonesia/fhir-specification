@@ -1,0 +1,184 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "questionnaire": "https://fhir.kemkes.go.id/Questionnaire/Q0023",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/{{Patient_id}}",
+    "display": "{{Patient_Name}}"
+  },
+  "encounter": {
+    "reference": "Encounter/{{Encounter_id}}"
+  },
+  "authored": "2023-06-22T14:30:00+00:00",
+  "author": {
+    "reference": "Practitioner/{{Practitioner_id}}"
+  },
+  "source": {
+    "reference": "Patient/{{Patient_id}}"
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": " Kajian Tingkat Risiko",
+      "item": [
+        {
+          "linkId": "1.1",
+          "text": "Kelompok Populasi",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/{{Observation_1_1}}"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.2",
+          "text": "Hubungan Seks Vaginal Beresiko",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/{{Observation_1_2}}"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.3",
+          "text": "Anal Seks Beresiko",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/{{Observation_1_3}}"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.4",
+          "text": "Bergantian Peralatan Suntik",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/{{Observation_1_4}}"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.5",
+          "text": "Transfusi Darah",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/{{Observation_1_5}}"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.6",
+          "text": "Transmisi Ibu ke Anak",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/{{Observation_1_6}}"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.7",
+          "text": "Periode Jendela",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/{{Observation_1_7}}"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.8",
+          "text": "Penyakit Terkait Pasien",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Condition/{{Condition_Penyakit}}"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "1.9",
+          "text": "Lainnya",
+          "answer": [
+            {
+              "valueBoolean": true,
+              "item": [
+                {
+                  "linkId": "1.9.1",
+                  "text": "Risiko Lainnya",
+                  "answer": [
+                    {
+                      "valueString": "Hipertensi"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "Tanda Klinis IMS dan Pemeriksaan Fisik",
+      "item": [
+        {
+          "linkId": "2.1",
+          "text": "Tanda Klinis IMS",
+          "answer": [
+            {
+              "valueBoolean": true,
+              "item": [
+                {
+                  "linkId": "2.1.1",
+                  "text": "Jika ya, Tanda Klinis IMS",
+                  "answer": [
+                    {
+                      "valueReference": {
+                        "reference": "Condition/{{Condition_TandaKlinis_1}}"
+                      }
+                    },
+                    {
+                      "valueReference": {
+                        "reference": "Condition/{{Condition_TandaKlinis_2}}"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "2.2",
+          "text": "Pemeriksaan Fisik",
+          "answer": [
+            {
+              "valueReference": {
+                "reference": "Observation/{{Observation_2_2_1}}"
+              }
+            },
+            {
+              "valueReference": {
+                "reference": "Observation/{{Observation_2_2_2}}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

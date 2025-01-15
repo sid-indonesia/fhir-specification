@@ -1,0 +1,73 @@
+{
+  "resourceType": "Immunization",
+  "status": "not-done",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://sys-ids.kemkes.go.id/kfa",
+        "code": "VG213",
+        "display": "COVID-19"
+      }
+    ]
+  },
+  "statusReason": {
+    "coding": [
+      {
+        "system": "http://terminology.kemkes.go.id/CodeSystem/immunization-statusReason",
+        "code": "IS000002",
+        "display": "Tidak Diberikan"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/02bc44c5-5a53-48d0-9ed0-cf910355c20e"
+  },
+  "occurrenceDateTime": "2023-07-07T19:00:00+00:00",
+  "recorded": "2023-07-07T19:00:00+00:00",
+  "primarySource": true,
+  "location": {
+    "reference": "Location/c0ab44ba-1979-43e5-846c-905814c62962",
+    "display": "Poli Vaksinasi COVID-19"
+  },
+  "performer": [
+    {
+      "function": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+            "code": "OP",
+            "display": "Ordering Provider"
+          }
+        ]
+      },
+      "actor": {
+        "reference": "Practitioner/N10000001"
+      }
+    },
+    {
+      "actor": {
+        "reference": "Organization/10000004"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/immunization-reason",
+          "code": "IM-Khusus",
+          "display": "Imunisasi Program Khusus"
+        }
+      ]
+    }
+  ],
+  "protocolApplied": [
+    {
+      "doseNumberPositiveInt": 1
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "questionnaire": "https://fhir.kemkes.go.id/Questionnaire/Q0001",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/2823ed1d-3e3e-434e-9a5b-9c579d192787"
+  },
+  "authored": "2023-01-01T15:30:00+07:00",
+  "author": {
+    "reference": "Practitioner/N10000001"
+  },
+  "source": {
+    "reference": "Patient/100000030009"
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Riwayat kontak dengan penderita TB",
+      "answer": [
+        {
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "Klien memenuhi syarat untuk pengobatan pencegahan TB (TPT) sesuai pedoman nasional",
+      "answer": [
+        {
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "linkId": "3",
+      "text": "Tanggal penentuan kelayakan klien untuk pengobatan pencegahan TB (TPT) dibuat",
+      "answer": [
+        {
+          "valueDateTime": "2023-01-01T15:30:00+07:00"
+        }
+      ]
+    },
+    {
+      "linkId": "4",
+      "text": "ID kasus indeks",
+      "answer": [
+        {
+          "valueString": "123"
+        }
+      ]
+    },
+    {
+      "linkId": "5",
+      "text": "Jenis IP Resistensi TB",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "#tbd",
+            "code": "DS-TB",
+            "display": "Pasien indeks terinfeksi dengan strain kompleks M. tuberculosis dengan kerentanan yang diketahui atau tidak ada resistensi yang terdokumentasi terhadap obat TB apa pun."
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "6",
+      "text": "BMI",
+      "answer": [
+        {
+          "valueQuantity": {
+            "value": 26,
+            "unit": "kg/m2",
+            "system": "http://unitsofmeasure.org",
+            "code": "kg/m2"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "7",
+      "text": "Status gizi (dewasa dan remaja)",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "414915002",
+            "display": "Obese"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "8",
+      "text": "Status gizi (anak-anak)",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "414915002",
+            "display": "Obese"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "9",
+      "text": "Berat badan klien terhadap tinggi badan Z Score",
+      "answer": [
+        {
+          "valueDecimal": -2.42
+        }
+      ]
+    }
+  ]
+}

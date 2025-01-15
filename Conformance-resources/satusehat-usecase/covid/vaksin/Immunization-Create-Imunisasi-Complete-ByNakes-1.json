@@ -1,0 +1,91 @@
+{
+  "resourceType": "Immunization",
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://sys-ids.kemkes.go.id/kfa",
+        "code": "93004035",
+        "display": "Vaksin COVID-19 Recombinant Adenovirus (CHADOX1), 5x10^10 VP/0.5 mL (ASTRAZENECA, 10)"
+      },
+      {
+        "system": "http://sys-ids.kemkes.go.id/kfa",
+        "code": "VG213",
+        "display": "COVID-19"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/cvx",
+        "code": "210",
+        "display": "COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/02bc44c5-5a53-48d0-9ed0-cf910355c20e"
+  },
+  "occurrenceDateTime": "2023-07-07T18:30:00+00:00",
+  "recorded": "2023-07-07T18:30:00+00:00",
+  "expirationDate": "2025-08-17",
+  "primarySource": true,
+  "location": {
+    "reference": "Location/c0ab44ba-1979-43e5-846c-905814c62962",
+    "display": "Poli Vaksinasi COVID-19"
+  },
+  "lotNumber": "202009007",
+  "route": {
+    "coding": [
+      {
+        "system": "http://www.whocc.no/atc",
+        "code": "inj.intramuscular",
+        "display": "Injection Intramuscular"
+      }
+    ]
+  },
+  "doseQuantity": {
+    "value": 1,
+    "unit": "mL",
+    "system": "http://unitsofmeasure.org",
+    "code": "ml"
+  },
+  "performer": [
+    {
+      "function": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+            "code": "AP",
+            "display": "Administering Provider"
+          }
+        ]
+      },
+      "actor": {
+        "reference": "Practitioner/N10000001"
+      }
+    },
+    {
+      "actor": {
+        "reference": "Organization/10000001"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/immunization-reason",
+          "code": "IM-Khusus",
+          "display": "Imunisasi Program Khusus"
+        }
+      ]
+    }
+  ],
+  "protocolApplied": [
+    {
+      "doseNumberPositiveInt": 1
+    }
+  ]
+}

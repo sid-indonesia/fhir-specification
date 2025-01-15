@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "citizenshipStatus",
+  "meta": {
+    "lastUpdated": "2022-03-04T03:53:33.924+00:00"
+  },
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/citizenshipStatus",
+  "version": "1.0.0",
+  "name": "CitizenshipStatus",
+  "status": "active",
+  "date": "2023-05-12T03:39:44.9696723+00:00",
+  "description": "Information that describe whether the patient is an Indonesian citizen or a foreign citizen by law.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Patient"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/citizenshipStatus"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "code": [
+          {
+            "system": "https://terminology.kemkes.go.id/v1-0101",
+            "version": "1",
+            "code": "I",
+            "display": "WNI"
+          },
+          {
+            "system": "https://terminology.kemkes.go.id/v1-0101",
+            "version": "1",
+            "code": "A",
+            "display": "WNA"
+          }
+        ],
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      }
+    ]
+  }
+}

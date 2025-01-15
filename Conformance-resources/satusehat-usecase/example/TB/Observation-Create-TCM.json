@@ -1,0 +1,60 @@
+{
+  "resourceType": "Observation",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/observation/1000004",
+      "value": "O111111"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "88874-3",
+        "display": "Mycobacterium tuberculosis complex DNA [Presence] in Isolate or Specimen by Molecular genetics method"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009"
+  },
+  "encounter": {
+    "reference": "Encounter/14e8398c-1016-44b8-b619-a802b80d2c94"
+  },
+  "effectiveDateTime": "2021-07-02",
+  "issued": "2022-08-07T15:30:10+01:00",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001"
+    },
+    {
+      "reference": "Organization/10000004"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "LA11882-0",
+        "display": "Detected"
+      }
+    ]
+  },
+  "referenceRange": [
+    {
+      "text": "Undetected"
+    }
+  ]
+}

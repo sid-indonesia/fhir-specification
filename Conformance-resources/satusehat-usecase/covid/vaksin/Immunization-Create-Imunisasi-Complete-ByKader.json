@@ -1,0 +1,62 @@
+{
+  "resourceType": "Immunization",
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://sys-ids.kemkes.go.id/kfa",
+        "code": "VG213",
+        "display": "COVID-19"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "occurrenceDateTime": "2023-07-07T18:01:00+00:00",
+  "recorded": "2023-07-07T18:01:00+00:00",
+  "primarySource": false,
+  "reportOrigin": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/immunization-origin",
+        "code": "provider",
+        "display": "Other Provider"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "function": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+            "code": "EP",
+            "display": "Entering Provider (probably not the same as transcriptionist?)"
+          }
+        ],
+        "text": "Kader Sri M"
+      },
+      "actor": {
+        "reference": "Organization/10000001"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/immunization-reason",
+          "code": "IM-Khusus",
+          "display": "Imunisasi Program Khusus"
+        }
+      ]
+    }
+  ],
+  "protocolApplied": [
+    {
+      "doseNumberPositiveInt": 1
+    }
+  ]
+}

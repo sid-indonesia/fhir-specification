@@ -1,0 +1,17 @@
+{
+  "resourceType": "OperationOutcome",
+  "id": "1100001000",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">The operation is not allowed by this server</div>"
+  },
+  "issue": [
+    {
+      "severity": "fatal",
+      "code": "operation-invalid",
+      "details": {
+        "text": "The operation is not allowed by this server"
+      }
+    }
+  ]
+}

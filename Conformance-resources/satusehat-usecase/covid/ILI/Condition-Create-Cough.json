@@ -1,0 +1,41 @@
+{
+  "resourceType": "Condition",
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "problem-list-item",
+          "display": "Problem List Item"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "49727002",
+        "display": "Cough"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/66533eb2-723d-4e7c-b7aa-500cd67dd4c8"
+  },
+  "onsetDateTime": "2022-07-14",
+  "recordedDate": "2022-07-14"
+}

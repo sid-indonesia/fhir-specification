@@ -1,0 +1,483 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "EpisodeOfCare",
+  "meta": {
+    "lastUpdated": "2019-11-01T09:29:23.356+11:00"
+  },
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Management"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 2
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-wg",
+      "valueCode": "pa"
+    }
+  ],
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/EpisodeOfCare",
+  "version": "4.0.1",
+  "name": "EpisodeOfCare",
+  "status": "draft",
+  "date": "2023-05-12T03:54:04.8907436+00:00",
+  "publisher": "Health Level Seven International (Patient Administration)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/fhir"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "EpisodeOfCare",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/DomainResource",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "EpisodeOfCare",
+        "path": "EpisodeOfCare",
+        "short": "An association of a Patient with an Organization and  Healthcare Provider(s) for a period of time that the Organization assumes some level of responsibility",
+        "definition": "An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.",
+        "alias": [
+          "Case Program Problem"
+        ],
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event"
+          },
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.identifier",
+        "path": "EpisodeOfCare.identifier",
+        "short": "Business Identifier(s) relevant for this EpisodeOfCare",
+        "definition": "The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.identifier"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.identifier"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.status",
+        "path": "EpisodeOfCare.status",
+        "short": "planned | waitlist | active | onhold | finished | cancelled | entered-in-error",
+        "definition": "planned | waitlist | active | onhold | finished | cancelled.",
+        "comment": "This element is labeled as a modifier because the status contains codes that mark the episode as not currently valid.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": true,
+        "isModifierReason": "This element is labelled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid",
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "EpisodeOfCareStatus"
+            }
+          ],
+          "strength": "required",
+          "description": "The status of the episode of care.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/episode-of-care-status|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.status"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.status"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.statusHistory",
+        "path": "EpisodeOfCare.statusHistory",
+        "short": "Past list of status codes (the current status may be included to cover the start date of the status)",
+        "definition": "The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.statusHistory.status",
+        "path": "EpisodeOfCare.statusHistory.status",
+        "short": "planned | waitlist | active | onhold | finished | cancelled | entered-in-error",
+        "definition": "planned | waitlist | active | onhold | finished | cancelled.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "EpisodeOfCareStatus"
+            }
+          ],
+          "strength": "required",
+          "description": "The status of the episode of care.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/episode-of-care-status|4.0.1"
+        }
+      },
+      {
+        "id": "EpisodeOfCare.statusHistory.period",
+        "path": "EpisodeOfCare.statusHistory.period",
+        "short": "Duration the EpisodeOfCare was in the specified status",
+        "definition": "The period during this EpisodeOfCare that the specific status applied.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.type",
+        "path": "EpisodeOfCare.type",
+        "short": "Type/class  - e.g. specialist referral, disease management",
+        "definition": "A classification of the type of episode of care; e.g. specialist referral, disease management, type of funded care.",
+        "comment": "The type can be very important in processing as this could be used in determining if the EpisodeOfCare is relevant to specific government reporting, or other types of classifications.",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "EpisodeOfCareType"
+            }
+          ],
+          "strength": "example",
+          "description": "The type of the episode of care.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/episodeofcare-type"
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.code"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.class"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.diagnosis",
+        "extension": [
+          {
+            "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-explicit-type-name",
+            "valueString": "Diagnosis"
+          }
+        ],
+        "path": "EpisodeOfCare.diagnosis",
+        "short": "The list of diagnosis relevant to this episode of care",
+        "definition": "The list of diagnosis relevant to this episode of care.",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "EpisodeOfCare.diagnosis.condition",
+        "path": "EpisodeOfCare.diagnosis.condition",
+        "short": "Conditions/problems/diagnoses this episode of care is for",
+        "definition": "A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Condition"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.reasonReference"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.what[x]"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.diagnosis.role",
+        "path": "EpisodeOfCare.diagnosis.role",
+        "short": "Role that this diagnosis has within the episode of care (e.g. admission, billing, discharge …)",
+        "definition": "Role that this diagnosis has within the episode of care (e.g. admission, billing, discharge …).",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "DiagnosisRole"
+            },
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-isCommonBinding",
+              "valueBoolean": true
+            }
+          ],
+          "strength": "preferred",
+          "description": "The type of diagnosis this condition represents.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/diagnosis-role"
+        }
+      },
+      {
+        "id": "EpisodeOfCare.diagnosis.rank",
+        "path": "EpisodeOfCare.diagnosis.rank",
+        "short": "Ranking of the diagnosis (for each role type)",
+        "definition": "Ranking of the diagnosis (for each role type).",
+        "max": "1",
+        "type": [
+          {
+            "code": "positiveInt"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "EpisodeOfCare.patient",
+        "path": "EpisodeOfCare.patient",
+        "short": "The patient who is the focus of this episode of care",
+        "definition": "The patient who is the focus of this episode of care.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.subject"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject[x]"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.managingOrganization",
+        "path": "EpisodeOfCare.managingOrganization",
+        "short": "Organization that assumes care",
+        "definition": "The organization that has assumed the specific responsibilities for the specified duration.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.performer.actor"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.period",
+        "path": "EpisodeOfCare.period",
+        "short": "Interval during responsibility is assumed",
+        "definition": "The interval during which the managing organization assumes the defined responsibility.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.occurrence[x]"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.init"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.referralRequest",
+        "path": "EpisodeOfCare.referralRequest",
+        "short": "Originating Referral Request(s)",
+        "definition": "Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.basedOn"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.careManager",
+        "path": "EpisodeOfCare.careManager",
+        "short": "Care manager/care coordinator for the patient",
+        "definition": "The practitioner that is the care manager/care coordinator for this patient.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Practitioner",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/PractitionerRole"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.performer.actor"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.team",
+        "path": "EpisodeOfCare.team",
+        "short": "Other practitioners facilitating this episode of care",
+        "definition": "The list of practitioners that may be facilitating this episode of care for specific purposes.",
+        "alias": [
+          "CareTeam"
+        ],
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/CareTeam"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.performer.actor"
+          }
+        ]
+      },
+      {
+        "id": "EpisodeOfCare.account",
+        "path": "EpisodeOfCare.account",
+        "short": "The set of accounts that may be used for billing for this EpisodeOfCare",
+        "definition": "The set of accounts that may be used for billing for this EpisodeOfCare.",
+        "comment": "The billing system may choose to allocate billable items associated with the EpisodeOfCare to different referenced Accounts based on internal business rules.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Account"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

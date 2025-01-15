@@ -1,0 +1,52 @@
+{
+  "resourceType": "Location",
+  "name": "Puskemas Ibu Anak",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/location-type",
+          "code": "LT000001",
+          "display": "Lokasi Tempat Bersalin"
+        }
+      ]
+    }
+  ],
+  "address": {
+    "use": "work",
+    "city": "Jakarta",
+    "postalCode": "12950",
+    "country": "ID",
+    "extension": [
+      {
+        "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode",
+        "extension": [
+          {
+            "url": "province",
+            "valueCode": "10"
+          },
+          {
+            "url": "city",
+            "valueCode": "1010"
+          },
+          {
+            "url": "district",
+            "valueCode": "1010101"
+          },
+          {
+            "url": "village",
+            "valueCode": "1010101101"
+          },
+          {
+            "url": "rt",
+            "valueCode": "1"
+          },
+          {
+            "url": "rw",
+            "valueCode": "2"
+          }
+        ]
+      }
+    ]
+  }
+}

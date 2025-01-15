@@ -1,0 +1,78 @@
+{
+  "resourceType": "MedicationDispense",
+  "status": "completed",
+  "medicationReference": {
+    "reference": "#Link-to-Example-Medication-Chemo-Oral-Dispensed.json",
+    "display": "Myleran 2mg tablet"
+  },
+  "subject": {
+    "reference": "Patient/P00030004",
+    "display": "Roel"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/N10000001"
+      }
+    }
+  ],
+  "authorizingPrescription": [
+    {
+      "reference": "urn:uuid:5904c5b9-7d0b-4eb6-bec4-42f667b809ae"
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "RFP",
+        "display": "Refill - Part Fill"
+      }
+    ]
+  },
+  "quantity": {
+    "value": 90,
+    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+    "code": "TAB"
+  },
+  "daysSupply": {
+    "value": 30,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+  },
+  "whenPrepared": "2015-01-15T10:20:00Z",
+  "whenHandedOver": "2015-01-15T16:20:00Z",
+  "dosageInstruction": [
+    {
+      "sequence": 1,
+      "text": "Take 3 tablets (6mg) once daily",
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "doseAndRate": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                "code": "calculated",
+                "display": "Calculated"
+              }
+            ]
+          },
+          "doseQuantity": {
+            "value": 6,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      ]
+    }
+  ]
+}

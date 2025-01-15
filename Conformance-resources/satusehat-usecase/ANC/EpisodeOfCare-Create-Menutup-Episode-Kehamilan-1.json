@@ -1,0 +1,49 @@
+{
+  "resourceType": "EpisodeOfCare",
+  "id": "9bc3900d-fbbf-4465-b2eb-a40a9cacd120",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/episode-of-care/10000004",
+      "value": "EOC998800"
+    }
+  ],
+  "status": "finished",
+  "statusHistory": [
+    {
+      "status": "active",
+      "period": {
+        "start": "2023-08-31T00:00:00+00:00",
+        "end": "2023-08-31T04:25:00+00:00"
+      }
+    },
+    {
+      "status": "finished",
+      "period": {
+        "start": "2023-08-31T04:25:00+00:00",
+        "end": "2023-08-31T04:25:00+00:00"
+      }
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id/CodeSystem/episodeofcare-type",
+          "code": "ANC",
+          "display": "Antenatal Care"
+        }
+      ]
+    }
+  ],
+  "patient": {
+    "reference": "Patient/100000030006",
+    "display": "Jane Smith"
+  },
+  "managingOrganization": {
+    "reference": "Organization/10000004"
+  },
+  "period": {
+    "start": "2023-08-31T00:00:00+00:00",
+    "end": "2023-08-31T04:25:00+00:00"
+  }
+}

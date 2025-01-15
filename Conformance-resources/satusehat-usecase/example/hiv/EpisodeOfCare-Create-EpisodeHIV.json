@@ -1,0 +1,39 @@
+{
+  "resourceType": "EpisodeOfCare",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/episode-of-care/{{Org_id}}",
+      "value": "EOC10234567"
+    }
+  ],
+  "status": "waitlist",
+  "statusHistory": [
+    {
+      "status": "waitlist",
+      "period": {
+        "start": "2023-08-31T04:10:00+00:00"
+      }
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.kemkes.go.id",
+          "code": "HIV",
+          "display": "Human Immunodeficiency Virus"
+        }
+      ]
+    }
+  ],
+  "patient": {
+    "reference": "Patient/{{Patient_id}}",
+    "display": "{{Patient_Name}}"
+  },
+  "managingOrganization": {
+    "reference": "Organization/{{Org_id}}"
+  },
+  "period": {
+    "start": "2023-08-31T04:10:00+00:00"
+  }
+}

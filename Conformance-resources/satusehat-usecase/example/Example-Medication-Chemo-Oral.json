@@ -1,0 +1,21 @@
+{
+  "resourceType": "Medication",
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/ndc",
+        "code": "76388-713-25",
+        "display": "Myleran 2mg tablet, film coated"
+      }
+    ]
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385057009",
+        "display": "Film-coated tablet (qualifier value)"
+      }
+    ]
+  }
+}

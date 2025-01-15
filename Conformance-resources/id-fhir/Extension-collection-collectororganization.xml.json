@@ -1,0 +1,51 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "CollectorOrganization",
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/CollectorOrganization",
+  "name": "CollectorOrganization",
+  "status": "draft",
+  "date": "2023-05-12T03:38:24.117026+00:00",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Specimen.collection"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Specimen Collector Organization information",
+        "definition": "Specimen.collection.collectorOrganization information for Specimen referral process",
+        "max": "1",
+        "mustSupport": false
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/CollectorOrganization"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Organization ID reference whom collect Specimen",
+        "definition": "Organization ID from the Specimen collector (referrer)",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Organization"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "resourceType": "Observation",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/observation/{{Org_id}}",
+      "value": "O111111"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "29539-4",
+        "display": "HIV 1 RNA [Log #/volume] (viral load) in Plasma by Probe with signal amplification"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/{{Patient_id}}"
+  },
+  "encounter": {
+    "reference": "Encounter/{{Encounter_id}}"
+  },
+  "effectiveDateTime": "2023-08-31T15:25:00+00:00",
+  "issued": "2023-08-31T15:25:00+00:00",
+  "performer": [
+    {
+      "reference": "Practitioner/{{Practitioner_id}}"
+    },
+    {
+      "reference": "Organization/{{Org_id}}"
+    }
+  ],
+  "specimen": {
+    "reference": "Specimen/{{Specimen_Lab}}"
+  },
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/{{ServiceRequest_Lab}}"
+    }
+  ],
+  "valueQuantity": {
+    "value": 18,
+    "unit": "{Log_copies}/mL",
+    "system": "http://unitsofmeasure.org",
+    "code": "{Log_copies}/mL"
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "POS",
+          "display": "Positive"
+        }
+      ]
+    }
+  ]
+}

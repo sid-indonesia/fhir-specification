@@ -1,0 +1,42 @@
+{
+  "resourceType": "Procedure",
+  "status": "completed",
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "311401005",
+        "display": "Patient education (procedure)"
+      }
+    ],
+    "text": "Education"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "https://terminology.kemkes.go.id/procedure",
+        "code": "48023004",
+        "display": "Proses penyakit, diagnosis, dan rencana asuhan"
+      }
+    ],
+    "text": "Edukasi: Proses penyakit, diagnosis, dan rencana asuhan"
+  },
+  "subject": {
+    "reference": "Patient/P00030004",
+    "display": "Roel"
+  },
+  "performedDateTime": "2014-08-16",
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/N10000001",
+        "display": "Pamela Educator, RN"
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Catatan mengenai edukasi pasien"
+    }
+  ]
+}

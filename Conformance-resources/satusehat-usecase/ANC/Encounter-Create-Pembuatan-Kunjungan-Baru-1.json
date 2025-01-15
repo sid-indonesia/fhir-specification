@@ -1,0 +1,64 @@
+{
+  "resourceType": "Encounter",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/encounter/10000004",
+      "value": "P20240005"
+    },
+    {
+      "system": "http://terminology.kemkes.go.id/CodeSystem/episodeofcare/ANC",
+      "value": "K1A"
+    }
+  ],
+  "status": "arrived",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "subject": {
+    "reference": "Patient/100000030006",
+    "display": "Jane Smith"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "ATND",
+              "display": "attender"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "reference": "Practitioner/N10000001",
+        "display": "Dokter Bronsig"
+      }
+    }
+  ],
+  "period": {
+    "start": "2023-08-31T00:00:00+00:00"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/c87e0ca7-badc-4c60-9080-277aaaf27a88",
+        "display": "Ruang Poli ANC, Departemen KIA, Lantai 2, Gedung Utama"
+      }
+    }
+  ],
+  "statusHistory": [
+    {
+      "status": "arrived",
+      "period": {
+        "start": "2023-08-31T00:00:00+00:00"
+      }
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/10000004"
+  }
+}

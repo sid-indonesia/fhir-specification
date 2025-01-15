@@ -1,0 +1,61 @@
+{
+  "resourceType": "ServiceRequest",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/servicerequest/{{Org_id}}",
+      "value": "{{Lab_SRID}}"
+    }
+  ],
+  "status": "active",
+  "intent": "original-order",
+  "priority": "routine",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "108252007",
+          "display": "Laboratory procedure"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://terminology.kemkes.go.id/CodeSystem/examination",
+        "code": "X099420",
+        "display": "Pemeriksaan HIV + Sifilis"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/{{Patient_id}}"
+  },
+  "encounter": {
+    "reference": "Encounter/{{Encounter_id}}"
+  },
+  "occurrenceDateTime": "2023-08-31T16:30:00+00:00",
+  "authoredOn": "2023-08-31T19:30:00+00:00",
+  "requester": {
+    "reference": "Practitioner/{{Practitioner_id}}",
+    "display": "{{Practitioner_Name}}"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/N10000005",
+      "display": "Fatma"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "171128005",
+          "display": "Venereal disease screening"
+        }
+      ]
+    }
+  ]
+}

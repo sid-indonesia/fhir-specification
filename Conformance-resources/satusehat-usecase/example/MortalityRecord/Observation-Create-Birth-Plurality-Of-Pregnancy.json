@@ -1,0 +1,54 @@
+{
+  "resourceType": "Observation",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/observation/1000004",
+      "value": "O111111"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "57722-1",
+        "display": "Birth plurality of Pregnancy"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/P02280547535",
+    "display": "Patient - Mother (Teresa Lee)"
+  },
+  "encounter": {
+    "reference": "Encounter/45e436ea-d6c7-4059-8cbe-e00fb2c665d8"
+  },
+  "effectiveDateTime": "2023-06-22T14:30:00+07:00",
+  "issued": "2023-06-22T14:30:00+07:00",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001",
+      "display": "Dokter Bronsig"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "237244005",
+        "display": "Single pregnancy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "MedicationType",
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/MedicationType",
+  "name": "MedicationType",
+  "status": "active",
+  "date": "2023-05-12T03:38:24.117026+00:00",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Medication"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kemkes.go.id/r4/StructureDefinition/MedicationType"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Type of medication",
+        "definition": "Value of extension - must be one of non-compound|compound|compound-dtd",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      }
+    ]
+  }
+}

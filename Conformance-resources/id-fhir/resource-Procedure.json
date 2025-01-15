@@ -1,0 +1,1124 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "Procedure",
+  "meta": {
+    "lastUpdated": "2022-10-05T04:55:36.732455+00:00"
+  },
+  "extension": [
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Summary"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 3
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    },
+    {
+      "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/structuredefinition-wg",
+      "valueCode": "pc"
+    }
+  ],
+  "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/Procedure",
+  "version": "4.0.1",
+  "name": "Procedure",
+  "status": "active",
+  "date": "2023-05-12T04:00:39.3091812+00:00",
+  "publisher": "Health Level Seven International (Patient Care)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/fhir"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/patientcare/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://fhir.kemkes.go.id/r4/StructureDefinition/DomainResource",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure",
+        "path": "Procedure",
+        "short": "An action that is being or was performed on a patient",
+        "definition": "An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.",
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event"
+          },
+          {
+            "identity": "rim",
+            "map": "Procedure[moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.identifier",
+        "path": "Procedure.identifier",
+        "short": "External Identifiers for this procedure",
+        "definition": "Business identifiers assigned to this procedure by the performer or other systems which remain constant as the resource is updated and is propagated from server to server.",
+        "comment": "This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and Person resource instances might share the same social insurance number.",
+        "requirements": "Allows identification of the procedure as it is known by various participating systems and in a way that remains consistent across servers.",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.identifier"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.identifier"
+          },
+          {
+            "identity": "v2",
+            "map": "Some combination of ORC-2 / ORC-3 / OBR-2 / OBR-3 / IPC-1 / IPC-2 / IPC-3 / IPC-4"
+          },
+          {
+            "identity": "rim",
+            "map": ".id"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.instantiatesCanonical",
+        "path": "Procedure.instantiatesCanonical",
+        "short": "Instantiates FHIR protocol or definition",
+        "definition": "The URL pointing to a FHIR-defined protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.",
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/PlanDefinition",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/ActivityDefinition",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Measure",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/OperationDefinition",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Questionnaire"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.instantiatesCanonical"
+          },
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=DEFN].target"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.instantiatesUri",
+        "path": "Procedure.instantiatesUri",
+        "short": "Instantiates external protocol or definition",
+        "definition": "The URL pointing to an externally maintained protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.",
+        "comment": "This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.instantiatesUri"
+          },
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=DEFN].target"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.basedOn",
+        "path": "Procedure.basedOn",
+        "short": "A request for this procedure",
+        "definition": "A reference to a resource that contains details of the request for this procedure.",
+        "alias": [
+          "fulfills"
+        ],
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/CarePlan",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.basedOn"
+          },
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=FLFS].target[classCode=(various e.g. PROC, OBS, PCPR, ACT,  moodCode=RQO].code"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.partOf",
+        "path": "Procedure.partOf",
+        "short": "Part of referenced event",
+        "definition": "A larger event of which this particular procedure is a component or step.",
+        "comment": "The MedicationAdministration resource has a partOf reference to Procedure, but this is not a circular reference.   For example, the anesthesia MedicationAdministration is part of the surgical Procedure (MedicationAdministration.partOf = Procedure).  For example, the procedure to insert the IV port for an IV medication administration is part of the medication administration (Procedure.partOf = MedicationAdministration).",
+        "alias": [
+          "container"
+        ],
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Procedure",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Observation",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/MedicationAdministration"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.partOf"
+          },
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=COMP].source[classCode=SBADM or PROC or OBS, moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.status",
+        "path": "Procedure.status",
+        "short": "preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown",
+        "definition": "A code specifying the state of the procedure. Generally, this will be the in-progress or completed state.",
+        "comment": "The \"unknown\" code is not to be used to convey other statuses.  The \"unknown\" code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the procedure.\n\nThis element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": true,
+        "isModifierReason": "This element is labelled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid",
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedureStatus"
+            }
+          ],
+          "strength": "required",
+          "description": "A code specifying the state of the procedure.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/event-status|4.0.1"
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.status"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.status"
+          },
+          {
+            "identity": "rim",
+            "map": "statusCode"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.statusReason",
+        "path": "Procedure.statusReason",
+        "short": "Reason for current status",
+        "definition": "Captures the reason for the current state of the procedure.",
+        "comment": "This is generally only used for \"exception\" statuses such as \"not-done\", \"suspended\" or \"aborted\". The reason for performing the event at all is captured in reasonCode, not here.",
+        "alias": [
+          "Suspended Reason",
+          "Cancelled Reason"
+        ],
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedureNegationReason"
+            }
+          ],
+          "strength": "example",
+          "description": "A code that identifies the reason a procedure was not performed.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-not-performed-reason"
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.statusReason"
+          },
+          {
+            "identity": "rim",
+            "map": ".reason.Observation.value"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.category",
+        "path": "Procedure.category",
+        "short": "Classification of the procedure",
+        "definition": "A code that classifies the procedure for searching, sorting and display purposes (e.g. \"Surgical Procedure\").",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedureCategory"
+            }
+          ],
+          "strength": "example",
+          "description": "A code that classifies a procedure for searching, sorting and display purposes.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-category"
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.class"
+          },
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=\"COMP].target[classCode=\"LIST\", moodCode=\"EVN\"].code"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "short": "Identification of the procedure",
+        "definition": "The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. \"Laparoscopic Appendectomy\").",
+        "requirements": "0..1 to account for primarily narrative only resources.",
+        "alias": [
+          "type"
+        ],
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedureCode"
+            }
+          ],
+          "strength": "example",
+          "description": "A code to identify a specific procedure .",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-code"
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.code"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.what[x]"
+          },
+          {
+            "identity": "v2",
+            "map": "OBR-44/OBR-45"
+          },
+          {
+            "identity": "rim",
+            "map": ".code"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "short": "Who the procedure was performed on",
+        "definition": "The person, animal or group on which the procedure was performed.",
+        "alias": [
+          "patient"
+        ],
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Group"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.subject"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject[x]"
+          },
+          {
+            "identity": "v2",
+            "map": "PID-3"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=SBJ].role"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.subject"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.encounter",
+        "path": "Procedure.encounter",
+        "short": "Encounter created as part of",
+        "definition": "The Encounter during which this Procedure was created or performed or to which the creation of this record is tightly associated.",
+        "comment": "This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Encounter"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.context"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.context"
+          },
+          {
+            "identity": "v2",
+            "map": "PV1-19"
+          },
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.performed[x]",
+        "path": "Procedure.performed[x]",
+        "short": "When the procedure was performed",
+        "definition": "Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.",
+        "comment": "Age is generally used when the patient reports an age at which the procedure was performed. Range is generally used when the patient reports an age range when the procedure was performed, such as sometime between 20-25 years old.  dateTime supports a range of precision due to some procedures being reported as past procedures that might not have millisecond precision while other procedures performed and documented during the encounter might have more precise UTC timestamps with timezone.",
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          },
+          {
+            "code": "Period"
+          },
+          {
+            "code": "string"
+          },
+          {
+            "code": "Age"
+          },
+          {
+            "code": "Range"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.occurrence[x]"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.done[x]"
+          },
+          {
+            "identity": "v2",
+            "map": "OBR-7"
+          },
+          {
+            "identity": "rim",
+            "map": ".effectiveTime"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.recorder",
+        "path": "Procedure.recorder",
+        "short": "Who recorded the procedure",
+        "definition": "Individual who recorded the record and takes responsibility for its content.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/RelatedPerson",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Practitioner",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/PractitionerRole"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.author"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=AUT].role"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.asserter",
+        "path": "Procedure.asserter",
+        "short": "Person who asserts this procedure",
+        "definition": "Individual who is making the procedure statement.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/RelatedPerson",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Practitioner",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/PractitionerRole"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.source"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=INF].role"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.performer",
+        "path": "Procedure.performer",
+        "short": "The people who performed the procedure",
+        "definition": "Limited to \"real\" people rather than equipment.",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.performer"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=PRF]"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.performer.function",
+        "path": "Procedure.performer.function",
+        "short": "Type of performance",
+        "definition": "Distinguishes the type of involvement of the performer in the procedure. For example, surgeon, anaesthetist, endoscopist.",
+        "requirements": "Allows disambiguation of the types of involvement of different performers.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedurePerformerRole"
+            }
+          ],
+          "strength": "example",
+          "description": "A code that identifies the role of a performer of the procedure.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/performer-role"
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.performer.function"
+          },
+          {
+            "identity": "v2",
+            "map": "Some combination of STF-18 / PRA-3 / PRT-4 / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17 / OBX-25"
+          },
+          {
+            "identity": "rim",
+            "map": ".functionCode"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.performer.actor",
+        "path": "Procedure.performer.actor",
+        "short": "The reference to the practitioner",
+        "definition": "The practitioner who was involved in the procedure.",
+        "requirements": "A reference to Device supports use cases, such as pacemakers.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Practitioner",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/PractitionerRole",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Organization",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Patient",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/RelatedPerson",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Device"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.performer.actor"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.actor"
+          },
+          {
+            "identity": "v2",
+            "map": "ORC-19/PRT-5"
+          },
+          {
+            "identity": "rim",
+            "map": ".role"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.performer.onBehalfOf",
+        "path": "Procedure.performer.onBehalfOf",
+        "short": "Organization the device or practitioner was acting for",
+        "definition": "The organization the device or practitioner was acting on behalf of.",
+        "requirements": "Practitioners and Devices can be associated with multiple organizations.  This element indicates which organization they were acting on behalf of when performing the action.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".scoper"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.location",
+        "path": "Procedure.location",
+        "short": "Where the procedure happened",
+        "definition": "The location where the procedure actually happened.  E.g. a newborn at home, a tracheostomy at a restaurant.",
+        "requirements": "Ties a procedure to where the records are likely kept.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Location"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "FiveWs.where[x]"
+          },
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=LOC].role[classCode=SDLOC]"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.reasonCode",
+        "path": "Procedure.reasonCode",
+        "short": "Coded reason procedure performed",
+        "definition": "The coded reason why the procedure was performed. This may be a coded entity of some type, or may simply be present as text.",
+        "comment": "Use Procedure.reasonCode when a code sufficiently describes the reason.  Use Procedure.reasonReference when referencing a resource, which allows more information to be conveyed, such as onset date. Procedure.reasonCode and Procedure.reasonReference are not meant to be duplicative.  For a single reason, either Procedure.reasonCode or Procedure.reasonReference can be used.  Procedure.reasonCode may be a summary code, or Procedure.reasonReference may be used to reference a very precise definition of the reason using Condition | Observation | Procedure | DiagnosticReport | DocumentReference.  Both Procedure.reasonCode and Procedure.reasonReference can be used if they are describing different reasons for the procedure.",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedureReason"
+            }
+          ],
+          "strength": "example",
+          "description": "A code that identifies the reason a procedure is  required.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-reason"
+        },
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.reasonCode"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.why[x]"
+          },
+          {
+            "identity": "rim",
+            "map": ".reasonCode"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.reasonReference",
+        "path": "Procedure.reasonReference",
+        "short": "The justification that the procedure was performed",
+        "definition": "The justification of why the procedure was performed.",
+        "comment": "It is possible for a procedure to be a reason (such as C-Section) for another procedure (such as an epidural). Other examples include endoscopy for dilatation and biopsy (a combination of diagnostic and therapeutic use). \nUse Procedure.reasonCode when a code sufficiently describes the reason.  Use Procedure.reasonReference when referencing a resource, which allows more information to be conveyed, such as onset date. Procedure.reasonCode and Procedure.reasonReference are not meant to be duplicative.  For a single reason, either Procedure.reasonCode or Procedure.reasonReference can be used.  Procedure.reasonCode may be a summary code, or Procedure.reasonReference may be used to reference a very precise definition of the reason using Condition | Observation | Procedure | DiagnosticReport | DocumentReference.  Both Procedure.reasonCode and Procedure.reasonReference can be used if they are describing different reasons for the procedure.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Condition",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Observation",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Procedure",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/DiagnosticReport",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/DocumentReference"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.reasonReference"
+          },
+          {
+            "identity": "w5",
+            "map": "FiveWs.why[x]"
+          },
+          {
+            "identity": "rim",
+            "map": ".reasonCode"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.bodySite",
+        "path": "Procedure.bodySite",
+        "short": "Target body sites",
+        "definition": "Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.",
+        "comment": "If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [procedure-targetbodystructure](extension-procedure-targetbodystructure.html).",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "BodySite"
+            }
+          ],
+          "strength": "example",
+          "description": "Codes describing anatomical locations. May include laterality.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "OBX-20"
+          },
+          {
+            "identity": "rim",
+            "map": ".targetSiteCode"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.outcome",
+        "path": "Procedure.outcome",
+        "short": "The result of procedure",
+        "definition": "The outcome of the procedure - did it resolve the reasons for the procedure being performed?",
+        "comment": "If outcome contains narrative text only, it can be captured using the CodeableConcept.text.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedureOutcome"
+            }
+          ],
+          "strength": "example",
+          "description": "An outcome of a procedure - whether it was resolved or otherwise.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-outcome"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=OUT].target.text"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.report",
+        "path": "Procedure.report",
+        "short": "Any report resulting from the procedure",
+        "definition": "This could be a histology result, pathology report, surgical report, etc.",
+        "comment": "There could potentially be multiple reports - e.g. if this was a procedure which took multiple biopsies resulting in a number of anatomical pathology reports.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/DiagnosticReport",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/DocumentReference",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Composition"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN]"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.complication",
+        "path": "Procedure.complication",
+        "short": "Complication following the procedure",
+        "definition": "Any complications that occurred during the procedure, or in the immediate post-performance period. These are generally tracked separately from the notes, which will typically describe the procedure itself rather than any 'post procedure' issues.",
+        "comment": "If complications are only expressed by the narrative text, they can be captured using the CodeableConcept.text.",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedureComplication"
+            }
+          ],
+          "strength": "example",
+          "description": "Codes describing complications that resulted from a procedure.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-code"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=OUTC].target[classCode=OBS, code=\"complication\", moodCode=EVN].value"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.complicationDetail",
+        "path": "Procedure.complicationDetail",
+        "short": "A condition that is a result of the procedure",
+        "definition": "Any complications that occurred during the procedure, or in the immediate post-performance period.",
+        "requirements": "This is used to document a condition that is a result of the procedure, not the condition that was the reason for the procedure.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Condition"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=OUTC].target[classCode=OBS, code=\"complication\", moodCode=EVN].value"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.followUp",
+        "path": "Procedure.followUp",
+        "short": "Instructions for follow up",
+        "definition": "If the procedure required specific follow up - e.g. removal of sutures. The follow up may be represented as a simple note or could potentially be more complex, in which case the CarePlan resource can be used.",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedureFollowUp"
+            }
+          ],
+          "strength": "example",
+          "description": "Specific follow up required for a procedure e.g. removal of sutures.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-followup"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".outboundRelationship[typeCode=COMP].target[classCode=ACT, moodCode=INT].code"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.note",
+        "path": "Procedure.note",
+        "short": "Additional information about the procedure",
+        "definition": "Any other notes and comments about the procedure.",
+        "type": [
+          {
+            "code": "Annotation"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "workflow",
+            "map": "Event.note"
+          },
+          {
+            "identity": "v2",
+            "map": "NTE"
+          },
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=\"annotation\"].value"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.focalDevice",
+        "path": "Procedure.focalDevice",
+        "short": "Manipulated, implanted, or removed device",
+        "definition": "A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=DEV].role[classCode=MANU]"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.focalDevice.action",
+        "path": "Procedure.focalDevice.action",
+        "short": "Kind of change to device",
+        "definition": "The kind of change that happened to the device during the procedure.",
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "DeviceActionKind"
+            }
+          ],
+          "strength": "preferred",
+          "description": "A kind of change that happened to the device during the procedure.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-action"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=\"procedure device action\"].value=:procedure device action codes"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.focalDevice.manipulated",
+        "path": "Procedure.focalDevice.manipulated",
+        "short": "Device that was changed",
+        "definition": "The device that was manipulated (changed) during the procedure.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Device"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=DEV].role[classCode=SDLOC]"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.usedReference",
+        "path": "Procedure.usedReference",
+        "short": "Items used during procedure",
+        "definition": "Identifies medications, devices and any other substance used as part of the procedure.",
+        "comment": "For devices actually implanted or removed, use Procedure.device.",
+        "requirements": "Used for tracking contamination, etc.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Device",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Medication",
+              "https://fhir.kemkes.go.id/r4/StructureDefinition/Substance"
+            ]
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": ".participation[typeCode=DEV].role[classCode=MANU] or\n.participation[typeCode=CSM].role[classCode=ADMM] (for Medication or Substance)"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.usedCode",
+        "path": "Procedure.usedCode",
+        "short": "Coded items used during the procedure",
+        "definition": "Identifies coded items that were used as part of the procedure.",
+        "comment": "For devices actually implanted or removed, use Procedure.device.",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProcedureUsed"
+            }
+          ],
+          "strength": "example",
+          "description": "Codes describing items used during a procedure.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-kind"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "participation[typeCode=Dev].role[classCode=MANU]"
+          }
+        ]
+      }
+    ]
+  }
+}

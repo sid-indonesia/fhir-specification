@@ -1,0 +1,67 @@
+{
+  "resourceType": "Encounter",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/encounter/1000079374",
+      "value": "O00002"
+    }
+  ],
+  "status": "arrived",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "episodeOfCare": {
+    "reference": "EpisodeOfCare/378f0a4b-e1d2-481d-9eae-843e7ee0c685"
+  },
+  "basedOn": {
+    "reference": "ServiceRequest/127d12db-6a39-43f9-9a7c-3bc8d748d254"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "ATND",
+              "display": "attender"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "reference": "Practitioner/3217040109800006",
+        "display": "Dokter Yellowsig"
+      }
+    }
+  ],
+  "period": {
+    "start": "2022-06-15T08:12:12+07:00"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/b017aa54-f1df-4ec2-9d84-8823815d7228",
+        "display": "Poliklinik TB, Lantai 3 (RS SATUSEHAT)"
+      }
+    }
+  ],
+  "statusHistory": [
+    {
+      "status": "arrived",
+      "period": {
+        "start": "2022-06-15T08:12:12+07:00"
+      }
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/6e6f600c-7aa3-4723-befb-356d3b19e2f6",
+    "display": "RS SATUSEHAT"
+  }
+}

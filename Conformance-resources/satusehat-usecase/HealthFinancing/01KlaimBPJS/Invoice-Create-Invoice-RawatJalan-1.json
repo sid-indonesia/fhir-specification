@@ -1,0 +1,60 @@
+{
+  "resourceType": "Invoice",
+  "status": "issued",
+  "subject": {
+    "reference": "Patient/100000030006"
+  },
+  "date": "2022-06-21T07:00:00+07:00",
+  "participant": [
+    {
+      "role": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "17561000",
+            "display": "Cardiologist"
+          }
+        ]
+      },
+      "actor": {
+        "reference": "Practitioner/N10000001"
+      }
+    }
+  ],
+  "issuer": {
+    "reference": "Organization/10085103"
+  },
+  "account": {
+    "reference": "Account/75e932a6-b528-4d5f-8340-20265300229a"
+  },
+  "lineItem": [
+    {
+      "sequence": 1,
+      "chargeItemReference": {
+        "reference": "ChargeItem/272d796a-e312-4927-8bea-e0cac80baf1d"
+      },
+      "priceComponent": [
+        {
+          "type": "surcharge",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.kemkes.go.id/CodeSystem/invoice-lineitem",
+                "code": "IN000001",
+                "display": "Invoice Biaya Poli Eksekutif"
+              }
+            ]
+          },
+          "amount": {
+            "value": 150000,
+            "currency": "IDR"
+          }
+        }
+      ]
+    }
+  ],
+  "totalNet": {
+    "value": 150000,
+    "currency": "IDR"
+  }
+}

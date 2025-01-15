@@ -1,0 +1,74 @@
+{
+  "resourceType": "Observation",
+  "identifier": [
+    {
+      "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+      "value": "O111111"
+    },
+    {
+      "system": "http://sys-ids.kemkes.go.id/sitb/10000004",
+      "value": "230641277821"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "88874-3",
+        "display": "Mycobacterium tuberculosis complex DNA [Presence] in Isolate or Specimen by Molecular genetics method"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/100000030009",
+    "display": "Budi Santoso"
+  },
+  "encounter": {
+    "reference": "Encounter/89927b83-7a2b-4f8a-8bef-a6f37d167814"
+  },
+  "effectiveDateTime": "2023-06-14T15:30:10+00:00",
+  "issued": "2023-06-14T15:30:10+00:00",
+  "performer": [
+    {
+      "reference": "Practitioner/N10000001"
+    },
+    {
+      "reference": "Organization/abddd50b-b22f-4d68-a1c3-d2c29a27698b",
+      "display": "Divisi Laboratorium Puskesmas SATUSEHAT"
+    }
+  ],
+  "specimen": {
+    "reference": "Specimen/5975cb2c-d83a-4312-924a-57cac253bd72"
+  },
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/9c890f6c-7798-4250-8c32-645abc26227b"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "LA11882-0",
+        "display": "Detected"
+      }
+    ]
+  },
+  "note": [
+    {
+      "text": "Hasil menunjukkan adanya kemungkinan positif TB"
+    }
+  ]
+}
